@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Understudy",
+  title: "Hack the Feed",
   description: "UGC accounts that keep posting after the intern leaves.",
 };
 

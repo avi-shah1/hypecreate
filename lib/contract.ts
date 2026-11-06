@@ -83,6 +83,8 @@ export interface CreateRequest {
   /** File name in brand/, without the extension. */
   brand: string;
   language: "en" | "fr";
+  /** Whose clips to use. */
+  person?: string;
 }
 
 export interface CreateResult {

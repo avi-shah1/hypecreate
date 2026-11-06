@@ -35,7 +35,7 @@ yarn-error.log*
 !.env.example
 
 # footage and renders stay local: too big for git, and they show real people
-/clips/
+/clips
 /public/renders/
 /data/cache/
 

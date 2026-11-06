@@ -1,8 +1,8 @@
-# Understudy (Hack the Feed)
+# Hack the Feed
 
-UGC accounts that keep posting after the intern leaves. Working name.
+UGC accounts that keep posting after the intern leaves.
 
-Consumer apps grow through accounts that interns warm up. When the intern leaves, the account goes dark and their clips sit unused. Understudy reads what is working today from video data, remakes those formats from the team's own clip library, generates what is missing, and learns from what each post did.
+Consumer apps grow through accounts that interns warm up. When the intern leaves, the account goes dark and their clips sit unused. This tool reads what is working today from video data, remakes those formats from the team's own clip library, generates what is missing, and learns from what each post did.
 
 First customer: Lodavo, a Canadian savings app, with its next batch of posts due Monday.
 

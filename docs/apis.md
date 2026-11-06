@@ -48,7 +48,7 @@ Full reference: https://connect.oriane.xyz/rest/docs (rendered page; the OpenAPI
 Docs: https://docs.gmicloud.ai, with every page listed at https://docs.gmicloud.ai/llms.txt. Not tested yet: needs a key.
 
 - Key: https://console.gmicloud.ai > Settings > API Keys.
-- Text, OpenAI-compatible: `POST https://api.gmi-serving.com/v1/chat/completions`. `anthropic/claude-sonnet-4.6` takes `image_url` parts, so it can read Oriane's frames.
+- Text, OpenAI-compatible: `POST https://api.gmi-serving.com/v1/chat/completions`. Tested: every `anthropic/` model we tried answers 429 on our key, and Opus 5.5 and Fable 5.1 answer 404. `openai/gpt-6.1-sol` works. `chat()` tries Claude Opus 5 first and moves on. `GET /v1/models` lists the rest.
 - Video, image and speech run on a queue: `POST https://console.gmicloud.ai/api/v1/ie/requestqueue/apikey/requests` with `{ "model": "...", "payload": {...} }`, then poll `GET .../requests/{request_id}`. `generate()` in `lib/gmi.ts` handles it. The docs name the finished state both `success` and `finished`, and the result both `outcome.media_urls[].url` and `outcome.video_url`; the client accepts all of them. Check it on the first real job.
 
 | Job | Model | Payload | Price |

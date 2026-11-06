@@ -33,8 +33,8 @@ async function gmi() {
     method: "POST",
     headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
     body: JSON.stringify({
-      model: "anthropic/claude-sonnet-4.6",
-      max_tokens: 10,
+      model: "openai/gpt-6.1-sol",
+      max_tokens: 200,
       messages: [{ role: "user", content: "Reply with the single word: ok" }],
     }),
   });

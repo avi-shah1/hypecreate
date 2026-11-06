@@ -1,10 +1,19 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import type { CreateResult, FormatBrief } from "@/lib/contract";
+import type { CreateResult, FormatBrief, VideoStyle } from "@/lib/contract";
+
+const STYLES: { style: VideoStyle; label: string }[] = [
+  { style: "hook-plus-demo", label: "Real clip + app demo" },
+  { style: "broll-text", label: "7-second b-roll" },
+  { style: "ai-generated", label: "AI-generated" },
+];
+
+type Gallery = { account: string; videos: { url: string; notes: string }[] }[];
 
 export default function Home() {
   const [briefs, setBriefs] = useState<FormatBrief[]>([]);
+  const [gallery, setGallery] = useState<Gallery>([]);
   const [working, setWorking] = useState<string | null>(null);
   const [made, setMade] = useState<Record<string, CreateResult | string>>({});
 
@@ -12,14 +21,17 @@ export default function Home() {
     fetch("/api/signal", { method: "POST" })
       .then((res) => res.json())
       .then(setBriefs);
+    fetch("/api/renders")
+      .then((res) => res.json())
+      .then(setGallery);
   }, []);
 
-  async function make(brief: FormatBrief) {
-    setWorking(brief.id);
+  async function make(brief: FormatBrief, style: VideoStyle) {
+    setWorking(`${brief.id}:${style}`);
     const res = await fetch("/api/create", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ brief, brand: "lodavo", language: "en" }),
+      body: JSON.stringify({ brief, style, brand: "lodavo", language: "en", person: "chaerin", folder: "made-live" }),
     });
     const json = await res.json();
     setMade((current) => ({ ...current, [brief.id]: res.ok ? json : json.error }));
@@ -27,15 +39,16 @@ export default function Home() {
   }
 
   return (
-    <main className="mx-auto w-full max-w-4xl p-6">
-      <h1 className="text-3xl font-bold">Understudy</h1>
-      <p className="mt-1 text-zinc-500">The formats working right now, remade for your accounts.</p>
+    <main className="mx-auto w-full max-w-5xl p-6">
+      <h1 className="text-3xl font-bold">Hack the Feed</h1>
+      <p className="mt-1 text-zinc-500">The formats working right now, remade from your team&apos;s own clips.</p>
 
+      <h2 className="mt-8 text-2xl font-semibold">What&apos;s working right now</h2>
       {briefs.map((brief) => {
         const result = made[brief.id];
         return (
           <section key={brief.id} className="mt-6 rounded-xl border border-zinc-300 p-5">
-            <h2 className="text-xl font-semibold">{brief.name}</h2>
+            <h3 className="text-xl font-semibold">{brief.name}</h3>
             <p className="mt-1 italic">{brief.hookPattern}</p>
             <p className="mt-2 text-zinc-500">{brief.whyItWorks}</p>
 
@@ -54,13 +67,18 @@ export default function Home() {
               ))}
             </div>
 
-            <button
-              onClick={() => make(brief)}
-              disabled={working !== null}
-              className="mt-4 rounded-lg bg-black px-4 py-2 text-white disabled:opacity-50"
-            >
-              {working === brief.id ? "Making it..." : "Make this video"}
-            </button>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {STYLES.map(({ style, label }) => (
+                <button
+                  key={style}
+                  onClick={() => make(brief, style)}
+                  disabled={working !== null}
+                  className="rounded-lg bg-black px-4 py-2 text-white disabled:opacity-50"
+                >
+                  {working === `${brief.id}:${style}` ? "Making it..." : label}
+                </button>
+              ))}
+            </div>
 
             {typeof result === "string" && <p className="mt-3 text-red-600">{result}</p>}
             {result && typeof result !== "string" && (
@@ -72,6 +90,19 @@ export default function Home() {
           </section>
         );
       })}
+
+      {gallery.map((group) => (
+        <section key={group.account} className="mt-10">
+          <h2 className="text-2xl font-semibold">
+            Ready to post: {group.account} ({group.videos.length})
+          </h2>
+          <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
+            {group.videos.map((video) => (
+              <video key={video.url} src={video.url} controls preload="metadata" className="rounded-lg" />
+            ))}
+          </div>
+        </section>
+      ))}
     </main>
   );
 }
