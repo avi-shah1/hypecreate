@@ -1,0 +1,430 @@
+{
+  "search": {
+    "query": "saving money",
+    "platforms": [
+      "instagram",
+      "tiktok"
+    ],
+    "minFollowers": 5000,
+    "maxFollowers": 200000,
+    "days": 30,
+    "limit": 20
+  },
+  "generatedAt": "2026-11-06T23:08:33.846Z",
+  "model": "google/gemini-3.8-flash",
+  "orianeFile": "data/oriane/saving-money_instagram+tiktok_f5000-200000_30d_n20.json",
+  "briefs": [
+    {
+      "id": "the-frugal-childhood-confession",
+      "name": "The Frugal Childhood Confession",
+      "whyItWorks": "Sharing raw, vulnerable memories of extreme childhood frugality builds instant trust and reframes penny-pinching discipline into aspirational wealth-building wisdom.",
+      "hookPattern": "I used to think my family was broke growing up because [childhood frugal habit].",
+      "beats": [
+        {
+          "fromSeconds": 0,
+          "toSeconds": 4,
+          "shows": "Creator seated comfortably in an apartment setting speaking candidly into a wireless mic.",
+          "says": "I always thought we were dead broke growing up because my parents made me cut coupons every week.",
+          "onScreen": "I thought we were broke..."
+        },
+        {
+          "fromSeconds": 4,
+          "toSeconds": 8,
+          "shows": "Slight camera punch-in as creator recalls specific childhood sacrifices and restrictions.",
+          "says": "I never got brand-name shoes and we only bought groceries that were on deep discount.",
+          "onScreen": "No brand names. Clearance only."
+        },
+        {
+          "fromSeconds": 8,
+          "toSeconds": 12,
+          "shows": "Creator leans forward to deliver the mindset revelation with a reflective expression.",
+          "says": "Years later my dad told me, 'We weren't poor, we were just intentional so we never carried debt.'",
+          "onScreen": "'Not poor. Frugal.'"
+        },
+        {
+          "fromSeconds": 12,
+          "toSeconds": 15,
+          "shows": "Creator nods toward camera as key takeaway text appears on screen.",
+          "says": "That single habit completely changed how I build and protect my money today.",
+          "onScreen": "Financial wisdom starts at home."
+        }
+      ],
+      "durationSeconds": 15,
+      "recommendedStyle": "ai-generated",
+      "clipTag": null,
+      "evidence": [
+        {
+          "url": "https://www.tiktok.com/@overgenpoverty/video/7697428626660265230",
+          "platform": "tiktok",
+          "handle": "overgenpoverty",
+          "thumbnailUrl": "https://social-catalog-static.oriane.xyz/oriane-contents/tiktok/7697428626660265230/thumbnail.webp",
+          "frameUrls": [
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7697428626660265230/1_2.00.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7697428626660265230/4_19.60.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7697428626660265230/7_98.60.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7697428626660265230/10_196.60.webp"
+          ],
+          "views": 2300000,
+          "followers": 20900,
+          "viewsPerFollower": 110.05,
+          "engagementRatePerViews": 21.182695652173912,
+          "spokenHook": "Life really is unfair, but I hope my story inspires you to keep going.",
+          "onScreenText": [
+            "but I hope my story inspires you",
+            "I overcame generational poverty",
+            "Mexican Rich\nGirl Series\nep.0",
+            "and now he's a porter",
+            "my parents didn't understand",
+            "Shent's dopamen c cou",
+            "EVICTION",
+            "NOTICE",
+            "we got an eviction notice",
+            "ACYAI",
+            "H",
+            "SMU"
+          ],
+          "audioTitle": "original sound",
+          "durationSeconds": 346,
+          "topComments": [
+            "The damn scholastic book fair had us all in a chokehold 😭🥲 I remember looking at the catalog and circling what I wanted that was as far as I got 😂",
+            "As a Latina I’m so PROUD of you!",
+            "poverty is so painful, i’m glad you made it out",
+            "I’ve never been prouder for a stranger 🥹💗 thank you for sharing your story!! I LOVE SEEING WOMEN WIN",
+            "So so proud of you ❤️and sharing your story is gonna help and inspire so many people"
+          ],
+          "publishedAt": "2026-10-17T00:34:32.000Z"
+        },
+        {
+          "url": "https://www.tiktok.com/@pastorlandonchase/video/7696565251067694366",
+          "platform": "tiktok",
+          "handle": "pastorlandonchase",
+          "thumbnailUrl": "https://social-catalog-static.oriane.xyz/oriane-contents/tiktok/7696565251067694366/thumbnail.webp",
+          "frameUrls": [
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7696565251067694366/1_2.00.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7696565251067694366/3_10.21.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7696565251067694366/5_18.65.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7696565251067694366/7_37.84.webp"
+          ],
+          "views": 421200,
+          "followers": 5357,
+          "viewsPerFollower": 78.63,
+          "engagementRatePerViews": 4.820987654320988,
+          "spokenHook": "I just got off the phone with my dad and I was telling him how",
+          "onScreenText": [
+            "FEAR",
+            "NO",
+            "LD",
+            "0",
+            "St",
+            "Giveth",
+            "AN",
+            "ND",
+            "TROL",
+            "telling",
+            "always",
+            "things"
+          ],
+          "audioTitle": "original sound - Landon Chase",
+          "durationSeconds": 76,
+          "topComments": [
+            "Frugal is the word she’s looking for. Not cheap.",
+            "My dad was an ACCOUNTANT!!!!!! He never taught us to save, or invest, or spend wisely. I was almost 30 when I found out what a 401k was. Meanwhile, he was saving Nabisco millions of dollars a year. I’m still angry about this 😂",
+            "So he created a scarcity mindset for his kids.",
+            "The best thing to do is not tell the kids how much money you have",
+            "Parental cheapness is not the same as fiscal responsibility."
+          ],
+          "publishedAt": "2026-10-14T17:00:00.000Z"
+        }
+      ],
+      "score": 1
+    },
+    {
+      "id": "the-everyday-retail-markup-dupe",
+      "name": "The Everyday Retail Markup Dupe",
+      "whyItWorks": "Exposing overpriced store-bought packaged goods and showing a fast, tactile DIY or refill substitute triggers consumer outrage and offers instant cost savings.",
+      "hookPattern": "I refuse to pay $[price] for [packaged item] when I can [make/refill] it for [fraction of cost].",
+      "beats": [
+        {
+          "fromSeconds": 0,
+          "toSeconds": 3,
+          "shows": "First-person POV of hands holding expensive store packaging over a kitchen counter.",
+          "says": "I refuse to pay seven dollars for a box of store-bought snacks.",
+          "onScreen": "WHY PAY $7 FOR THIS?!"
+        },
+        {
+          "fromSeconds": 3,
+          "toSeconds": 7,
+          "shows": "Overhead fast-motion shot combining two cheap bulk ingredients into a stainless steel bowl.",
+          "says": "When you can make them at home in five minutes with literally two bulk ingredients.",
+          "onScreen": "2 Ingredients Only"
+        },
+        {
+          "fromSeconds": 7,
+          "toSeconds": 10,
+          "shows": "Close-up knife slice cutting the homemade bars cleanly on a wooden cutting board.",
+          "says": "It tastes better, takes zero effort, and costs under a dollar a serving.",
+          "onScreen": "Cost: $0.80 / serving"
+        },
+        {
+          "fromSeconds": 10,
+          "toSeconds": 12,
+          "shows": "Hands picking up a finished treat to show cross-section texture to the camera.",
+          "says": "Stop wasting your money and save this recipe.",
+          "onScreen": "SAVE TO MAKE LATER"
+        }
+      ],
+      "durationSeconds": 12,
+      "recommendedStyle": "ai-generated",
+      "clipTag": null,
+      "evidence": [
+        {
+          "url": "https://www.tiktok.com/@inventionontt/video/7695100851177737485",
+          "platform": "tiktok",
+          "handle": "inventionontt",
+          "thumbnailUrl": "https://social-catalog-static.oriane.xyz/oriane-contents/tiktok/7695100851177737485/thumbnail.webp",
+          "frameUrls": [
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7695100851177737485/1_0.40.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7695100851177737485/4_3.23.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7695100851177737485/7_9.60.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7695100851177737485/10_14.00.webp"
+          ],
+          "views": 2900000,
+          "followers": 20300,
+          "viewsPerFollower": 142.86,
+          "engagementRatePerViews": 3.073034482758621,
+          "spokenHook": "Tape this. Why? Why are you doing this? Because I've never seen anything like this.",
+          "onScreenText": [
+            "1",
+            "Invention",
+            "Petco's cat litter refill station lets customers reuse containers, reducing plastic waste and potentially saving money",
+            "sophresh.",
+            "ADVANCE",
+            "Moer che",
+            "smartest",
+            "itto",
+            "sopluesh",
+            "V",
+            "smartes self-clean"
+          ],
+          "audioTitle": "original sound",
+          "durationSeconds": 21,
+          "topComments": [
+            "I just bring my cat there once a day to use it sometimes he walks there by himself",
+            "I use wood pellets and its like 7 bucks for 40 pounds at tractor supply",
+            "too bad it's more expensive than most other litter",
+            "That’s the worst litter to get so much dust and ammonia",
+            "I get arm and hammer litter for like $20 for 40pounds. Thats a good deal right?"
+          ],
+          "publishedAt": "2026-10-10T18:01:50.000Z"
+        },
+        {
+          "url": "https://www.instagram.com/reel/Db9rmuszy0m/",
+          "platform": "instagram",
+          "handle": "natalierosegraham",
+          "thumbnailUrl": "https://social-catalog-static.oriane.xyz/oriane-contents/instagram/Db9rmuszy0m/thumbnail.webp",
+          "frameUrls": [
+            "https://social-catalog-static.oriane.xyz/oriane-frames/instagram/Db9rmuszy0m/1_0.00.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/instagram/Db9rmuszy0m/4_1.80.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/instagram/Db9rmuszy0m/7_5.40.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/instagram/Db9rmuszy0m/10_9.00.webp"
+          ],
+          "views": 1412380,
+          "followers": 31221,
+          "viewsPerFollower": 45.24,
+          "engagementRatePerViews": 3.380534983503023,
+          "spokenHook": "",
+          "onScreenText": [
+            "I refuse to pay $7 for a box of kids snacks when i can make these with 2 ingredients"
+          ],
+          "audioTitle": "Original audio",
+          "durationSeconds": 13.333,
+          "topComments": [
+            "So you make them for 12 Dollars all by yourself",
+            "I made them and they tasted like doodoo :)",
+            "Honestly hell yeah, homemade snacks are incredible",
+            "what's this supposed to be a mimic of if the original product is more on the price-y side",
+            "Sugar and pinch of salt are missing probably"
+          ],
+          "publishedAt": "2026-10-20T22:52:30.000Z"
+        }
+      ],
+      "score": 0.97
+    },
+    {
+      "id": "the-paycheck-percentage-split",
+      "name": "The Paycheck Percentage Split",
+      "whyItWorks": "Revealing real paycheck figures and assigning every dollar to simple percentage buckets satisfies audience curiosity while providing an actionable, zero-stress saving blueprint.",
+      "hookPattern": "Here is exactly how I would split a [income amount] monthly paycheck.",
+      "beats": [
+        {
+          "fromSeconds": 0,
+          "toSeconds": 3,
+          "shows": "Talking head creator holding a mini lavalier microphone in a tidy home room, speaking directly to camera.",
+          "says": "If you take home twenty-five hundred dollars a month, here is the exact formula to save money.",
+          "onScreen": "HOW TO SPLIT $2,500/MO"
+        },
+        {
+          "fromSeconds": 3,
+          "toSeconds": 7,
+          "shows": "Graphic box slides in on screen listing 50% for essential needs and fixed monthly bills.",
+          "says": "Fifty percent goes immediately to rent, utilities, and your baseline groceries.",
+          "onScreen": "50% Essentials: $1,250"
+        },
+        {
+          "fromSeconds": 7,
+          "toSeconds": 11,
+          "shows": "Second graphic highlight pops up with an upward arrow icon representing automated savings and investment.",
+          "says": "Thirty percent gets swept automatically into a high-yield savings account and emergency fund.",
+          "onScreen": "30% Savings & HYSA: $750"
+        },
+        {
+          "fromSeconds": 11,
+          "toSeconds": 15,
+          "shows": "Final graphic fills in the remaining 20% for guilt-free spending as creator smiles and points at screen.",
+          "says": "The remaining twenty percent is yours to spend completely guilt-free.",
+          "onScreen": "20% Guilt-Free: $500 | SAVE THIS"
+        }
+      ],
+      "durationSeconds": 15,
+      "recommendedStyle": "ai-generated",
+      "clipTag": null,
+      "evidence": [
+        {
+          "url": "https://www.tiktok.com/@notesbynathan/video/7697405520629468446",
+          "platform": "tiktok",
+          "handle": "notesbynathan",
+          "thumbnailUrl": "https://social-catalog-static.oriane.xyz/oriane-contents/tiktok/7697405520629468446/thumbnail.webp",
+          "frameUrls": [
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7697405520629468446/1_0.80.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7697405520629468446/3_7.03.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7697405520629468446/5_30.63.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7697405520629468446/7_42.03.webp"
+          ],
+          "views": 388600,
+          "followers": 7754,
+          "viewsPerFollower": 50.12,
+          "engagementRatePerViews": 3.6013896037056097,
+          "spokenHook": "I make $120,000 a year and my take-home pay for this pay period was $2,952.90.",
+          "onScreenText": [
+            "CORPORATE PAYDAY",
+            "(30 yr old trying to make his wife work optional)",
+            "My salary: $120,000",
+            "$120,000",
+            "My salary: $2,952.90",
+            "THE NEW YORKER",
+            "AMERICAN DIRT",
+            "CENTS.",
+            "CORPORATE PAYDAY (30 yr old trying to make his wife work optional)",
+            "TOGETHER.",
+            "Gross pay:",
+            "$4,615.40"
+          ],
+          "audioTitle": "original sound",
+          "durationSeconds": 67,
+          "topComments": [
+            "Six figures doesn’t six figure the way it used to 😞",
+            "Taxes get on my nerves",
+            "I wanted to throw up at only $107 for insurance",
+            "I make 75k and my take home is $2086.52 bi weekly including my 401k, insurance, and taxes…that’s kind of crazy it’s almost the same",
+            "$107 for insurance?! Cries in $450"
+          ],
+          "publishedAt": "2026-10-16T23:04:53.000Z"
+        },
+        {
+          "url": "https://www.tiktok.com/@gray.area.finance/video/7696593396416384279",
+          "platform": "tiktok",
+          "handle": "gray.area.finance",
+          "thumbnailUrl": "https://social-catalog-static.oriane.xyz/oriane-contents/tiktok/7696593396416384279/thumbnail.webp",
+          "frameUrls": [
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7696593396416384279/1_1.20.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7696593396416384279/2_57.43.webp"
+          ],
+          "views": 570800,
+          "followers": 17800,
+          "viewsPerFollower": 32.07,
+          "engagementRatePerViews": 2.300280308339173,
+          "spokenHook": "Number one, take your monthly income and multiply it by 0.55. That's the maximum I'd",
+          "onScreenText": [
+            "5 steps to financial freedom",
+            "£2500/month - part 6",
+            "1. £2,500\n2.\n3.\n4.\n5.",
+            "YOUR MONTHLY INCOME",
+            "1. £1,375\n2. £250\n3. £250\n4. £250",
+            "5. £375",
+            "EASY, EASY, EASY."
+          ],
+          "audioTitle": "original sound",
+          "durationSeconds": 57,
+          "topComments": [
+            "It was believable til step 1 🤣🤣",
+            "I think with the cost of living currently, 55% on essentials is looking more like 60-75% for most, the cost of food, fuel etc is just ridiculous!",
+            "For anyone wondering, £2,000 a month take home is roughly a £28.5k salary on 2026/27 rates. With average UK rent now £1,400, the “needs” part blows past 50% for a lot of people",
+            "I’d appreciate more advice on investing, I don’t know where to begin and it seems very daunting",
+            "Ran out after step 1"
+          ],
+          "publishedAt": "2026-10-14T18:33:20.000Z"
+        }
+      ],
+      "score": 0.82
+    }
+  ],
+  "rejected": [
+    {
+      "url": "https://www.tiktok.com/@underrated.footba/video/7698292013187304726",
+      "reason": "Soccer highlights and commentary about Hatem Ben Arfa; false match for saving money."
+    },
+    {
+      "url": "https://www.tiktok.com/@cindiezhu/video/7695162329909988609",
+      "reason": "ChatGPT prompt tutorial for summarizing books; not related to saving money."
+    },
+    {
+      "url": "https://www.tiktok.com/@basaraski/video/7699920412855029022",
+      "reason": "Paid affiliate pitch promoting the TickPick ticket marketplace app."
+    },
+    {
+      "url": "https://www.tiktok.com/@aqayadubai/video/7698369347265236244",
+      "reason": "Brand account comedy sketch promoting an upscale Dubai cafe."
+    },
+    {
+      "url": "https://www.instagram.com/reel/Dej-_ophDHd/",
+      "reason": "Documentary teaser about the 1990s Christian music industry; false match."
+    },
+    {
+      "url": "https://www.tiktok.com/@bellabclark/video/7698025041333620001",
+      "reason": "Luxury handbag unboxing using breastfeeding savings as a satirical mom-math punchline."
+    },
+    {
+      "url": "https://www.tiktok.com/@littlepawjoy142/video/7695707782003084574",
+      "reason": "Re-uploaded clip of comedian John Mulaney on a late-night talk show; false match."
+    },
+    {
+      "url": "https://www.tiktok.com/@timmbrocks/video/7700568585990589728",
+      "reason": "Archival TV news broadcast (CBS Sunday Morning) discussing historical Vanderbilt family wealth."
+    },
+    {
+      "url": "https://www.instagram.com/reel/DePSn8YhBzJ/",
+      "reason": "Creator monthly income transparency report focusing on gross earnings rather than saving money."
+    },
+    {
+      "url": "https://www.instagram.com/reel/DfARX6JMv1E/",
+      "reason": "Corporate advertisement produced by HDFC Mutual Fund brand account."
+    },
+    {
+      "url": "https://www.tiktok.com/@virtuososnetwork/video/7698156365524520223",
+      "reason": "Whiteboard animation focused on relationship communication and hidden spending rather than actionable saving methods."
+    },
+    {
+      "url": "https://www.tiktok.com/@virtuososnetwork/video/7695958380896210206",
+      "reason": "Whiteboard animation about legal contracts when picking a business partner; false match."
+    },
+    {
+      "url": "https://www.tiktok.com/@ale441683/video/7700995369366244621",
+      "reason": "Slow-paced dealership inventory listicle with insufficient structural overlap to form a multi-video format."
+    },
+    {
+      "url": "https://www.instagram.com/reel/Dec7_MVvgFm/",
+      "reason": "Baywatch parody entertainment sketch; false match."
+    }
+  ],
+  "usedImages": true
+}
