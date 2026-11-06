@@ -49,10 +49,14 @@ export interface OrianeContent {
  * says it is an ad, or engagement far below normal. In a test of the top 100
  * videos mentioning an app, 40 were under 1% engagement (one had 1M views at
  * 0.1%, from a brand account), against a 2.6% median.
+ *
+ * Exact phrases, not fuzzy: fuzzy matches partial words, so "#ad" also hit
+ * "add", "made" and so on. On "saving money" it dropped 39% of all videos;
+ * exact drops 3%.
  */
 export const ORGANIC_ONLY = {
   caption: {
-    excludesFuzzy: {
+    excludesExactly: {
       values: [
         "#ad",
         "#ads",
@@ -69,6 +73,40 @@ export const ORGANIC_ONLY = {
   },
   engagementRatePerViews: { min: 1 },
 };
+
+/** What /api/signal searches for. It is also the cache key, so it stays small. */
+export interface NicheSearch {
+  /** Words to find in the transcript, caption or on-screen text, in any order. Commas separate alternatives. */
+  query: string;
+  platforms: Platform[];
+  minFollowers: number;
+  maxFollowers: number;
+  /** Only videos published in the last this many days. */
+  days: number;
+  /** How many videos to fetch, top first. 1 to 100. */
+  limit: number;
+}
+
+/** Organic videos matching the search words, from mid-sized accounts, recent only. */
+export function nicheQuery(search: NicheSearch): OrianeQuery {
+  const words = {
+    includesFuzzy: {
+      values: search.query.split(",").map((phrase) => phrase.trim()).filter(Boolean),
+      operator: "or",
+    },
+  };
+  return {
+    operator: "and",
+    filters: {
+      ...ORGANIC_ONLY,
+      platform: { includes: search.platforms },
+      format: { includes: ["video"] },
+      profileFollowersCount: { min: search.minFollowers, max: search.maxFollowers },
+      publishedAt: { after: new Date(Date.now() - search.days * 86_400_000).toISOString() },
+    },
+    queries: [{ operator: "or", filters: { transcript: words, caption: words, onScreenText: words } }],
+  };
+}
 
 async function post<T>(path: string, body: unknown): Promise<T> {
   const key = process.env.ORIANE_API_KEY;
