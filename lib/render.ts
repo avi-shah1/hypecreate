@@ -42,6 +42,8 @@ function drawText(textFile: string, options: { size: number; y: string; border: 
   const parts = [
     `fontfile=${FONT}`,
     `textfile=${textFile}`,
+    // Otherwise a % in the words ("saving > 50%") is read as a format code.
+    "expansion=none",
     `fontsize=${options.size}`,
     "fontcolor=white",
     `borderw=${options.border}`,
