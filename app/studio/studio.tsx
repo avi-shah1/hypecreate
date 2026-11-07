@@ -4,7 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import type { JobView, NicheSearch, SavedSearch, SignalSummary } from "@/app/api/signal/signal";
 import FormatCard from "./format-card";
 import { USE_MOCK_GENERATE } from "./generate";
-import RecentAds, { addRecentAd } from "./recent-ads";
+import RecentAds from "./recent-ads";
+import type { StudioVideo } from "./videos/route";
 import ScanProgress from "./scan-progress";
 import { compact, sleep, thousands } from "./utils";
 
@@ -26,16 +27,25 @@ export default function Studio() {
   const [signal, setSignal] = useState<SignalSummary | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [live, setLive] = useState(false);
+  const [videos, setVideos] = useState<StudioVideo[]>([]);
   // Each scan gets a number, so a slow old scan can't overwrite a newer one.
   const scanNumber = useRef(0);
 
   useEffect(() => {
     loadSaved();
+    loadVideos();
     // /studio?q=saving%20money opens straight to that search: a safe bookmark for the stage.
     const linked = new URLSearchParams(window.location.search).get("q");
     if (linked) scan({ ...DEFAULT_SEARCH, query: linked });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  function loadVideos() {
+    fetch("/studio/videos")
+      .then((res) => res.json())
+      .then((list) => Array.isArray(list) && setVideos(list))
+      .catch(() => {});
+  }
 
   function loadSaved() {
     fetch("/api/signal/saved")
@@ -207,7 +217,8 @@ export default function Studio() {
                   brief={brief}
                   brand={brand.trim() || "Lodavo"}
                   signalSlug={signal.slug}
-                  onFinished={addRecentAd}
+                  ready={videos.filter((video) => video.formatId === brief.id)}
+                  onFinished={loadVideos}
                 />
               ))}
             </div>
@@ -220,7 +231,7 @@ export default function Studio() {
           </p>
         )}
 
-        <RecentAds />
+        <RecentAds videos={videos} />
       </main>
     </div>
   );

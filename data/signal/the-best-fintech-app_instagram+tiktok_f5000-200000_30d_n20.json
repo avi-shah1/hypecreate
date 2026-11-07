@@ -1,0 +1,271 @@
+{
+  "search": {
+    "query": "the best fintech app",
+    "platforms": [
+      "instagram",
+      "tiktok"
+    ],
+    "minFollowers": 5000,
+    "maxFollowers": 200000,
+    "days": 30,
+    "limit": 20
+  },
+  "generatedAt": "2026-11-07T00:07:16.879Z",
+  "model": "google/gemini-3.8-flash",
+  "orianeFile": "data/oriane/the-best-fintech-app_instagram+tiktok_f5000-200000_30d_n20.json",
+  "videosAnalysed": 20,
+  "totalMatches": 31,
+  "briefs": [
+    {
+      "id": "software-tool-deep-dive",
+      "name": "Software Tool Deep Dive",
+      "whyItWorks": "Hooks viewers with a game-changing tech capability or alternative to high fees, immediately backing it up with a screenshare walkthrough showing exactly how the setup works.",
+      "hookPattern": "A developer just [open-sourced / launched] [a fintech product] that completely cuts out [major pain point / fees].",
+      "beats": [
+        {
+          "fromSeconds": 0,
+          "toSeconds": 4,
+          "shows": "Talking head looking into the camera with software or code repository screenshot in the upper half of the screen.",
+          "says": "A developer just open-sourced a payment gateway like Stripe, but with zero transaction fees.",
+          "onScreen": "Zero Fee Payment Gateway"
+        },
+        {
+          "fromSeconds": 4,
+          "toSeconds": 9,
+          "shows": "Screen recording zooming into the GitHub repo code and simple API documentation.",
+          "says": "Normally payment gateways take 2 to 3 percent per charge. With this, payments go straight to your bank.",
+          "onScreen": "Direct Bank Payouts - 0% Fees"
+        },
+        {
+          "fromSeconds": 9,
+          "toSeconds": 14,
+          "shows": "Split screen of website checkout code snippet and instant payment verification alert.",
+          "says": "You just paste a single script into your website and it verifies payouts automatically via bank alerts.",
+          "onScreen": "1-Line Setup"
+        }
+      ],
+      "durationSeconds": 14,
+      "recommendedStyle": "ai-generated",
+      "clipTag": null,
+      "evidence": [
+        {
+          "url": "https://www.tiktok.com/@dr_cintas/video/7698387476628475149",
+          "platform": "tiktok",
+          "handle": "dr_cintas",
+          "thumbnailUrl": "https://social-catalog-static.oriane.xyz/oriane-contents/tiktok/7698387476628475149/thumbnail.webp",
+          "frameUrls": [
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7698387476628475149/1_0.60.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7698387476628475149/5_6.83.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7698387476628475149/9_14.83.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7698387476628475149/13_22.00.webp"
+          ],
+          "views": 12800,
+          "followers": 18000,
+          "viewsPerFollower": 0.71,
+          "engagementRatePerViews": 6.5078125,
+          "spokenHook": "A developer just open-source a payment getaway like RazorPay and Stripe, but without the transaction",
+          "onScreenText": [
+            "zenux / YouPI-PG",
+            "Private",
+            "payment gateway",
+            "Self-hosted UPI & COD payment gateway with zero platform",
+            "fees, a one-line JavaScript checkout and automatic bank-SMS verification.",
+            "payment-gateway",
+            "upi",
+            "self-hosted",
+            "open-source",
+            "checkout",
+            "fintech",
+            "—forks"
+          ],
+          "audioTitle": "original sound",
+          "durationSeconds": 31,
+          "topComments": [
+            "And you need an indian bank account for it",
+            "too many questions",
+            "Huh? how ? It must be part of a network. Via and Mastercard have transacting fees. Works in which countries ??",
+            "the problem not how to send money to bank account. the problem how never send it to banks 😅😅😅 so developer have to reimagine his product 💩💩💩",
+            "lol 😂I just Dey laugh"
+          ],
+          "publishedAt": "2026-10-19T14:35:24.000Z"
+        },
+        {
+          "url": "https://www.instagram.com/reel/De1sUVOKfDD/",
+          "platform": "instagram",
+          "handle": "bradfordmarais",
+          "thumbnailUrl": "https://social-catalog-static.oriane.xyz/oriane-contents/instagram/De1sUVOKfDD/thumbnail.webp",
+          "frameUrls": [
+            "https://social-catalog-static.oriane.xyz/oriane-frames/instagram/De1sUVOKfDD/1_0.00.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/instagram/De1sUVOKfDD/7_8.44.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/instagram/De1sUVOKfDD/13_20.00.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/instagram/De1sUVOKfDD/19_39.24.webp"
+          ],
+          "views": 12001,
+          "followers": 59848,
+          "viewsPerFollower": 0.2,
+          "engagementRatePerViews": 6.974418798433464,
+          "spokenHook": "Or can I audit your entire Instagram account and tell you exactly what's working? It's",
+          "onScreenText": [
+            "Claude can now",
+            "Claude",
+            "audit your content",
+            "Pearsonian. He borrows a lot of authority from his job, Todd of AI for one of the biggest business brands in the world! Pearsonian is an independent fintech company that is leveraging AI and blockchain to build a new business model.",
+            "appears in nearly every caption. His audience Is founders and business owners who aren't technical, not other",
+            "Pix: His 323D plumed reels are schematic personal-branded pieces (DMs me 685\" Mulched music, expertbottles). From July 2012 the content is included almost entirely about Caucasus Code and AI code systems. The old",
+            "personal-branding audience is now being sold an Al product.",
+            "43,554/5,392/972/133",
+            "8,954/1,378",
+            "and tell",
+            "it's wild",
+            "110K"
+          ],
+          "audioTitle": "Original audio",
+          "durationSeconds": 63.969,
+          "topComments": [
+            "🙌"
+          ],
+          "publishedAt": "2026-10-23T13:44:36.000Z"
+        }
+      ],
+      "score": 1
+    },
+    {
+      "id": "market-stock-breakdown",
+      "name": "Market Stock Breakdown",
+      "whyItWorks": "Capitalizes on anxiety around volatile fintech companies or apps, putting an expert talking head front and center to provide a reassuring action plan.",
+      "hookPattern": "[Fintech apps / stocks] are having a massive selloff, and here is [what you need to do / my exact playbook].",
+      "beats": [
+        {
+          "fromSeconds": 0,
+          "toSeconds": 4,
+          "shows": "Creator sitting at desk in front of microphone, speaking directly and urgently to camera.",
+          "says": "So we all know at this point it has been a wild ride for top fintech apps like SoFi and Robinhood.",
+          "onScreen": "FINTECH CRASH: WHAT NOW?"
+        },
+        {
+          "fromSeconds": 4,
+          "toSeconds": 9,
+          "shows": "Cut to trading chart overlay on monitor showing recent price volatility and app volume spikes.",
+          "says": "Everyone is panicking before earnings, but if you actually look at active user numbers, the story changes.",
+          "onScreen": "Don't Panic Sell"
+        },
+        {
+          "fromSeconds": 9,
+          "toSeconds": 15,
+          "shows": "Creator pointing at key data metrics on screen before leaning back into center frame.",
+          "says": "Here is the exact playbook I am using to trade these fintech apps this week.",
+          "onScreen": "Full Playbook"
+        }
+      ],
+      "durationSeconds": 15,
+      "recommendedStyle": "ai-generated",
+      "clipTag": null,
+      "evidence": [
+        {
+          "url": "https://www.tiktok.com/@stastalksstocks/video/7700552721539058974",
+          "platform": "tiktok",
+          "handle": "stastalksstocks",
+          "thumbnailUrl": "https://social-catalog-static.oriane.xyz/oriane-contents/tiktok/7700552721539058974/thumbnail.webp",
+          "frameUrls": [
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7700552721539058974/1_2.80.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7700552721539058974/2_30.03.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7700552721539058974/3_53.23.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7700552721539058974/4_549.60.webp"
+          ],
+          "views": 22900,
+          "followers": 109400,
+          "viewsPerFollower": 0.21,
+          "engagementRatePerViews": 4.353711790393013,
+          "spokenHook": "So we all know at this point, guys, it's been a rough go for the",
+          "onScreenText": [
+            "SOFI & ROBINHOOD",
+            "10/24/26",
+            "Jh 7511"
+          ],
+          "audioTitle": "original sound",
+          "durationSeconds": 813,
+          "topComments": [
+            "If the CEO would stop diluting the stock with new shares Sofi would be at $100. The past dilutions were criminal to share holders.",
+            "🎯 thank you ma'am 🎯\nTheresa Coleman 🌞",
+            "Honestly 🥰🇺🇸 you're the best Theresa, 💯😃💫",
+            "Hood finna beat earnings but could dip bc of market conditions, BTC looking low right now",
+            "hood will beat"
+          ],
+          "publishedAt": "2026-10-25T10:38:45.000Z"
+        }
+      ],
+      "score": 0.27
+    }
+  ],
+  "rejected": [
+    {
+      "url": "https://www.tiktok.com/@overgenpoverty/video/7697428626660265230",
+      "reason": "Personal immigrant story and lifestyle overcoming poverty; does not evaluate or feature a fintech app."
+    },
+    {
+      "url": "https://www.tiktok.com/@overgenpoverty/video/7697428027617168653",
+      "reason": "Duplicate upload of Video 1; personal poverty story, not about fintech apps."
+    },
+    {
+      "url": "https://www.tiktok.com/@thedabblingchick/video/7694115778035059982",
+      "reason": "Political commentary regarding White House appointment and Fiserv executive; not about the best fintech apps."
+    },
+    {
+      "url": "https://www.instagram.com/reel/De0uPaUNNi5/",
+      "reason": "Vlog about friendships and personal career ambitions; only mentions founder aspirations in passing."
+    },
+    {
+      "url": "https://www.instagram.com/reel/DeamWeYI3tE/",
+      "reason": "Get-rich-quick binary options/forex day-trading promotional stunt, not an organic fintech app review."
+    },
+    {
+      "url": "https://www.instagram.com/reel/Deb4E_sk42_/",
+      "reason": "Expo Osaka 2025 institutional event montage in Polish; completely unrelated."
+    },
+    {
+      "url": "https://www.instagram.com/reel/DefU5XKhvT4/",
+      "reason": "VC advice video about how venture funds find early-stage startup deals; does not discuss fintech apps."
+    },
+    {
+      "url": "https://www.instagram.com/reel/DefNZ5vsmqU/",
+      "reason": "Foreign exchange/trading scheme promo showing stacks of cash; spam trading content."
+    },
+    {
+      "url": "https://www.instagram.com/reel/DeWPUDTsD2I/",
+      "reason": "Street trading scheme promo in Kenya; binary options scam content."
+    },
+    {
+      "url": "https://www.tiktok.com/@techtalkuk/video/7695464543882956054",
+      "reason": "Career advice video about messaging recruiters on LinkedIn with Reslink; not fintech app content."
+    },
+    {
+      "url": "https://www.instagram.com/reel/DehAPcbxVUx/",
+      "reason": "Forex trading/M-Pesa cash payout proof scheme video."
+    },
+    {
+      "url": "https://www.instagram.com/reel/DeO-Hb2xWUx/",
+      "reason": "Biographical deep-dive on Guy Oseary and venture syndicates; not a fintech app review."
+    },
+    {
+      "url": "https://www.tiktok.com/@itshannahzhang/video/7698151672765336846",
+      "reason": "Career pivot story about quitting a startup job to become a creator; unrelated."
+    },
+    {
+      "url": "https://www.instagram.com/reel/Dei_qbFjYGq/",
+      "reason": "Diplomatic travel log for the British High Commissioner; unrelated."
+    },
+    {
+      "url": "https://www.tiktok.com/@echodatruth/video/7698810969434197278",
+      "reason": "Conspiracy monetary theory commentary (NESARA/GESARA); not a fintech app."
+    },
+    {
+      "url": "https://www.tiktok.com/@maverickgpt/video/7696153414941674782",
+      "reason": "Listicle about ChatGPT browser plugins for general productivity; not fintech apps."
+    },
+    {
+      "url": "https://www.instagram.com/reel/DejsLLDtTrr/",
+      "reason": "Brand profile / interview clip about an individual Lebanese CEO; public relations content."
+    }
+  ],
+  "usedImages": true
+}

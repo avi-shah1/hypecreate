@@ -87,6 +87,12 @@ async function run(job: GenerateJob, brief: FormatBrief, brand: string, rules: s
   job.stage = "Adding the legal line";
   const videoUrl = await finish(remote, job.jobId, legalLine(rules));
 
+  // Saved next to the video so the studio can show it again as a ready-made ad.
+  await writeFile(
+    path.join(RENDERS, `${job.jobId}.json`),
+    JSON.stringify({ formatId: brief.id, formatName: brief.name, brand, model: VIDEO_MODEL, videoUrl, ...script }, null, 2),
+  );
+
   job.result = {
     videoUrl,
     caption: script.caption,
@@ -154,15 +160,23 @@ function headers() {
   return { Authorization: `Bearer ${key}`, "Content-Type": "application/json" };
 }
 
+/** GMI sometimes answers 500 "Generation failed for an unknown reason; please retry", so retry it. */
 async function submit(payload: Record<string, unknown>): Promise<string> {
-  const res = await fetch(QUEUE_URL, {
-    method: "POST",
-    headers: headers(),
-    body: JSON.stringify({ model: VIDEO_MODEL, payload }),
-  });
-  const json = await res.json().catch(() => ({}));
-  if (!res.ok || !json.request_id) throw new Error(`GMI submit ${res.status}: ${JSON.stringify(json).slice(0, 300)}`);
-  return json.request_id as string;
+  let lastError = "";
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    const res = await fetch(QUEUE_URL, {
+      method: "POST",
+      headers: headers(),
+      body: JSON.stringify({ model: VIDEO_MODEL, payload }),
+    });
+    const json = await res.json().catch(() => ({}));
+    if (res.ok && json.request_id) return json.request_id as string;
+    lastError = `GMI submit ${res.status}: ${JSON.stringify(json).slice(0, 300)}`;
+    console.error(`studio generate: attempt ${attempt} failed: ${lastError}`);
+    if (res.status < 500 && res.status !== 429) break;
+    await new Promise((resolve) => setTimeout(resolve, 3000 * attempt));
+  }
+  throw new Error(lastError);
 }
 
 async function waitForVideo(job: GenerateJob): Promise<string> {

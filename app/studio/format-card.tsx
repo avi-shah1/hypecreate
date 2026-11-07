@@ -3,18 +3,20 @@
 import { useEffect, useRef, useState } from "react";
 import type { Beat, Evidence, FormatBrief } from "@/lib/contract";
 import { GENERATE_POLL_MS, getGenerate, startGenerate, USE_MOCK_GENERATE, type GenerateStatus } from "./generate";
-import type { RecentAd } from "./recent-ads";
 import { compact, multiple, sleep, span } from "./utils";
+import type { StudioVideo } from "./videos/route";
 
 interface Props {
   rank: number;
   brief: FormatBrief;
   brand: string;
   signalSlug: string;
-  onFinished: (ad: RecentAd) => void;
+  /** Videos already made for this format: instant to show, and the fallback if GMI fails. */
+  ready: StudioVideo[];
+  onFinished: () => void;
 }
 
-export default function FormatCard({ rank, brief, brand, signalSlug, onFinished }: Props) {
+export default function FormatCard({ rank, brief, brand, signalSlug, ready, onFinished }: Props) {
   const [generation, setGeneration] = useState<GenerateStatus | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [startedAt, setStartedAt] = useState(0);
@@ -29,6 +31,15 @@ export default function FormatCard({ rank, brief, brand, signalSlug, onFinished 
   const busy = generation?.status === "queued" || generation?.status === "running";
   const result = generation?.status === "done" ? generation.result : undefined;
 
+  function showReady(video: StudioVideo) {
+    setError(null);
+    setGeneration({
+      jobId: video.url,
+      status: "done",
+      result: { videoUrl: video.url, beats: video.beats, caption: video.caption, script: "" },
+    });
+  }
+
   async function generate() {
     setError(null);
     setStartedAt(Date.now());
@@ -38,16 +49,7 @@ export default function FormatCard({ rank, brief, brand, signalSlug, onFinished 
       while (mounted.current) {
         setGeneration(status);
         if (status.status === "done") {
-          if (status.result?.videoUrl) {
-            onFinished({
-              id: jobId,
-              brand,
-              formatName: brief.name,
-              videoUrl: status.result.videoUrl,
-              createdAt: new Date().toISOString(),
-              mock: USE_MOCK_GENERATE,
-            });
-          }
+          onFinished();
           return;
         }
         if (status.status === "error") throw new Error(status.error ?? "Generation failed");
@@ -112,7 +114,21 @@ export default function FormatCard({ rank, brief, brand, signalSlug, onFinished 
                 <Elapsed since={startedAt} />
               </p>
             )}
-            {error && <p className="text-lg text-red-400">{error}</p>}
+            {error && <p className="w-full text-lg text-red-400">{error}</p>}
+            {!busy && ready.length > 0 && (
+              <div className="flex w-full flex-wrap items-center gap-3">
+                <span className="text-zinc-500">Ready-made:</span>
+                {ready.map((video) => (
+                  <button
+                    key={video.url}
+                    onClick={() => showReady(video)}
+                    className="rounded-full border border-violet-400/50 bg-violet-400/10 px-5 py-2.5 text-lg font-medium text-violet-200 transition hover:border-violet-300"
+                  >
+                    ▶ {video.model ?? "GMI"} ad
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         )}
 
@@ -155,12 +171,25 @@ export default function FormatCard({ rank, brief, brand, signalSlug, onFinished 
                   {result.caption}
                 </p>
               )}
-              <button
-                onClick={generate}
-                className="mt-6 rounded-full border border-white/20 px-5 py-2 text-zinc-300 transition hover:border-white/50"
-              >
-                Generate another
-              </button>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <button
+                  onClick={generate}
+                  className="rounded-full border border-white/20 px-5 py-2 text-zinc-300 transition hover:border-white/50"
+                >
+                  Generate another
+                </button>
+                {ready
+                  .filter((video) => video.url !== result.videoUrl)
+                  .map((video) => (
+                    <button
+                      key={video.url}
+                      onClick={() => showReady(video)}
+                      className="rounded-full border border-violet-400/40 px-5 py-2 text-violet-200 transition hover:border-violet-300"
+                    >
+                      ▶ {video.model ?? "GMI"} version
+                    </button>
+                  ))}
+              </div>
             </div>
           </div>
         )}
