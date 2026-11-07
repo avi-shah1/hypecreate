@@ -10,12 +10,10 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 # Rules for any AI agent in this repo
 
-Read `README.md`, then `docs/apis.md`. This is a hackathon build with a hard deadline and two people pushing at once.
+Read `README.md`, then `docs/apis.md`.
 
-- Stay in your person's half (README, "Who owns what"). Touching the other half is a conversation first.
-- `lib/contract.ts` is the only interface between the halves. Change it in its own commit and tell the other person.
-- Never commit a key, an event code, footage or a render. Keys live in `.env.local`, footage in `clips/`, renders in `public/renders/`. All of them are ignored.
-- Oriane and GMI credits are finite. Cache responses in `data/cache/`, keep `limit` small while exploring, and never run a generation job in an uncapped loop.
-- Copy for Lodavo follows `brand/lodavo.md`. Copy is checked against it, not written from memory.
+- `lib/contract.ts` is the interface between signal, create and brain. Change it deliberately.
+- Never commit a key, footage or a render. Keys live in `.env.local`, footage in `clips/`, renders in `public/renders/`. All of them are ignored.
+- Oriane and GMI cost real credits. Cache responses, keep `limit` small while exploring, and never run a generation job in an uncapped loop.
+- Copy for Lodavo follows `brand/lodavo.md`. Check copy against it, not from memory.
 - Clips with `cleared: false` are never used. An AI-generated person never plays a real user, and nobody's face or voice is made to say words they did not say.
-- Build the simplest thing that demos. No test suites, no abstractions for later.

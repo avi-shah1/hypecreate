@@ -2,8 +2,6 @@
 //   Avi (signal): POST /api/signal returns FormatBrief[]
 //   Ben (create): POST /api/create takes a CreateRequest, returns a CreateResult
 // Change this file together, in its own commit, and tell the other person.
-// fixtures/format-brief.example.json is a real example, so each side can build
-// against it before the other side is finished.
 
 export type Platform = "tiktok" | "instagram" | "youtube";
 

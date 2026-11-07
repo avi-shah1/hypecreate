@@ -1,16 +1,16 @@
 // The results loop: what an account's own posts did becomes the formats for its next batch.
-//   node --env-file=.env.local scripts/results-loop.mjs notquiterichyet 2839
-// Reads data/results/<account>.json ([{hook, views, link}], from the platform's own numbers:
-// Oriane doesn't index accounts under 5,000 followers). The LLM only groups posts by hook
-// shape. Scores come from the views, never the LLM. The result is a saved scan, so it shows
-// up in the Studio next to the Oriane searches and goes through the same video pipeline.
+//   node --env-file=.env.local scripts/results-loop.mjs clips/results/<account>.json <followers>
+// Reads [{hook, views, link}], from the platform's own numbers: Oriane doesn't index accounts
+// under 5,000 followers. The LLM only groups posts by hook shape. Scores come from the views,
+// never the LLM. The result is a saved scan, so it shows up in the Studio next to the Oriane
+// searches and goes through the same video pipeline. The account stays nameless in the Studio.
 import { readFile, writeFile } from "node:fs/promises";
 
-const [account, followersArg] = process.argv.slice(2);
-if (!account || !followersArg) throw new Error("Usage: results-loop.mjs <account> <followers>");
+const [file, followersArg] = process.argv.slice(2);
+if (!file || !followersArg) throw new Error("Usage: results-loop.mjs <results.json> <followers>");
 const followers = Number(followersArg);
 const root = new URL("../", import.meta.url);
-const posts = JSON.parse(await readFile(new URL(`data/results/${account}.json`, root), "utf8"));
+const posts = JSON.parse(await readFile(file, "utf8"));
 
 const MODELS = ["anthropic/claude-opus-5", "openai/gpt-6.1-sol", "google/gemini-4-argon"];
 const prompt = `These are one account's posts with their views. Each is a short b-roll video with one line of text on screen.

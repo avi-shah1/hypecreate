@@ -1,10 +1,15 @@
 // Renders one account's batch through /api/create. Needs the dev server and the footage.
-//   node scripts/batch.mjs savewithcher [person] [slug-filter]
+//   node scripts/batch.mjs clips/batches/notquiterichyet.json faceless [slug-filter]
+// The file name is the account: videos land in public/renders/<account>/. Each item is
+// {slug, style?, script: {scenes: [{clip | prompt, start?, seconds, text}], caption}}.
 import { readFile } from "node:fs/promises";
+import path from "node:path";
 
-const [account = "savewithcher", person = "chaerin", only] = process.argv.slice(2);
-const items = JSON.parse(await readFile(new URL(`../data/batches/${account}.json`, import.meta.url), "utf8"));
-const queue = items.filter((item) => !only || item.slug.includes(only));
+const [file, person, only] = process.argv.slice(2);
+if (!file || !person) throw new Error("Usage: batch.mjs <batch.json> <person|faceless> [slug-filter]");
+const account = path.basename(file, ".json");
+const items = JSON.parse(await readFile(file, "utf8"));
+const queue = items.filter((item) => !only || item.slug.startsWith(only));
 
 async function worker() {
   for (let item = queue.shift(); item; item = queue.shift()) {

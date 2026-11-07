@@ -30,10 +30,7 @@ export async function POST(request: Request) {
       (clips) => clips.length > 0,
       () => false,
     );
-    const aiReady = body.style === "ai-generated" && !body.fresh && (await savedVideo(`${body.formatId}-ai-generated`));
-    if (!hasFootage || (body.style === "ai-generated" && !aiReady)) {
-      return Response.json({ jobId: (await startGeneration(body)).jobId });
-    }
+    if (!hasFootage) return Response.json({ jobId: (await startGeneration(body)).jobId });
 
     const brief = await findFormat(String(body.signalSlug ?? ""), String(body.formatId ?? ""));
     const job: Job = { jobId: crypto.randomUUID(), status: "running", stage: "Starting" };
