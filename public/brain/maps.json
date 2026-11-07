@@ -1,0 +1,191 @@
+{
+ "format": "uint8, groups x 20484 in the order of the gruppen in regions.json; 0..255 = 0..1 per skala_vorschlag",
+ "gruppen": {
+  "sehen": null,
+  "bewegung": {
+   "index": 1,
+   "karte": "bewegung_sehen_nq",
+   "name": "Seeing motion",
+   "art": "Meta-analysis",
+   "umfang": "NeuroQuery, ~14,000 studies",
+   "lizenz": "BSD-3-Clause",
+   "quelle": {
+    "name": "NeuroQuery",
+    "studie": "Dockès et al. 2020, eLife",
+    "doi": "10.7554/eLife.53385",
+    "kontrast": "Meta-analytic prediction for 'visual motion'"
+   },
+   "abdeckung": 764
+  },
+  "gesichter": {
+   "index": 2,
+   "karte": "gesichter_ibc",
+   "name": "Faces",
+   "art": "Measured",
+   "umfang": "9 people",
+   "lizenz": "CC0",
+   "quelle": {
+    "name": "Individual Brain Charting (IBC)",
+    "studie": "IBC 5th release (Ponce et al. 2026, Scientific Data)",
+    "doi": "10.1038/s41597-026-06869-1",
+    "kontrast": "Faces > bodies, text, objects, places"
+   },
+   "abdeckung": 845
+  },
+  "orte": {
+   "index": 3,
+   "karte": "orte_hcpwm_ibc",
+   "name": "Places & scenes",
+   "art": "Measured",
+   "umfang": "13 people",
+   "lizenz": "CC0",
+   "quelle": {
+    "name": "Individual Brain Charting (IBC)",
+    "studie": "IBC 2nd release (Pinho et al. 2020, Scientific Data)",
+    "doi": "10.1038/s41597-020-00670-4",
+    "kontrast": "Places > mean of faces, bodies, tools (HCP working memory)"
+   },
+   "abdeckung": 882
+  },
+  "hoeren": {
+   "index": 4,
+   "karte": "hoeren_ibc",
+   "name": "Hearing",
+   "art": "Measured",
+   "umfang": "11 people",
+   "lizenz": "CC0",
+   "quelle": {
+    "name": "Individual Brain Charting (IBC)",
+    "studie": "IBC 5th release (Ponce et al. 2026, Scientific Data)",
+    "doi": "10.1038/s41597-026-06869-1",
+    "kontrast": "All natural sounds > silence"
+   },
+   "abdeckung": 782
+  },
+  "menschen": {
+   "index": 5,
+   "karte": "stimmen_nq",
+   "name": "Voices",
+   "art": "Meta-analysis",
+   "umfang": "NeuroQuery, ~14,000 studies",
+   "lizenz": "BSD-3-Clause",
+   "quelle": {
+    "name": "NeuroQuery",
+    "studie": "Dockès et al. 2020, eLife",
+    "doi": "10.7554/eLife.53385",
+    "kontrast": "Meta-analytic prediction for 'voice'"
+   },
+   "abdeckung": 841
+  },
+  "sprache": {
+   "index": 6,
+   "karte": "sprache_lana",
+   "name": "Language",
+   "art": "Measured",
+   "umfang": "804 people",
+   "lizenz": "CC BY 4.0",
+   "quelle": {
+    "name": "LanA - Language Atlas",
+    "studie": "Lipkin et al. 2022, Scientific Data",
+    "doi": "10.1038/s41597-022-01645-3",
+    "kontrast": "Language localizer (language > control condition, e.g. sentences > nonword lists); top 10% of points per person, then share of people per point"
+   },
+   "abdeckung": 1745
+  },
+  "aufmerksamkeit": {
+   "index": 7,
+   "karte": "aufmerksamkeit_nq",
+   "name": "Attention",
+   "art": "Meta-analysis",
+   "umfang": "NeuroQuery, ~14,000 studies",
+   "lizenz": "BSD-3-Clause",
+   "quelle": {
+    "name": "NeuroQuery",
+    "studie": "Dockès et al. 2020, eLife",
+    "doi": "10.7554/eLife.53385",
+    "kontrast": "Meta-analytic prediction for 'attention'"
+   },
+   "abdeckung": 882
+  },
+  "ueberraschung": {
+   "index": 8,
+   "karte": "ueberraschung_nq",
+   "name": "Surprise",
+   "art": "Meta-analysis",
+   "umfang": "NeuroQuery, ~14,000 studies",
+   "lizenz": "BSD-3-Clause",
+   "quelle": {
+    "name": "NeuroQuery",
+    "studie": "Dockès et al. 2020, eLife",
+    "doi": "10.7554/eLife.53385",
+    "kontrast": "Meta-analytic prediction for 'surprise'"
+   },
+   "abdeckung": 807
+  },
+  "salienz": {
+   "index": 9,
+   "karte": "salienz_nq",
+   "name": "Salience",
+   "art": "Meta-analysis",
+   "umfang": "NeuroQuery, ~14,000 studies",
+   "lizenz": "BSD-3-Clause",
+   "quelle": {
+    "name": "NeuroQuery",
+    "studie": "Dockès et al. 2020, eLife",
+    "doi": "10.7554/eLife.53385",
+    "kontrast": "Meta-analytic prediction for 'salience'"
+   },
+   "abdeckung": 881
+  },
+  "bewertung": {
+   "index": 10,
+   "karte": "bewertung_nq",
+   "name": "Liking & value",
+   "art": "Meta-analysis",
+   "umfang": "NeuroQuery, ~14,000 studies",
+   "lizenz": "BSD-3-Clause",
+   "quelle": {
+    "name": "NeuroQuery",
+    "studie": "Dockès et al. 2020, eLife",
+    "doi": "10.7554/eLife.53385",
+    "kontrast": "Meta-analytic prediction for 'value'"
+   },
+   "abdeckung": 865
+  },
+  "selbst": {
+   "index": 11,
+   "karte": "selbstbezug_nq",
+   "name": "Self-reference",
+   "art": "Meta-analysis",
+   "umfang": "NeuroQuery, ~14,000 studies",
+   "lizenz": "BSD-3-Clause",
+   "quelle": {
+    "name": "NeuroQuery",
+    "studie": "Dockès et al. 2020, eLife",
+    "doi": "10.7554/eLife.53385",
+    "kontrast": "Meta-analytic prediction for 'self-referential'"
+   },
+   "abdeckung": 868
+  },
+  "koerper": {
+   "index": 12,
+   "karte": "koerper_hcpwm_ibc",
+   "name": "Bodies",
+   "art": "Measured",
+   "umfang": "13 people",
+   "lizenz": "CC0",
+   "quelle": {
+    "name": "Individual Brain Charting (IBC)",
+    "studie": "IBC 2nd release (Pinho et al. 2020, Scientific Data)",
+    "doi": "10.1038/s41597-020-00670-4",
+    "kontrast": "Bodies > mean of faces, places, tools (HCP working memory)"
+   },
+   "abdeckung": 836
+  }
+ },
+ "namensnennung": [
+  "IBC: Pinho et al. 2018 (Sci Data, doi 10.1038/sdata.2018.105); Ponce et al. 2026 (Sci Data, doi 10.1038/s41597-026-06869-1), CC0 via NeuroVault",
+  "LanA: Lipkin et al. 2022 (Sci Data, doi 10.1038/s41597-022-01645-3), CC BY 4.0",
+  "NeuroQuery: Dockès et al. 2020 (eLife, doi 10.7554/eLife.53385), BSD-3-Clause"
+ ]
+}

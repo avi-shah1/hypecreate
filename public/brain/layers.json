@@ -1,0 +1,135 @@
+{
+ "format": "uint8, layers x 20484, 0..255 = 0..1 within the scale (positive part only)",
+ "ebenen": [
+  {
+   "key": "isc",
+   "index": 0,
+   "gruppe": "Viewers",
+   "name": "Synchrony between viewers",
+   "text": "Where the brains of 30 people run in sync while they watch the same 14 short films. High: the film drives this area the same way in everyone. Low: everyone is thinking their own thoughts. This map is measured data.",
+   "quelle": "Emo-FilM, University of Geneva (Morgenroth et al. 2025, Sci Data, doi 10.1038/s41597-025-04803-5), CC0",
+   "skala": {
+    "von": 0.15,
+    "bis": 0.6
+   },
+   "abdeckung": 10200
+  },
+  {
+   "key": "modell",
+   "index": 1,
+   "gruppe": "Our model",
+   "name": "Where our model hits",
+   "text": "How well our own model predicts the brain response from image and sound for a film it has never seen (correlation per point, 4 held-out films, mean of 30 people). Strongest for hearing and voices, weak for valuation and reward.",
+   "quelle": "Emo-FilM, University of Geneva (Morgenroth et al. 2025, Sci Data, doi 10.1038/s41597-025-04803-5), CC0; model: tribe-lab/emofilm (SigLIP + Whisper, Ridge)",
+   "skala": {
+    "von": 0.15,
+    "bis": 0.75
+   },
+   "abdeckung": 10678
+  },
+  {
+   "key": "emo_surprise",
+   "index": 2,
+   "gruppe": "Emotion",
+   "name": "Surprise",
+   "text": "Where the brain follows along when viewers rate a moment as “Surprise”: the link between second-by-second ratings from 44 people and the brain activity of 30 viewers across 14 films. Emotions overlap strongly, so the maps reflect “exciting vs. calm” more than any single emotion.",
+   "quelle": "Emo-FilM, University of Geneva (Morgenroth et al. 2025, Sci Data, doi 10.1038/s41597-025-04803-5), CC0, annotations ds004872 (CC0)",
+   "skala": {
+    "von": 0.05,
+    "bis": 0.25
+   },
+   "abdeckung": 8665
+  },
+  {
+   "key": "emo_suddenly",
+   "index": 3,
+   "gruppe": "Emotion",
+   "name": "Suddenness",
+   "text": "Where the brain follows along when viewers rate a moment as “Suddenness”: the link between second-by-second ratings from 44 people and the brain activity of 30 viewers across 14 films. Emotions overlap strongly, so the maps reflect “exciting vs. calm” more than any single emotion.",
+   "quelle": "Emo-FilM, University of Geneva (Morgenroth et al. 2025, Sci Data, doi 10.1038/s41597-025-04803-5), CC0, annotations ds004872 (CC0)",
+   "skala": {
+    "von": 0.05,
+    "bis": 0.25
+   },
+   "abdeckung": 9230
+  },
+  {
+   "key": "emo_anxiety",
+   "index": 4,
+   "gruppe": "Emotion",
+   "name": "Worry/nervousness",
+   "text": "Where the brain follows along when viewers rate a moment as “Worry/nervousness”: the link between second-by-second ratings from 44 people and the brain activity of 30 viewers across 14 films. Emotions overlap strongly, so the maps reflect “exciting vs. calm” more than any single emotion.",
+   "quelle": "Emo-FilM, University of Geneva (Morgenroth et al. 2025, Sci Data, doi 10.1038/s41597-025-04803-5), CC0, annotations ds004872 (CC0)",
+   "skala": {
+    "von": 0.05,
+    "bis": 0.25
+   },
+   "abdeckung": 4138
+  },
+  {
+   "key": "emo_disgust",
+   "index": 5,
+   "gruppe": "Emotion",
+   "name": "Disgust",
+   "text": "Where the brain follows along when viewers rate a moment as “Disgust”: the link between second-by-second ratings from 44 people and the brain activity of 30 viewers across 14 films. Emotions overlap strongly, so the maps reflect “exciting vs. calm” more than any single emotion.",
+   "quelle": "Emo-FilM, University of Geneva (Morgenroth et al. 2025, Sci Data, doi 10.1038/s41597-025-04803-5), CC0, annotations ds004872 (CC0)",
+   "skala": {
+    "von": 0.05,
+    "bis": 0.25
+   },
+   "abdeckung": 3936
+  },
+  {
+   "key": "emo_intenseemotion",
+   "index": 6,
+   "gruppe": "Emotion",
+   "name": "Intense emotion",
+   "text": "Where the brain follows along when viewers rate a moment as “Intense emotion”: the link between second-by-second ratings from 44 people and the brain activity of 30 viewers across 14 films. Emotions overlap strongly, so the maps reflect “exciting vs. calm” more than any single emotion.",
+   "quelle": "Emo-FilM, University of Geneva (Morgenroth et al. 2025, Sci Data, doi 10.1038/s41597-025-04803-5), CC0, annotations ds004872 (CC0)",
+   "skala": {
+    "von": 0.05,
+    "bis": 0.25
+   },
+   "abdeckung": 3043
+  },
+  {
+   "key": "emo_alert",
+   "index": 7,
+   "gruppe": "Emotion",
+   "name": "Awake (not tired)",
+   "text": "Where the brain follows along when viewers rate a moment as “Awake (not tired)”: the link between second-by-second ratings from 44 people and the brain activity of 30 viewers across 14 films. Emotions overlap strongly, so the maps reflect “exciting vs. calm” more than any single emotion.",
+   "quelle": "Emo-FilM, University of Geneva (Morgenroth et al. 2025, Sci Data, doi 10.1038/s41597-025-04803-5), CC0, annotations ds004872 (CC0)",
+   "skala": {
+    "von": 0.05,
+    "bis": 0.25
+   },
+   "abdeckung": 2852
+  },
+  {
+   "key": "emo_socialnorms",
+   "index": 8,
+   "gruppe": "Emotion",
+   "name": "In line with laws/social norms",
+   "text": "Where the brain follows along when viewers rate a moment as “In line with laws/social norms”: the link between second-by-second ratings from 44 people and the brain activity of 30 viewers across 14 films. Emotions overlap strongly, so the maps reflect “exciting vs. calm” more than any single emotion.",
+   "quelle": "Emo-FilM, University of Geneva (Morgenroth et al. 2025, Sci Data, doi 10.1038/s41597-025-04803-5), CC0, annotations ds004872 (CC0)",
+   "skala": {
+    "von": 0.05,
+    "bis": 0.25
+   },
+   "abdeckung": 636
+  },
+  {
+   "key": "emo_guilt",
+   "index": 9,
+   "gruppe": "Emotion",
+   "name": "Guilt",
+   "text": "Where the brain follows along when viewers rate a moment as “Guilt”: the link between second-by-second ratings from 44 people and the brain activity of 30 viewers across 14 films. Emotions overlap strongly, so the maps reflect “exciting vs. calm” more than any single emotion.",
+   "quelle": "Emo-FilM, University of Geneva (Morgenroth et al. 2025, Sci Data, doi 10.1038/s41597-025-04803-5), CC0, annotations ds004872 (CC0)",
+   "skala": {
+    "von": 0.05,
+    "bis": 0.25
+   },
+   "abdeckung": 605
+  }
+ ]
+}
