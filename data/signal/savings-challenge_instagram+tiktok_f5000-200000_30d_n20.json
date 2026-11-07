@@ -1,0 +1,399 @@
+{
+  "search": {
+    "query": "savings challenge",
+    "platforms": [
+      "instagram",
+      "tiktok"
+    ],
+    "minFollowers": 5000,
+    "maxFollowers": 200000,
+    "days": 30,
+    "limit": 20
+  },
+  "generatedAt": "2026-11-06T23:48:30.970Z",
+  "model": "google/gemini-3.8-flash",
+  "orianeFile": "data/oriane/savings-challenge_instagram+tiktok_f5000-200000_30d_n20.json",
+  "videosAnalysed": 20,
+  "totalMatches": 183,
+  "briefs": [
+    {
+      "id": "interactive-savings-framework",
+      "name": "Interactive Savings Framework",
+      "whyItWorks": "They turn an intimidating abstract savings goal into a tangible, game-like visual chart or post-it board that viewers instantly want to screenshot and implement.",
+      "hookPattern": "Have you tried [gamifying/visualizing] your savings with this [dollar amount/timeframe] challenge?",
+      "beats": [
+        {
+          "fromSeconds": 0,
+          "toSeconds": 4,
+          "shows": "Close-up of a visual tracker sheet or color-coded calendar on a wall showing incremental dollar targets.",
+          "says": "Have you tried gamifying your savings? Because watching numbers change makes it actually achievable.",
+          "onScreen": "SAVINGS CHALLENGE HACK"
+        },
+        {
+          "fromSeconds": 4,
+          "toSeconds": 9,
+          "shows": "Hand pointing down a tiered list matching target milestones and paycheck breakdown.",
+          "says": "Find your income tier and lock in your bi-weekly contribution target right here.",
+          "onScreen": "SCREENSHOT YOUR TARGET"
+        },
+        {
+          "fromSeconds": 9,
+          "toSeconds": 14,
+          "shows": "Hand checking off a completed milestone box or coloring in a tracker icon.",
+          "says": "Check your progress every week, reward yourself at every mini goal, and watch it stack.",
+          "onScreen": "HIT YOUR GOAL"
+        }
+      ],
+      "durationSeconds": 14,
+      "recommendedStyle": "ai-generated",
+      "clipTag": null,
+      "evidence": [
+        {
+          "url": "https://www.instagram.com/reel/DeTSKeODyfx/",
+          "platform": "instagram",
+          "handle": "updraftuk",
+          "thumbnailUrl": "https://social-catalog-static.oriane.xyz/oriane-contents/instagram/DeTSKeODyfx/thumbnail.webp",
+          "frameUrls": [
+            "https://social-catalog-static.oriane.xyz/oriane-frames/instagram/DeTSKeODyfx/1_1.84.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/instagram/DeTSKeODyfx/4_2.80.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/instagram/DeTSKeODyfx/7_12.24.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/instagram/DeTSKeODyfx/10_18.04.webp"
+          ],
+          "views": 29251,
+          "followers": 7816,
+          "viewsPerFollower": 3.74,
+          "engagementRatePerViews": 5.2818707052750336,
+          "spokenHook": "Have you tried gamifying your savings? Because sometimes when you're saving, you can't really visualize",
+          "onScreenText": [
+            "Hackto help you save",
+            "money:",
+            "THAURS",
+            "CHECK",
+            "REWARD",
+            "PROGRESS",
+            "SUBccRIm",
+            "REWARO",
+            "PROGdESS",
+            "TROGAESS",
+            "YOUR SAViNGS?",
+            "Hack to help you save"
+          ],
+          "audioTitle": "Original audio",
+          "durationSeconds": 39.24,
+          "topComments": [],
+          "publishedAt": "2026-10-10T05:01:36.000Z"
+        },
+        {
+          "url": "https://www.instagram.com/reel/Dec5a2ooTB5/",
+          "platform": "instagram",
+          "handle": "jamietalksmoney",
+          "thumbnailUrl": "https://social-catalog-static.oriane.xyz/oriane-contents/instagram/Dec5a2ooTB5/thumbnail.webp",
+          "frameUrls": [
+            "https://social-catalog-static.oriane.xyz/oriane-frames/instagram/Dec5a2ooTB5/1_2.60.webp"
+          ],
+          "views": 25439,
+          "followers": 11612,
+          "viewsPerFollower": 2.19,
+          "engagementRatePerViews": 1.1635677503046502,
+          "spokenHook": "",
+          "onScreenText": [
+            "3 Month",
+            "Emergency Fund",
+            "13",
+            "$500 in 3 months",
+            "ir",
+            "savings challenge",
+            "Salary 3 Mo. Fund",
+            "Save",
+            "month",
+            "$35K",
+            "payche$8,750",
+            "$337"
+          ],
+          "audioTitle": "There She Goes",
+          "durationSeconds": 15.045,
+          "topComments": [
+            "The monthly-expenses caveat is important. Two people on the same salary can have very different essential bills, so a salary chart can start the conversation without settling the final target."
+          ],
+          "publishedAt": "2026-10-13T22:37:57.000Z"
+        }
+      ],
+      "score": 1
+    },
+    {
+      "id": "fixed-cash-budget-run",
+      "name": "Fixed Cash Budget Run",
+      "whyItWorks": "Framing shopping as a strict cash-only cap creates natural tension, forcing creators to make tough in-store trade-offs that drive high engagement and opinionated comments.",
+      "hookPattern": "We are on a strict $[amount] cash budget to get [goal/event], let's see what happens.",
+      "beats": [
+        {
+          "fromSeconds": 0,
+          "toSeconds": 4,
+          "shows": "Creator holding physical cash bills inside their car or outside the store front.",
+          "says": "We are on a strict seventy-five dollar cash budget today to get everything on this list.",
+          "onScreen": "$75 CASH CHALLENGE"
+        },
+        {
+          "fromSeconds": 4,
+          "toSeconds": 9,
+          "shows": "POV walking aisles, picking up items, checking price tags, and calculating subtotals.",
+          "says": "Everything is ridiculously expensive right now, so every single dollar has to count.",
+          "onScreen": "BUDGET SHOPPING"
+        },
+        {
+          "fromSeconds": 9,
+          "toSeconds": 14,
+          "shows": "Handing cash to the register and revealing the final haul spread.",
+          "says": "We checked out right under the limit. Look at everything we actually managed to score.",
+          "onScreen": "CHALLENGE COMPLETED"
+        }
+      ],
+      "durationSeconds": 14,
+      "recommendedStyle": "ai-generated",
+      "clipTag": null,
+      "evidence": [
+        {
+          "url": "https://www.instagram.com/reel/DeZBOQApFIB/",
+          "platform": "instagram",
+          "handle": "monique_tibbott_",
+          "thumbnailUrl": "https://social-catalog-static.oriane.xyz/oriane-contents/instagram/DeZBOQApFIB/thumbnail.webp",
+          "frameUrls": [
+            "https://social-catalog-static.oriane.xyz/oriane-frames/instagram/DeZBOQApFIB/1_1.20.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/instagram/DeZBOQApFIB/35_92.20.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/instagram/DeZBOQApFIB/69_176.40.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/instagram/DeZBOQApFIB/103_244.80.webp"
+          ],
+          "views": 42667,
+          "followers": 11100,
+          "viewsPerFollower": 3.84,
+          "engagementRatePerViews": 2.006234326294326,
+          "spokenHook": "So I got myself banned from going to the shops this week because I spent",
+          "onScreenText": [
+            "BIRTHDAY ON A BUDGET\n$125 CASH CHALLENGE\nCASH = FREE MONEY",
+            "SUZU",
+            "BIRTHDAY ON A BUDGET",
+            "$125 CASH CHALLENGE",
+            "CASH = FREE MONEY",
+            "H",
+            "---",
+            "50",
+            "\"I!",
+            "A I",
+            "2",
+            "K"
+          ],
+          "audioTitle": "Original audio",
+          "durationSeconds": 305.133,
+          "topComments": [
+            "$1000 at adairs but only $125 for her birthday?🥲",
+            "you better go back to that big w with brandon’s card and get that girl everything paw patrol. there’s no budget for a girl birthday 🥳😭",
+            "You should check out marketplace for paw patrol toys. There’s often really good deals.",
+            "Paw Patrol Wrapping paper go to the cheap shops.",
+            "Ur wasting money fancy wrapping paper & decorations. Not to mention the cost of a card"
+          ],
+          "publishedAt": "2026-10-12T10:31:06.000Z"
+        },
+        {
+          "url": "https://www.instagram.com/reel/DfPLUelNNZH/",
+          "platform": "instagram",
+          "handle": "rachinuk",
+          "thumbnailUrl": "https://social-catalog-static.oriane.xyz/oriane-contents/instagram/DfPLUelNNZH/thumbnail.webp",
+          "frameUrls": [],
+          "views": 81195,
+          "followers": 60287,
+          "viewsPerFollower": 1.35,
+          "engagementRatePerViews": 2.243980540673687,
+          "spokenHook": "",
+          "onScreenText": [],
+          "audioTitle": "Original audio",
+          "durationSeconds": 60.207,
+          "topComments": [
+            "Location?",
+            "Bhai ma batata hou M41 7PP Trafford park Manchester",
+            "Costco",
+            "Costco",
+            "Costco"
+          ],
+          "publishedAt": "2026-11-02T11:16:39.000Z"
+        }
+      ],
+      "score": 0.9
+    },
+    {
+      "id": "coupon-stacking-challenge",
+      "name": "Coupon Stacking Challenge",
+      "whyItWorks": "Shows a crazy retail value drop down to pennies or free, giving step-by-step app coupon combinations that deliver instant dopamine.",
+      "hookPattern": "We are getting over $[high amount] worth of products down to [cheap amount/free] this week using this stack.",
+      "beats": [
+        {
+          "fromSeconds": 0,
+          "toSeconds": 3,
+          "shows": "Countertop display of brand-name products next to a printed receipt showing massive discounts.",
+          "says": "We are getting thirty-five dollars worth of household essentials down to completely free.",
+          "onScreen": "EXTREME SAVINGS CHALLENGE"
+        },
+        {
+          "fromSeconds": 3,
+          "toSeconds": 8,
+          "shows": "Screen recording scrolling through store loyalty app clipping manufacturer digital coupons and rewards.",
+          "says": "First, open your app and clip these two digital coupons before you head into the store.",
+          "onScreen": "CLIP THESE COUPONS"
+        },
+        {
+          "fromSeconds": 8,
+          "toSeconds": 12,
+          "shows": "Register screen ringing up items with price dropping after applying rebate booster.",
+          "says": "Stack it with the spend booster at checkout and roll your points to pay next to nothing.",
+          "onScreen": "FINAL OUT OF POCKET: $0"
+        }
+      ],
+      "durationSeconds": 12,
+      "recommendedStyle": "ai-generated",
+      "clipTag": null,
+      "evidence": [
+        {
+          "url": "https://www.tiktok.com/@chaotic.couponer/video/7697806452563479839",
+          "platform": "tiktok",
+          "handle": "chaotic.couponer",
+          "thumbnailUrl": "https://social-catalog-static.oriane.xyz/oriane-contents/tiktok/7697806452563479839/thumbnail.webp",
+          "frameUrls": [
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7697806452563479839/1_1.83.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7697806452563479839/5_16.46.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7697806452563479839/9_27.21.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7697806452563479839/13_46.00.webp"
+          ],
+          "views": 14600,
+          "followers": 5637,
+          "viewsPerFollower": 2.59,
+          "engagementRatePerViews": 5.315068493150685,
+          "spokenHook": "This is the power of OTC couponing. We are getting over $34 worth of retail",
+          "onScreenText": [
+            "OTC COUPONING\nMASTERCLASS",
+            "Dove",
+            "Dove\nanti-\nbacterial\neliminates 99% of bacteria\nmoisture\npowder blend",
+            "deep",
+            "moisture",
+            "nourishes the driest skin",
+            "rishes the driest skin",
+            "24 RENEWING",
+            "milw  iend",
+            "24hr lotion-soft skin",
+            "body wash 120R 0",
+            "antibacterial body wash/2 0"
+          ],
+          "audioTitle": "original sound",
+          "durationSeconds": 74,
+          "topComments": [
+            "UPDATE: Dove OTC no longer available to clip but check from time to time to see if they activated it again.",
+            "OTC’s is Definitely a game changer!!😍",
+            "Omg! That is fantastic! Would this work on dove men’s? Also I would love the OTC if it’s not too much trouble! Thank you! 🙏",
+            "OTC please",
+            "OTC 🤞"
+          ],
+          "publishedAt": "2026-10-18T01:00:39.000Z"
+        },
+        {
+          "url": "https://www.tiktok.com/@dealswjazzy/video/7700798340618816799",
+          "platform": "tiktok",
+          "handle": "dealswjazzy",
+          "thumbnailUrl": "https://social-catalog-static.oriane.xyz/oriane-contents/tiktok/7700798340618816799/thumbnail.webp",
+          "frameUrls": [
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7700798340618816799/1_2.80.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7700798340618816799/10_22.62.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7700798340618816799/19_56.86.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7700798340618816799/28_101.63.webp"
+          ],
+          "views": 7475,
+          "followers": 7830,
+          "viewsPerFollower": 0.95,
+          "engagementRatePerViews": 9.28428093645485,
+          "spokenHook": "Hey guys, it's Ease with Jazzy. It's Sunday, so you know it's coupon day. Let's",
+          "onScreenText": [
+            "CVS DEALS",
+            "come extreme with me!",
+            "deals valid oct. 25-31st",
+            "CVS/pharmacy",
+            "8400",
+            "deals valid oct 25-31st",
+            "/pharmacy",
+            "Get a",
+            "vaccine.",
+            "Grab savings",
+            "$520",
+            "CYal s vold ot 25-31"
+          ],
+          "audioTitle": "original sound",
+          "durationSeconds": 153,
+          "topComments": [
+            "Ouuuu the gain deal!!",
+            "Yasssss✨",
+            "first off, THE NAILSSSS!!!!! ATEEEE",
+            "Omg you look so cute and fall! These deals are amazing 🔥 love these finds!!",
+            "I need new tweezers"
+          ],
+          "publishedAt": "2026-10-26T02:30:47.000Z"
+        }
+      ],
+      "score": 0.72
+    }
+  ],
+  "rejected": [
+    {
+      "url": "https://www.instagram.com/reel/DePzzh4MXli/",
+      "reason": "Job recruitment notice for Chevron maintenance trainees, unrelated to savings challenges."
+    },
+    {
+      "url": "https://www.tiktok.com/@avaonbrand/video/7700311871903075597",
+      "reason": "Sports warmup clip about Luka Doncic and music; keyword false match."
+    },
+    {
+      "url": "https://www.instagram.com/reel/DehmZsMMdLw/",
+      "reason": "UK parliamentary debate speech regarding disability benefits policy."
+    },
+    {
+      "url": "https://www.instagram.com/reel/De5rOAaRHGJ/",
+      "reason": "Supermarket store opening walkthrough and commercial tour."
+    },
+    {
+      "url": "https://www.tiktok.com/@tinayazdani/video/7698855534467747093",
+      "reason": "News report on healthcare litigation and cancer treatment funding."
+    },
+    {
+      "url": "https://www.instagram.com/reel/DeSXlfYkiSK/",
+      "reason": "Brand account dance challenge commercial promotion by HSBC HK."
+    },
+    {
+      "url": "https://www.tiktok.com/@cbctoronto/video/7699866904227384584",
+      "reason": "CBC news segment analyzing the single tax and cost of living."
+    },
+    {
+      "url": "https://www.tiktok.com/@tryingmayabest/video/7698441897001372942",
+      "reason": "News commentary explaining political protests across Europe."
+    },
+    {
+      "url": "https://www.tiktok.com/@candyshowroom/video/7697329928479477014",
+      "reason": "Automotive review analyzing used BMW 330i models."
+    },
+    {
+      "url": "https://www.tiktok.com/@theslickestsu/video/7698928625160097055",
+      "reason": "Buffet restaurant promotion and TikTok coupon ad."
+    },
+    {
+      "url": "https://www.instagram.com/reel/DekAebKx9_a/",
+      "reason": "House tour vlog detailing fitness mansion renovations."
+    },
+    {
+      "url": "https://www.tiktok.com/@leanne.bretanha/video/7700941048356293919",
+      "reason": "Sephora sale beauty haul wishlist recommendations, not a savings challenge."
+    },
+    {
+      "url": "https://www.tiktok.com/@briknmix/video/7701063843606187297",
+      "reason": "Mall vlog shopping for Lego and dinner."
+    },
+    {
+      "url": "https://www.instagram.com/reel/De2wDijPW8P/",
+      "reason": "Real estate brokerage discussion analyzing presidential housing policy."
+    }
+  ],
+  "usedImages": true
+}

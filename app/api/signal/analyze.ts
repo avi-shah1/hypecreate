@@ -2,7 +2,7 @@
 // opening frame plus its transcript and on-screen text, drops false matches and
 // groups the rest into formats. Scores come from Oriane's numbers, never the LLM.
 import type { Beat, Evidence, FormatBrief } from "@/lib/contract";
-import { chat, type ChatContent } from "@/lib/gmi";
+import type { ChatContent } from "@/lib/gmi";
 import { toEvidence, type OrianeContent } from "@/lib/oriane";
 
 /**
@@ -12,7 +12,15 @@ import { toEvidence, type OrianeContent } from "@/lib/oriane";
 export const SIGNAL_MODEL = process.env.SIGNAL_MODEL ?? "google/gemini-3.8-flash";
 
 /** The top videos the LLM sees. Each one adds a frame of about 200 KB to the request. */
-const MAX_VIDEOS = 20;
+export const MAX_VIDEOS = 20;
+
+/** Where a scan is, for the studio's progress panel. */
+export interface Progress {
+  stage: "searching" | "filtering" | "frames" | "grouping" | "done";
+  detail: string;
+  framesDone?: number;
+  framesTotal?: number;
+}
 
 export interface Analysis {
   briefs: FormatBrief[];
@@ -29,22 +37,45 @@ interface LlmFormat {
   videos?: number[];
 }
 
-export async function analyze(results: OrianeContent[], query: string): Promise<Analysis> {
+export async function analyze(
+  results: OrianeContent[],
+  query: string,
+  onProgress: (progress: Progress) => void = () => {},
+): Promise<Analysis> {
   const contents = results.slice(0, MAX_VIDEOS);
   if (contents.length === 0) throw new Error(`Oriane found no videos for "${query}"`);
   const evidence = contents.map(toEvidence);
-  const frames = await Promise.all(evidence.map((item) => inlineImage(item.frameUrls[0])));
+
+  let framesDone = 0;
+  const framesTotal = evidence.length;
+  const report = () =>
+    onProgress({ stage: "frames", detail: "Reading each video's opening frame", framesDone, framesTotal });
+  report();
+  const frames = await Promise.all(
+    evidence.map(async (item) => {
+      const frame = await inlineImage(item.frameUrls[0]);
+      framesDone += 1;
+      report();
+      return frame;
+    }),
+  );
 
   // First try with frames. If GMI refuses them or the JSON is bad, retry on text alone.
   let lastError: unknown;
   for (const withImages of [true, false]) {
+    onProgress({
+      stage: "grouping",
+      detail: withImages
+        ? `Gemini is watching ${contents.length} videos and grouping them into formats`
+        : "Frames were refused, so Gemini is retrying on transcripts and on-screen text",
+    });
     try {
-      const reply = await chat(
+      const reply = await ask(
         [
           { role: "system", content: "You study short-form social videos for a marketing team. Reply with JSON only." },
           { role: "user", content: buildPrompt(contents, evidence, query, withImages ? frames : []) },
         ],
-        { model: SIGNAL_MODEL, maxTokens: 16000 },
+        withImages ? 100_000 : 90_000,
       );
       return { ...toBriefs(parseJson(reply), evidence), usedImages: withImages };
     } catch (error) {
@@ -53,6 +84,36 @@ export async function analyze(results: OrianeContent[], query: string): Promise<
     }
   }
   throw lastError;
+}
+
+/**
+ * Like chat() in lib/gmi.ts, plus two things this step needs. reasoning_effort "low":
+ * with default thinking, a 20-frame request ran 80 to 130 s and once hit GMI's
+ * gateway timeout (an HTML error page); low answered a small test 4x faster.
+ * And a timeout, so a stuck request falls back to text instead of hanging the scan.
+ */
+export async function ask(
+  messages: { role: "system" | "user"; content: ChatContent }[],
+  timeoutMs: number,
+): Promise<string> {
+  const key = process.env.GMI_API_KEY;
+  if (!key) throw new Error("GMI_API_KEY is missing from .env.local");
+  const res = await fetch("https://api.gmi-serving.com/v1/chat/completions", {
+    method: "POST",
+    headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
+    body: JSON.stringify({ model: SIGNAL_MODEL, max_tokens: 16000, reasoning_effort: "low", messages }),
+    signal: AbortSignal.timeout(timeoutMs),
+  });
+  const text = await res.text();
+  let json: { choices?: { message?: { content?: string } }[] } | null = null;
+  try {
+    json = JSON.parse(text);
+  } catch {
+    // GMI's gateway answers timeouts with an HTML page.
+  }
+  const content = json?.choices?.[0]?.message?.content;
+  if (!res.ok || typeof content !== "string") throw new Error(`GMI chat ${res.status}: ${clip(text, 300)}`);
+  return content;
 }
 
 async function inlineImage(url: string | undefined): Promise<string | null> {
