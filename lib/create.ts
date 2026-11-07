@@ -78,17 +78,21 @@ export async function createVideo(body: CreateBody, onStage: (stage: string) => 
     } else {
       const clip = pickClip(library, scene.clip, style, scenes.length === 0);
       const start = Math.max(0, Math.min(scene.start ?? 0, clip.seconds - 1));
-      scenes.push({
-        file: clipPath(clip),
-        start,
-        seconds: Math.min(scene.seconds, clip.seconds - start),
-        text: scene.text,
-      });
+      const seconds = Math.min(scene.seconds, clip.seconds - start);
+      // The brain view's hook check flagged no cut in the first second: open with a jump cut.
+      const spare = clip.seconds - start - seconds;
+      if (style === "hook-plus-demo" && scenes.length === 0 && seconds >= 3 && spare >= 0.4) {
+        const skip = Math.min(spare, 0.8);
+        scenes.push({ file: clipPath(clip), start, seconds: 1, text: scene.text });
+        scenes.push({ file: clipPath(clip), start: start + 1 + skip, seconds: seconds - 1, text: scene.text });
+      } else {
+        scenes.push({ file: clipPath(clip), start, seconds, text: scene.text });
+      }
       clipsUsed.push(clip.file);
       showsPrizes ||= clip.tags.includes("prizes");
       shows = clip.description;
     }
-    const seconds = scenes[scenes.length - 1].seconds;
+    const seconds = scenes.reduce((sum, item) => sum + item.seconds, 0) - clock;
     beats.push({ fromSeconds: clock, toSeconds: clock + seconds, shows, ...(scene.text ? { onScreen: scene.text } : {}) });
     clock += seconds;
   }
@@ -135,7 +139,7 @@ Rules for this video:
 - On-screen lines are short and spoken-sounding, 9 words at most. A line must read in the seconds it holds: 1 second plus 0.3 seconds a word.
 - Sell the fun. Never say how the bank connection works or where the savings stay.
 - Never put legal text on screen or in the caption: the renderer adds the legal line.
-- Only state facts in the brand rules. Do not invent a personal story, an age or a number about the person on screen: use a general voice, or a hook they approved.
+- Claims about the product come only from the brand rules. General money tips are fine, with honest round numbers. Do not invent a personal story, an age or a number about the person on screen: use a general voice, or a hook they approved.
 - Reply with JSON only: {"scenes":[{"clip":"file from the list","start":0,"seconds":4,"text":"on-screen line"}],"caption":"post caption","sound":"the kind of sound to add when posting"}`,
     },
     {

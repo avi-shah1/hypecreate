@@ -1,0 +1,173 @@
+{
+  "search": {
+    "query": "our faceless account",
+    "platforms": [
+      "instagram"
+    ],
+    "minFollowers": 0,
+    "maxFollowers": 5000,
+    "days": 90,
+    "limit": 25
+  },
+  "generatedAt": "2026-11-07T00:22:13.321Z",
+  "model": "results-loop",
+  "orianeFile": null,
+  "briefs": [
+    {
+      "id": "realistic-habits-savings",
+      "name": "Realistic habits with immediate savings",
+      "whyItWorks": "A specific monthly saving and the promise of immediate results make the habits feel practical and worth checking.",
+      "hookPattern": "[Number] realistic habits that cut $[amount] a month immediately",
+      "beats": [
+        {
+          "fromSeconds": 0,
+          "toSeconds": 7,
+          "shows": "Everyday b-roll with nobody on camera",
+          "onScreen": "[Number] realistic habits that cut $[amount] a month immediately"
+        }
+      ],
+      "durationSeconds": 7,
+      "recommendedStyle": "broll-text",
+      "clipTag": null,
+      "evidence": [
+        {
+          "url": "https://www.instagram.com/notquiterichyet/reel/DceEi6AhjWn/?hl=en",
+          "platform": "instagram",
+          "handle": "our-faceless-account",
+          "thumbnailUrl": null,
+          "frameUrls": [],
+          "views": 1400000,
+          "followers": 2839,
+          "viewsPerFollower": 493.13,
+          "engagementRatePerViews": 0,
+          "spokenHook": "",
+          "onScreenText": [
+            "5 realistic habits that cut $1000 a month immediately"
+          ],
+          "audioTitle": null,
+          "durationSeconds": 7,
+          "topComments": [],
+          "publishedAt": ""
+        },
+        {
+          "url": "https://www.instagram.com/notquiterichyet/reel/Dcro1b_J5sU/?hl=en",
+          "platform": "instagram",
+          "handle": "our-faceless-account",
+          "thumbnailUrl": null,
+          "frameUrls": [],
+          "views": 831000,
+          "followers": 2839,
+          "viewsPerFollower": 292.71,
+          "engagementRatePerViews": 0,
+          "spokenHook": "",
+          "onScreenText": [
+            "7 realistic habits that cut $500 a month immediately"
+          ],
+          "audioTitle": null,
+          "durationSeconds": 7,
+          "topComments": [],
+          "publishedAt": ""
+        },
+        {
+          "url": "https://www.instagram.com/notquiterichyet/reel/DcWdllqpt6D/?hl=en",
+          "platform": "instagram",
+          "handle": "our-faceless-account",
+          "thumbnailUrl": null,
+          "frameUrls": [],
+          "views": 823000,
+          "followers": 2839,
+          "viewsPerFollower": 289.89,
+          "engagementRatePerViews": 0,
+          "spokenHook": "",
+          "onScreenText": [
+            "7 realistic habits that cut $500 a month immediately"
+          ],
+          "audioTitle": null,
+          "durationSeconds": 7,
+          "topComments": [],
+          "publishedAt": ""
+        },
+        {
+          "url": "https://www.instagram.com/notquiterichyet/reel/DctJydJBKpI/?hl=en",
+          "platform": "instagram",
+          "handle": "our-faceless-account",
+          "thumbnailUrl": null,
+          "frameUrls": [],
+          "views": 2526,
+          "followers": 2839,
+          "viewsPerFollower": 0.89,
+          "engagementRatePerViews": 0,
+          "spokenHook": "",
+          "onScreenText": [
+            "7 realistic habits that cut $500 a month immediately"
+          ],
+          "audioTitle": null,
+          "durationSeconds": 7,
+          "topComments": [],
+          "publishedAt": ""
+        }
+      ],
+      "score": 1.0
+    },
+    {
+      "id": "biggest-financial-trap",
+      "name": "The biggest financial trap or lie",
+      "whyItWorks": "Calling a familiar behavior or belief the biggest financial problem challenges viewers to reconsider something they may accept.",
+      "hookPattern": "The biggest financial [trap or lie] is [a familiar behavior or belief reframed as harmful].",
+      "beats": [
+        {
+          "fromSeconds": 0,
+          "toSeconds": 7,
+          "shows": "Everyday b-roll with nobody on camera",
+          "onScreen": "The biggest financial [trap or lie] is [a familiar behavior or belief reframed as harmful]."
+        }
+      ],
+      "durationSeconds": 7,
+      "recommendedStyle": "broll-text",
+      "clipTag": null,
+      "evidence": [
+        {
+          "url": "https://www.instagram.com/notquiterichyet/reel/DcgsQ49Avzt/?hl=en",
+          "platform": "instagram",
+          "handle": "our-faceless-account",
+          "thumbnailUrl": null,
+          "frameUrls": [],
+          "views": 1666,
+          "followers": 2839,
+          "viewsPerFollower": 0.59,
+          "engagementRatePerViews": 0,
+          "spokenHook": "",
+          "onScreenText": [
+            "The biggest financial trap is working 50 weeks a year just to afford a 2 week escape from your own life."
+          ],
+          "audioTitle": null,
+          "durationSeconds": 7,
+          "topComments": [],
+          "publishedAt": ""
+        },
+        {
+          "url": "https://www.instagram.com/notquiterichyet/reel/Dcl-KQ0pQ4J/?hl=en",
+          "platform": "instagram",
+          "handle": "our-faceless-account",
+          "thumbnailUrl": null,
+          "frameUrls": [],
+          "views": 1307,
+          "followers": 2839,
+          "viewsPerFollower": 0.46,
+          "engagementRatePerViews": 0,
+          "spokenHook": "",
+          "onScreenText": [
+            "The biggest financial lie society sells you is that you need to wait until you are \"settled\" to start building wealth."
+          ],
+          "audioTitle": null,
+          "durationSeconds": 7,
+          "topComments": [],
+          "publishedAt": ""
+        }
+      ],
+      "score": 0.0020048134777376657
+    }
+  ],
+  "rejected": [],
+  "usedImages": false
+}

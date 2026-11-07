@@ -30,7 +30,8 @@ export async function POST(request: Request) {
       (clips) => clips.length > 0,
       () => false,
     );
-    if (!hasFootage || body.style === "ai-generated") {
+    const aiReady = body.style === "ai-generated" && !body.fresh && (await savedVideo(`${body.formatId}-ai-generated`));
+    if (!hasFootage || (body.style === "ai-generated" && !aiReady)) {
       return Response.json({ jobId: (await startGeneration(body)).jobId });
     }
 
@@ -64,11 +65,11 @@ async function run(
   const own = brief.evidence.every((video) => video.frameUrls.length === 0);
   const style = body.style ?? (own ? "broll-text" : "hook-plus-demo");
   const slug = `${brief.id}-${style}`;
-  const saved = path.join(process.cwd(), "public", "renders", "made-live", `${slug}.json`);
+  const saved = savedPath(slug);
   if (!body.fresh) {
-    const previous = await readFile(saved, "utf8").catch(() => null);
+    const previous = await savedVideo(slug);
     if (previous) {
-      job.result = JSON.parse(previous);
+      job.result = previous;
       job.stage = "Done";
       job.status = "done";
       return;
@@ -78,9 +79,24 @@ async function run(
     { brief, style, brand: body.brand ?? "Lodavo", language: "en", person: body.person ?? (own ? "faceless" : "chaerin"), slug, folder: "made-live" },
     (stage) => (job.stage = stage),
   );
-  await writeFile(saved, JSON.stringify({ ...job.result, formatId: brief.id, formatName: brief.name, model: "Real clips" }));
+  await writeFile(saved, JSON.stringify({ ...job.result, formatId: brief.id, formatName: brief.name, model: STYLE_NAMES[style] }));
   job.stage = "Done";
   job.status = "done";
+}
+
+const STYLE_NAMES: Record<VideoStyle, string> = {
+  "hook-plus-demo": "Real clips + app demo",
+  "broll-text": "7-second b-roll",
+  "ai-generated": "AI-generated",
+};
+
+function savedPath(slug: string): string {
+  return path.join(process.cwd(), "public", "renders", "made-live", `${slug}.json`);
+}
+
+async function savedVideo(slug: string): Promise<CreatedVideo | null> {
+  const previous = await readFile(savedPath(slug), "utf8").catch(() => null);
+  return previous ? JSON.parse(previous) : null;
 }
 
 async function findFormat(slug: string, formatId: string): Promise<FormatBrief> {

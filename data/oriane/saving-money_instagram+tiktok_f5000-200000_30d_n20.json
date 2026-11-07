@@ -2,16 +2,16 @@
   "search": {
     "query": "saving money",
     "platforms": [
-      "tiktok",
-      "instagram"
+      "instagram",
+      "tiktok"
     ],
     "minFollowers": 5000,
     "maxFollowers": 200000,
     "days": 30,
     "limit": 20
   },
-  "fetchedAt": "2026-11-06T23:05:12.978Z",
-  "totalCount": 3329,
+  "fetchedAt": "2026-11-07T00:39:03.193Z",
+  "totalCount": 3319,
   "oriane": {
     "operator": "and",
     "filters": {
@@ -36,8 +36,8 @@
       },
       "platform": {
         "includes": [
-          "tiktok",
-          "instagram"
+          "instagram",
+          "tiktok"
         ]
       },
       "format": {
@@ -50,7 +50,7 @@
         "max": 200000
       },
       "publishedAt": {
-        "after": "2026-10-07T23:05:02.373Z"
+        "after": "2026-10-08T00:39:01.089Z"
       }
     },
     "queries": [

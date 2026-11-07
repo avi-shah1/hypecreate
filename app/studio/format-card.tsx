@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { Beat, Evidence, FormatBrief } from "@/lib/contract";
 import BrainView from "@/app/brain/brain-view";
-import { GENERATE_POLL_MS, getGenerate, startGenerate, USE_MOCK_GENERATE, type GenerateStatus } from "./generate";
+import { GENERATE_POLL_MS, getGenerate, startGenerate, USE_MOCK_GENERATE, type GenerateRequest, type GenerateStatus } from "./generate";
 import { compact, multiple, sleep, span } from "./utils";
 import type { StudioVideo } from "./videos/route";
 
@@ -42,7 +42,7 @@ export default function FormatCard({ rank, brief, brand, signalSlug, ready, onFi
     });
   }
 
-  async function generate(style?: "ai-generated") {
+  async function generate(style?: GenerateRequest["style"]) {
     setError(null);
     setShowBrain(false);
     setStartedAt(Date.now());
@@ -108,12 +108,20 @@ export default function FormatCard({ rank, brief, brand, signalSlug, ready, onFi
               {busy ? "Generating…" : `Make a ${brand || "brand"} video from real clips`}
             </button>
             {!busy && !USE_MOCK_GENERATE && (
-              <button
-                onClick={() => generate("ai-generated")}
-                className="rounded-full border border-white/20 px-6 py-3 text-lg text-zinc-300 transition hover:border-white/50"
-              >
-                AI version
-              </button>
+              <>
+                <button
+                  onClick={() => generate("broll-text")}
+                  className="rounded-full border border-white/20 px-6 py-3 text-lg text-zinc-300 transition hover:border-white/50"
+                >
+                  7-second b-roll
+                </button>
+                <button
+                  onClick={() => generate("ai-generated")}
+                  className="rounded-full border border-white/20 px-6 py-3 text-lg text-zinc-300 transition hover:border-white/50"
+                >
+                  AI-generated
+                </button>
+              </>
             )}
             {!busy && !USE_MOCK_GENERATE && <p className="text-zinc-500">Your own footage, cut to this format. About a minute.</p>}
             {busy && generation && (
@@ -146,7 +154,7 @@ export default function FormatCard({ rank, brief, brand, signalSlug, ready, onFi
             <div className="relative mx-auto aspect-[9/16] w-full max-w-72 overflow-hidden rounded-2xl border border-white/10 bg-black">
               <video src={result.videoUrl} className="h-full w-full object-cover" controls autoPlay muted loop playsInline />
               <span className="absolute left-3 top-3 rounded-full bg-violet-500/90 px-3 py-1 text-sm font-semibold">
-                {result.videoUrl.includes("/made-live/") ? "Real clips" : "AI-generated"}
+                {result.videoUrl.includes("ai-generated") || !result.videoUrl.includes("/made-live/") ? "AI-generated" : "Real clips"}
               </span>
               {USE_MOCK_GENERATE && (
                 <span className="absolute right-3 top-3 rounded-full bg-amber-400 px-3 py-1 text-sm font-semibold text-black">

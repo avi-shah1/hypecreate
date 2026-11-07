@@ -96,6 +96,8 @@ export default function Studio() {
   }
 
   const scanning = job !== null;
+  // A saved "scan" of an account's own results (scripts/results-loop.mjs), not an Oriane search.
+  const own = signal?.search.query.startsWith("our ") ?? false;
 
   return (
     <div className="flex-1 bg-zinc-950 font-sans text-zinc-100">
@@ -195,11 +197,16 @@ export default function Studio() {
               {new Date(signal.generatedAt).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}
             </p>
             <h2 className="text-4xl font-semibold tracking-tight md:text-5xl">
-              Analysed {signal.videosAnalysed} videos <span className="text-zinc-600">→</span>{" "}
+              Analysed {own ? signal.search.limit : signal.videosAnalysed} {own ? "of our own posts" : "videos"} <span className="text-zinc-600">→</span>{" "}
               <span className="text-emerald-400">
                 {signal.briefs.length} winning {signal.briefs.length === 1 ? "format" : "formats"}
               </span>
             </h2>
+            {own ? (
+              <p className="mt-4 max-w-4xl text-lg text-zinc-400">
+                What this account already posted, from the platform&apos;s own numbers, grouped by hook shape. It decides what the next batch leans on.
+              </p>
+            ) : (
             <p className="mt-4 max-w-4xl text-lg text-zinc-400">
               “{signal.search.query}”: the top {signal.videosAnalysed}
               {signal.totalMatches ? ` of ${compact(signal.totalMatches)}` : ""} organic{" "}
@@ -208,6 +215,7 @@ export default function Studio() {
               creators in the last {signal.search.days} days, ranked by views per follower.{" "}
               {signal.rejectedCount > 0 && `${signal.rejectedCount} dropped as off-topic or paid reach.`}
             </p>
+            )}
 
             <div className="mt-10 space-y-10">
               {signal.briefs.map((brief, index) => (

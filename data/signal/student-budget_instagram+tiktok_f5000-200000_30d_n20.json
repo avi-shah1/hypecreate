@@ -1,0 +1,261 @@
+{
+  "search": {
+    "query": "student budget",
+    "platforms": [
+      "instagram",
+      "tiktok"
+    ],
+    "minFollowers": 5000,
+    "maxFollowers": 200000,
+    "days": 30,
+    "limit": 20
+  },
+  "generatedAt": "2026-11-07T00:37:33.649Z",
+  "model": "google/gemini-3.8-flash",
+  "orianeFile": "data/oriane/student-budget_instagram+tiktok_f5000-200000_30d_n20.json",
+  "videosAnalysed": 20,
+  "totalMatches": 483,
+  "briefs": [
+    {
+      "id": "ultra-low-budget-recipe",
+      "name": "Ultra-Low Budget Recipe",
+      "whyItWorks": "Hooks viewers with a relatable 'broke student' persona contrasting high dining costs with an easy sub-$3 meal tutorial.",
+      "hookPattern": "I don't understand why people spend [amount] on [item] when you can make it for under [budget].",
+      "beats": [
+        {
+          "fromSeconds": 0,
+          "toSeconds": 3,
+          "shows": "Creator presenting delicious prepared meal with fork pull.",
+          "says": "I do not understand why people spend twenty dollars on dinner when you can make this for under three.",
+          "onScreen": "Under $3 Student Meal"
+        },
+        {
+          "fromSeconds": 3,
+          "toSeconds": 8,
+          "shows": "Fast-paced assembly of inexpensive staple ingredients into a skillet.",
+          "says": "I'm a broke student, and here is how to make creamy veggie pasta in ten minutes.",
+          "onScreen": "Total cost: ~$1.90"
+        },
+        {
+          "fromSeconds": 8,
+          "toSeconds": 13,
+          "shows": "Sauce simmering and cheese melting over the dish.",
+          "says": "Toss everything together, let it simmer, and dinner is served.",
+          "onScreen": "Quick & Easy"
+        },
+        {
+          "fromSeconds": 13,
+          "toSeconds": 15,
+          "shows": "Creator taking a bite with an approving smile.",
+          "says": "Follow for more budget student meals.",
+          "onScreen": "Follow for more"
+        }
+      ],
+      "durationSeconds": 15,
+      "recommendedStyle": "ai-generated",
+      "clipTag": null,
+      "evidence": [
+        {
+          "url": "https://www.tiktok.com/@leaslife_/video/7699426309994188065",
+          "platform": "tiktok",
+          "handle": "leaslife_",
+          "thumbnailUrl": "https://social-catalog-static.oriane.xyz/oriane-contents/tiktok/7699426309994188065/thumbnail.webp",
+          "frameUrls": [
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7699426309994188065/1_1.20.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7699426309994188065/3_6.83.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7699426309994188065/5_11.03.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7699426309994188065/7_13.60.webp"
+          ],
+          "views": 724800,
+          "followers": 56000,
+          "viewsPerFollower": 12.94,
+          "engagementRatePerViews": 5.040149006622516,
+          "spokenHook": "Ich verstehe nicht, warum Menschen sagen, sie haben kein Geld und dann trotzdem jeden Abend",
+          "onScreenText": [
+            "Wednesd",
+            "wenn man's auch super",
+            "einfach und schnell",
+            "Ca. 1,90€",
+            "für unter 3 Euro hinbekommt",
+            "25 Studentin und broke",
+            "und in meiner Wednesday on",
+            "the Budget Reihe",
+            "zeig ich euch jeden Mittwoch",
+            "günstige Rezepte",
+            "und heute gabs diese\nSchupfnudeln",
+            "Gemüsepfanne und um nichts mehr zu verpassen"
+          ],
+          "audioTitle": "Originalton",
+          "durationSeconds": 17,
+          "topComments": [
+            "Jetzt hab ich Lust auf Schupfnudeln und Brokkoli 😁",
+            "Statt Sahne, nehme ich auch gerne Kräuterfrischkäse zum kochen, bringt auch nochmal mehr Geschmack rein. Liebe das 🫶🏼",
+            "\"Ja hallo ich hätte gern 3 Kirschtomaten und 4 einzelne Sprossen Brokolli für mein 1,90 Rezept\" 🥲",
+            "Ohhh, das sieht so, so lecker aus 🫶🫶🫶",
+            "Die Schupfnudeln kosten schon 2 Euro.🤷‍♂️"
+          ],
+          "publishedAt": "2026-10-22T09:46:28.000Z"
+        }
+      ],
+      "score": 1
+    },
+    {
+      "id": "walking-student-deal-guide",
+      "name": "Walking Student Deal Guide",
+      "whyItWorks": "Uses a POV walking route directly from a campus landmark to a budget deal, making the savings tangible and locally relevant.",
+      "hookPattern": "Did you know that if you walk right out of [campus building] you can get [budget offer]?",
+      "beats": [
+        {
+          "fromSeconds": 0,
+          "toSeconds": 4,
+          "shows": "Host standing right outside a recognizable campus landmark, gesturing to start walking.",
+          "says": "Did you know that if you walk right out of the student union, there's a secret student discount?",
+          "onScreen": "Student Budget Hack"
+        },
+        {
+          "fromSeconds": 4,
+          "toSeconds": 8,
+          "shows": "Fast forward walk-through past local street corners and storefronts.",
+          "says": "Just head two blocks down past the station and keep going straight.",
+          "onScreen": "2 blocks away"
+        },
+        {
+          "fromSeconds": 8,
+          "toSeconds": 12,
+          "shows": "Entering the shop and showing the counter displaying budget options.",
+          "says": "You get ten percent off your entire meal just by showing your student card.",
+          "onScreen": "Show Student ID for 10% Off"
+        },
+        {
+          "fromSeconds": 12,
+          "toSeconds": 15,
+          "shows": "Close-up of fresh comfort food being served.",
+          "says": "Perfect when you need cheap comfort food between classes.",
+          "onScreen": "Save your budget"
+        }
+      ],
+      "durationSeconds": 15,
+      "recommendedStyle": "ai-generated",
+      "clipTag": null,
+      "evidence": [
+        {
+          "url": "https://www.instagram.com/reel/DehifPwIPsz/",
+          "platform": "instagram",
+          "handle": "adelinapastabar",
+          "thumbnailUrl": "https://social-catalog-static.oriane.xyz/oriane-contents/instagram/DehifPwIPsz/thumbnail.webp",
+          "frameUrls": [
+            "https://social-catalog-static.oriane.xyz/oriane-frames/instagram/DehifPwIPsz/1_0.40.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/instagram/DehifPwIPsz/6_10.00.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/instagram/DehifPwIPsz/11_23.40.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/instagram/DehifPwIPsz/16_31.40.webp"
+          ],
+          "views": 52616,
+          "followers": 5213,
+          "viewsPerFollower": 10.09,
+          "engagementRatePerViews": 1.6515888703056105,
+          "spokenHook": "Did you know that if you walk out of the Concordia building and you turn",
+          "onScreenText": [
+            "Did you kno w that",
+            "of the Concordia building CONCORDIA",
+            "Adelina and you turn left",
+            "and you pass the Van Houtte",
+            "30",
+            "Adelina",
+            "you admire all of the beautiful",
+            "construction work that Montreal is known for",
+            "ACCÈS\nD URGENCE",
+            "and you just keep walking straight",
+            "Melina",
+            "of the police station"
+          ],
+          "audioTitle": "Original audio",
+          "durationSeconds": 44.186,
+          "topComments": [
+            "prochaine pause lunch 🫡",
+            "Yummy 😋 ❤️‍🔥👀",
+            "👏👏👏👏hang in there",
+            "Had lunch there yesterday and was amazing !!!",
+            "Great food !!👏👏"
+          ],
+          "publishedAt": "2026-10-15T17:58:11.000Z"
+        }
+      ],
+      "score": 0.91
+    }
+  ],
+  "rejected": [
+    {
+      "url": "https://www.tiktok.com/@lucyhale/video/7696651683593506078",
+      "reason": "Not about student budgets; celebrity nostalgic script unboxing."
+    },
+    {
+      "url": "https://www.tiktok.com/@talesfromthirdgrade/video/7695039250059840798",
+      "reason": "Parenting and public school attendance funding rant, not student budgeting."
+    },
+    {
+      "url": "https://www.tiktok.com/@abc6_fox28/video/7699754226720771342",
+      "reason": "Local news clip on public school district transportation cuts."
+    },
+    {
+      "url": "https://www.tiktok.com/@13abctoledo/video/7694650822659018015",
+      "reason": "Local news clip about a school police puppy."
+    },
+    {
+      "url": "https://www.tiktok.com/@arcnv/video/7700006639113456909",
+      "reason": "Call of Duty gaming clip."
+    },
+    {
+      "url": "https://www.tiktok.com/@liamrondi/video/7698720801679297814",
+      "reason": "Commentary on French school infrastructure strikes and political unrest."
+    },
+    {
+      "url": "https://www.tiktok.com/@wsjopinion/video/7694477257280081182",
+      "reason": "Financial news podcast commentary on France's national debt."
+    },
+    {
+      "url": "https://www.instagram.com/reel/DezKF-uAZZN/",
+      "reason": "Political podcast discussion on European welfare and immigration."
+    },
+    {
+      "url": "https://www.tiktok.com/@nycasiandad/video/7696663533034966302",
+      "reason": "Campus street interview on California political party policies."
+    },
+    {
+      "url": "https://www.instagram.com/reel/De1UtQBj1QL/",
+      "reason": "Movie trailer reaction video."
+    },
+    {
+      "url": "https://www.instagram.com/reel/De7MdgeRmOU/",
+      "reason": "Clip from a theatrical stage play."
+    },
+    {
+      "url": "https://www.tiktok.com/@mtc_nyc/video/7700652916713016590",
+      "reason": "Clip from a theatrical stage play."
+    },
+    {
+      "url": "https://www.instagram.com/reel/DevlNgnI0xD/",
+      "reason": "Commercial car rental advertisement."
+    },
+    {
+      "url": "https://www.tiktok.com/@couriercalifornia/video/7701062068543229198",
+      "reason": "Campus protest reporting against an institutional OpenAI contract."
+    },
+    {
+      "url": "https://www.tiktok.com/@thestockguy/video/7698430908415659295",
+      "reason": "Financial streamer explaining the French national debt crisis."
+    },
+    {
+      "url": "https://www.tiktok.com/@blackghostdargon/video/7695489716015172878",
+      "reason": "Hindi commentary on student politics and reality TV drama."
+    },
+    {
+      "url": "https://www.tiktok.com/@abigailimuria/video/7696326327091285269",
+      "reason": "Commentary on Indonesian forest fires and pollution."
+    },
+    {
+      "url": "https://www.instagram.com/reel/DeH_l8Gizcn/",
+      "reason": "College admissions prep advice analyzing Stanford's institutional endowment."
+    }
+  ],
+  "usedImages": true
+}

@@ -10,46 +10,185 @@
     "days": 30,
     "limit": 20
   },
-  "generatedAt": "2026-11-06T23:08:33.846Z",
+  "generatedAt": "2026-11-07T00:41:03.819Z",
   "model": "google/gemini-3.8-flash",
   "orianeFile": "data/oriane/saving-money_instagram+tiktok_f5000-200000_30d_n20.json",
+  "videosAnalysed": 20,
+  "totalMatches": 3319,
   "briefs": [
     {
-      "id": "the-frugal-childhood-confession",
-      "name": "The Frugal Childhood Confession",
-      "whyItWorks": "Sharing raw, vulnerable memories of extreme childhood frugality builds instant trust and reframes penny-pinching discipline into aspirational wealth-building wisdom.",
-      "hookPattern": "I used to think my family was broke growing up because [childhood frugal habit].",
+      "id": "everyday-cost-cutting-alternative",
+      "name": "Everyday Cost-Cutting Alternative",
+      "whyItWorks": "Exposes an overpriced consumer expense or event cost, then reveals an unexpected store refill, digital tool, or DIY alternative that saves immediate cash.",
+      "hookPattern": "If you are tired of paying [high price] for [item/event], here is how to get it for way less.",
       "beats": [
         {
           "fromSeconds": 0,
           "toSeconds": 4,
-          "shows": "Creator seated comfortably in an apartment setting speaking candidly into a wireless mic.",
-          "says": "I always thought we were dead broke growing up because my parents made me cut coupons every week.",
-          "onScreen": "I thought we were broke..."
+          "shows": "First-person perspective of an expensive receipt, ticket app, or store shelf item with an outrageous price tag.",
+          "says": "I refuse to pay full price for this when you can save over 50% with one simple switch.",
+          "onScreen": "STOP OVERPAYING FOR THIS"
         },
         {
           "fromSeconds": 4,
-          "toSeconds": 8,
-          "shows": "Slight camera punch-in as creator recalls specific childhood sacrifices and restrictions.",
-          "says": "I never got brand-name shoes and we only bought groceries that were on deep discount.",
-          "onScreen": "No brand names. Clearance only."
+          "toSeconds": 9,
+          "shows": "Demonstrating the budget alternative, showing the process of buying bulk, refilling, or using a discount platform.",
+          "says": "Instead of buying new every time, use this exact refill option to slash the cost.",
+          "onScreen": "THE CHEAPER ALTERNATIVE"
         },
         {
-          "fromSeconds": 8,
+          "fromSeconds": 9,
+          "toSeconds": 14,
+          "shows": "Side-by-side price comparison showing the total money kept in pocket.",
+          "says": "You get the exact same result while keeping over a hundred dollars in your wallet.",
+          "onScreen": "SAVINGS: $100+"
+        }
+      ],
+      "durationSeconds": 14,
+      "recommendedStyle": "ai-generated",
+      "clipTag": null,
+      "evidence": [
+        {
+          "url": "https://www.tiktok.com/@inventionontt/video/7695100851177737485",
+          "platform": "tiktok",
+          "handle": "inventionontt",
+          "thumbnailUrl": "https://social-catalog-static.oriane.xyz/oriane-contents/tiktok/7695100851177737485/thumbnail.webp",
+          "frameUrls": [
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7695100851177737485/1_0.40.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7695100851177737485/4_3.23.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7695100851177737485/7_9.60.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7695100851177737485/10_14.00.webp"
+          ],
+          "views": 2900000,
+          "followers": 20300,
+          "viewsPerFollower": 142.86,
+          "engagementRatePerViews": 3.073034482758621,
+          "spokenHook": "Tape this. Why? Why are you doing this? Because I've never seen anything like this.",
+          "onScreenText": [
+            "1",
+            "Invention",
+            "Petco's cat litter refill station lets customers reuse containers, reducing plastic waste and potentially saving money",
+            "sophresh.",
+            "ADVANCE",
+            "Moer che",
+            "smartest",
+            "itto",
+            "sopluesh",
+            "V",
+            "smartes self-clean"
+          ],
+          "audioTitle": "original sound",
+          "durationSeconds": 21,
+          "topComments": [
+            "I just bring my cat there once a day to use it sometimes he walks there by himself",
+            "I use wood pellets and its like 7 bucks for 40 pounds at tractor supply",
+            "too bad it's more expensive than most other litter",
+            "That’s the worst litter to get so much dust and ammonia",
+            "I get arm and hammer litter for like $20 for 40pounds. Thats a good deal right?"
+          ],
+          "publishedAt": "2026-10-10T18:01:50.000Z"
+        },
+        {
+          "url": "https://www.tiktok.com/@basaraski/video/7699920412855029022",
+          "platform": "tiktok",
+          "handle": "basaraski",
+          "thumbnailUrl": "https://social-catalog-static.oriane.xyz/oriane-contents/tiktok/7699920412855029022/thumbnail.webp",
+          "frameUrls": [
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7699920412855029022/1_2.00.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7699920412855029022/2_11.25.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7699920412855029022/3_12.46.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7699920412855029022/4_14.67.webp"
+          ],
+          "views": 950600,
+          "followers": 12700,
+          "viewsPerFollower": 74.85,
+          "engagementRatePerViews": 1.227540500736377,
+          "spokenHook": "If you're looking to go to the game this week and want to save some",
+          "onScreenText": [
+            "PACKERS",
+            "GREEN BAY, WI",
+            "E",
+            "HOW MUCH IT COSTS TO",
+            "SEE PACKERS VS LIONS",
+            "1961",
+            "1944",
+            "PACKERS\nG\nGREEN BAY, WI",
+            "Jane",
+            "WITH TICKPICK.",
+            "Xiao",
+            "THESE SAME SEATS"
+          ],
+          "audioTitle": "original sound",
+          "durationSeconds": 27,
+          "topComments": [
+            "already going this week l and used tickpick btww",
+            "expensive especially a divisional game like this but I know how to get them for less and that is with tick pic",
+            "Packers vs refs"
+          ],
+          "publishedAt": "2026-10-23T17:44:10.000Z"
+        },
+        {
+          "url": "https://www.instagram.com/reel/Db9rmuszy0m/",
+          "platform": "instagram",
+          "handle": "natalierosegraham",
+          "thumbnailUrl": "https://social-catalog-static.oriane.xyz/oriane-contents/instagram/Db9rmuszy0m/thumbnail.webp",
+          "frameUrls": [
+            "https://social-catalog-static.oriane.xyz/oriane-frames/instagram/Db9rmuszy0m/1_0.00.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/instagram/Db9rmuszy0m/4_1.80.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/instagram/Db9rmuszy0m/7_5.40.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/instagram/Db9rmuszy0m/10_9.00.webp"
+          ],
+          "views": 1412380,
+          "followers": 31221,
+          "viewsPerFollower": 45.24,
+          "engagementRatePerViews": 3.380534983503023,
+          "spokenHook": "",
+          "onScreenText": [
+            "I refuse to pay $7 for a box of kids snacks when i can make these with 2 ingredients"
+          ],
+          "audioTitle": "Original audio",
+          "durationSeconds": 13.333,
+          "topComments": [
+            "So you make them for 12 Dollars all by yourself",
+            "I made them and they tasted like doodoo :)",
+            "Honestly hell yeah, homemade snacks are incredible",
+            "what's this supposed to be a mimic of if the original product is more on the price-y side",
+            "Sugar and pinch of salt are missing probably"
+          ],
+          "publishedAt": "2026-10-20T22:52:30.000Z"
+        }
+      ],
+      "score": 1
+    },
+    {
+      "id": "money-lessons-narrative-storytime",
+      "name": "Money Lessons Narrative / Storytime",
+      "whyItWorks": "Builds high emotional resonance by contrasting childhood poverty or extreme parental frugality with modern financial habits, sparking intense debate about being cheap versus frugal.",
+      "hookPattern": "Growing up, I thought my [family member] was broke, but they were actually [financial mindset].",
+      "beats": [
+        {
+          "fromSeconds": 0,
+          "toSeconds": 5,
+          "shows": "Creator speaking directly to camera with an engaging, reflective expression.",
+          "says": "I spent my entire childhood thinking my dad was broke because we only bought things on clearance.",
+          "onScreen": "CHEAP VS FRUGAL"
+        },
+        {
+          "fromSeconds": 5,
           "toSeconds": 12,
-          "shows": "Creator leans forward to deliver the mindset revelation with a reflective expression.",
-          "says": "Years later my dad told me, 'We weren't poor, we were just intentional so we never carried debt.'",
-          "onScreen": "'Not poor. Frugal.'"
+          "shows": "Casual hand gestures as creator details extreme saving rules and cutting coupons.",
+          "says": "He made us cut out coupons every Sunday and never allowed brand-name sneakers, but he never had a car payment or mortgage.",
+          "onScreen": "Zero Debt Rule"
         },
         {
           "fromSeconds": 12,
-          "toSeconds": 15,
-          "shows": "Creator nods toward camera as key takeaway text appears on screen.",
-          "says": "That single habit completely changed how I build and protect my money today.",
-          "onScreen": "Financial wisdom starts at home."
+          "toSeconds": 18,
+          "shows": "Creator delivering the core punchline or lesson on long-term wealth building.",
+          "says": "Turns out he wasn't poor at all—he just understood living below his means so we could build real wealth.",
+          "onScreen": "Live Below Your Means"
         }
       ],
-      "durationSeconds": 15,
+      "durationSeconds": 18,
       "recommendedStyle": "ai-generated",
       "clipTag": null,
       "evidence": [
@@ -136,156 +275,44 @@
           "publishedAt": "2026-10-14T17:00:00.000Z"
         }
       ],
-      "score": 1
+      "score": 0.69
     },
     {
-      "id": "the-everyday-retail-markup-dupe",
-      "name": "The Everyday Retail Markup Dupe",
-      "whyItWorks": "Exposing overpriced store-bought packaged goods and showing a fast, tactile DIY or refill substitute triggers consumer outrage and offers instant cost savings.",
-      "hookPattern": "I refuse to pay $[price] for [packaged item] when I can [make/refill] it for [fraction of cost].",
+      "id": "income-breakdown-percentage-split",
+      "name": "Income Breakdown / Percentage Split",
+      "whyItWorks": "Shows exact numbers and formulas on screen to break down a specific paycheck or salary into fixed saving and spending buckets. Viewers watch till the end to compare their own finances and calculate their potential savings.",
+      "hookPattern": "I make [amount] a [time period], so here is exactly how I budget and save it.",
       "beats": [
         {
           "fromSeconds": 0,
-          "toSeconds": 3,
-          "shows": "First-person POV of hands holding expensive store packaging over a kitchen counter.",
-          "says": "I refuse to pay seven dollars for a box of store-bought snacks.",
-          "onScreen": "WHY PAY $7 FOR THIS?!"
+          "toSeconds": 4,
+          "shows": "Creator at a desk or pointing to an iPad/notepad showing a specific salary or take-home pay figure.",
+          "says": "I make $120,000 a year and this is exactly how I split my paycheck to save money.",
+          "onScreen": "MY SALARY: $120,000 | PAYDAY BUDGET"
         },
         {
-          "fromSeconds": 3,
-          "toSeconds": 7,
-          "shows": "Overhead fast-motion shot combining two cheap bulk ingredients into a stainless steel bowl.",
-          "says": "When you can make them at home in five minutes with literally two bulk ingredients.",
-          "onScreen": "2 Ingredients Only"
+          "fromSeconds": 4,
+          "toSeconds": 9,
+          "shows": "Pen or digital marker writing down fixed bills and percentage deducted for essentials.",
+          "says": "First, 55% goes straight to essentials: rent, utilities, and groceries.",
+          "onScreen": "55% Essentials = $2,500"
         },
         {
-          "fromSeconds": 7,
-          "toSeconds": 10,
-          "shows": "Close-up knife slice cutting the homemade bars cleanly on a wooden cutting board.",
-          "says": "It tastes better, takes zero effort, and costs under a dollar a serving.",
-          "onScreen": "Cost: $0.80 / serving"
+          "fromSeconds": 9,
+          "toSeconds": 14,
+          "shows": "Highlighting high-yield savings and investment account allocations.",
+          "says": "Next, 20% gets split between my 401k match and an emergency high-yield savings fund.",
+          "onScreen": "20% Savings & Investments"
         },
         {
-          "fromSeconds": 10,
-          "toSeconds": 12,
-          "shows": "Hands picking up a finished treat to show cross-section texture to the camera.",
-          "says": "Stop wasting your money and save this recipe.",
-          "onScreen": "SAVE TO MAKE LATER"
+          "fromSeconds": 14,
+          "toSeconds": 18,
+          "shows": "Writing down remaining amount for guilt-free spending.",
+          "says": "The rest is guilt-free spending money so you can enjoy life without blowing your goals.",
+          "onScreen": "Guilt-Free Spending"
         }
       ],
-      "durationSeconds": 12,
-      "recommendedStyle": "ai-generated",
-      "clipTag": null,
-      "evidence": [
-        {
-          "url": "https://www.tiktok.com/@inventionontt/video/7695100851177737485",
-          "platform": "tiktok",
-          "handle": "inventionontt",
-          "thumbnailUrl": "https://social-catalog-static.oriane.xyz/oriane-contents/tiktok/7695100851177737485/thumbnail.webp",
-          "frameUrls": [
-            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7695100851177737485/1_0.40.webp",
-            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7695100851177737485/4_3.23.webp",
-            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7695100851177737485/7_9.60.webp",
-            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7695100851177737485/10_14.00.webp"
-          ],
-          "views": 2900000,
-          "followers": 20300,
-          "viewsPerFollower": 142.86,
-          "engagementRatePerViews": 3.073034482758621,
-          "spokenHook": "Tape this. Why? Why are you doing this? Because I've never seen anything like this.",
-          "onScreenText": [
-            "1",
-            "Invention",
-            "Petco's cat litter refill station lets customers reuse containers, reducing plastic waste and potentially saving money",
-            "sophresh.",
-            "ADVANCE",
-            "Moer che",
-            "smartest",
-            "itto",
-            "sopluesh",
-            "V",
-            "smartes self-clean"
-          ],
-          "audioTitle": "original sound",
-          "durationSeconds": 21,
-          "topComments": [
-            "I just bring my cat there once a day to use it sometimes he walks there by himself",
-            "I use wood pellets and its like 7 bucks for 40 pounds at tractor supply",
-            "too bad it's more expensive than most other litter",
-            "That’s the worst litter to get so much dust and ammonia",
-            "I get arm and hammer litter for like $20 for 40pounds. Thats a good deal right?"
-          ],
-          "publishedAt": "2026-10-10T18:01:50.000Z"
-        },
-        {
-          "url": "https://www.instagram.com/reel/Db9rmuszy0m/",
-          "platform": "instagram",
-          "handle": "natalierosegraham",
-          "thumbnailUrl": "https://social-catalog-static.oriane.xyz/oriane-contents/instagram/Db9rmuszy0m/thumbnail.webp",
-          "frameUrls": [
-            "https://social-catalog-static.oriane.xyz/oriane-frames/instagram/Db9rmuszy0m/1_0.00.webp",
-            "https://social-catalog-static.oriane.xyz/oriane-frames/instagram/Db9rmuszy0m/4_1.80.webp",
-            "https://social-catalog-static.oriane.xyz/oriane-frames/instagram/Db9rmuszy0m/7_5.40.webp",
-            "https://social-catalog-static.oriane.xyz/oriane-frames/instagram/Db9rmuszy0m/10_9.00.webp"
-          ],
-          "views": 1412380,
-          "followers": 31221,
-          "viewsPerFollower": 45.24,
-          "engagementRatePerViews": 3.380534983503023,
-          "spokenHook": "",
-          "onScreenText": [
-            "I refuse to pay $7 for a box of kids snacks when i can make these with 2 ingredients"
-          ],
-          "audioTitle": "Original audio",
-          "durationSeconds": 13.333,
-          "topComments": [
-            "So you make them for 12 Dollars all by yourself",
-            "I made them and they tasted like doodoo :)",
-            "Honestly hell yeah, homemade snacks are incredible",
-            "what's this supposed to be a mimic of if the original product is more on the price-y side",
-            "Sugar and pinch of salt are missing probably"
-          ],
-          "publishedAt": "2026-10-20T22:52:30.000Z"
-        }
-      ],
-      "score": 0.97
-    },
-    {
-      "id": "the-paycheck-percentage-split",
-      "name": "The Paycheck Percentage Split",
-      "whyItWorks": "Revealing real paycheck figures and assigning every dollar to simple percentage buckets satisfies audience curiosity while providing an actionable, zero-stress saving blueprint.",
-      "hookPattern": "Here is exactly how I would split a [income amount] monthly paycheck.",
-      "beats": [
-        {
-          "fromSeconds": 0,
-          "toSeconds": 3,
-          "shows": "Talking head creator holding a mini lavalier microphone in a tidy home room, speaking directly to camera.",
-          "says": "If you take home twenty-five hundred dollars a month, here is the exact formula to save money.",
-          "onScreen": "HOW TO SPLIT $2,500/MO"
-        },
-        {
-          "fromSeconds": 3,
-          "toSeconds": 7,
-          "shows": "Graphic box slides in on screen listing 50% for essential needs and fixed monthly bills.",
-          "says": "Fifty percent goes immediately to rent, utilities, and your baseline groceries.",
-          "onScreen": "50% Essentials: $1,250"
-        },
-        {
-          "fromSeconds": 7,
-          "toSeconds": 11,
-          "shows": "Second graphic highlight pops up with an upward arrow icon representing automated savings and investment.",
-          "says": "Thirty percent gets swept automatically into a high-yield savings account and emergency fund.",
-          "onScreen": "30% Savings & HYSA: $750"
-        },
-        {
-          "fromSeconds": 11,
-          "toSeconds": 15,
-          "shows": "Final graphic fills in the remaining 20% for guilt-free spending as creator smiles and points at screen.",
-          "says": "The remaining twenty percent is yours to spend completely guilt-free.",
-          "onScreen": "20% Guilt-Free: $500 | SAVE THIS"
-        }
-      ],
-      "durationSeconds": 15,
+      "durationSeconds": 18,
       "recommendedStyle": "ai-generated",
       "clipTag": null,
       "evidence": [
@@ -365,66 +392,171 @@
           "publishedAt": "2026-10-14T18:33:20.000Z"
         }
       ],
-      "score": 0.82
+      "score": 0.57
+    },
+    {
+      "id": "contrasting-mindset-storyboard",
+      "name": "Contrasting Mindset Storyboard",
+      "whyItWorks": "Uses fast-paced animated or illustrative vignettes contrasting poor vs. rich financial dynamics to highlight common money leaks, relationship spending traps, and preventative habits.",
+      "hookPattern": "How poor versus rich people handle [money situation].",
+      "beats": [
+        {
+          "fromSeconds": 0,
+          "toSeconds": 4,
+          "shows": "Bold typography on screen over clean graphic visual introducing two archetypes.",
+          "says": "How poor versus rich people handle money when sharing expenses.",
+          "onScreen": "POOR VS. RICH: EXPENSES"
+        },
+        {
+          "fromSeconds": 4,
+          "toSeconds": 10,
+          "shows": "Kinetic typography and sound-effect driven text showing unspoken financial mistakes.",
+          "says": "The poor approach never discusses bills. One person pays rent, one pays lights, and nobody tracks savings until cards decline.",
+          "onScreen": "Mistake: Zero Communication"
+        },
+        {
+          "fromSeconds": 10,
+          "toSeconds": 16,
+          "shows": "Visual transition to an organized joint budgeting structure.",
+          "says": "The wealthy approach maps every dollar into shared accounts first, saving before spending.",
+          "onScreen": "Solution: Automatic Savings First"
+        }
+      ],
+      "durationSeconds": 16,
+      "recommendedStyle": "ai-generated",
+      "clipTag": null,
+      "evidence": [
+        {
+          "url": "https://www.tiktok.com/@virtuososnetwork/video/7698156365524520223",
+          "platform": "tiktok",
+          "handle": "virtuososnetwork",
+          "thumbnailUrl": "https://social-catalog-static.oriane.xyz/oriane-contents/tiktok/7698156365524520223/thumbnail.webp",
+          "frameUrls": [
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7698156365524520223/1_2.80.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7698156365524520223/8_24.40.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7698156365524520223/15_42.20.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7698156365524520223/22_84.80.webp"
+          ],
+          "views": 1000000,
+          "followers": 31900,
+          "viewsPerFollower": 31.35,
+          "engagementRatePerViews": 15.330499999999999,
+          "spokenHook": "How poor versus rich people handle money in a relationship.",
+          "onScreenText": [
+            "How Poor Vs Rich People Handle Money In A Relationship",
+            "$",
+            "OURS",
+            "RELATIONSHIP.",
+            "↑↑",
+            "PIZZAS.",
+            "W",
+            "LIGHTS",
+            "RENT",
+            "INTERNET",
+            "PAYS",
+            "MOVIE."
+          ],
+          "audioTitle": "original sound - braeden",
+          "durationSeconds": 118,
+          "topComments": [
+            "my dad gives money to my mom and my mom manages the money",
+            "thats bad advice even for rich or poor couples",
+            "The girl should leave him if she makes double the money",
+            "If a woman makes more than her man why would she be with him? You forgot the third couple the man who fully provides and the woman can use her money for saving and self care, that sounds like the happiest couple.",
+            "my parents give their money to me, I manage it🙂"
+          ],
+          "publishedAt": "2026-10-18T23:38:33.000Z"
+        },
+        {
+          "url": "https://www.tiktok.com/@virtuososnetwork/video/7695958380896210206",
+          "platform": "tiktok",
+          "handle": "virtuososnetwork",
+          "thumbnailUrl": "https://social-catalog-static.oriane.xyz/oriane-contents/tiktok/7695958380896210206/thumbnail.webp",
+          "frameUrls": [
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7695958380896210206/1_1.80.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7695958380896210206/24_30.20.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7695958380896210206/47_71.03.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7695958380896210206/70_97.80.webp"
+          ],
+          "views": 953900,
+          "followers": 31900,
+          "viewsPerFollower": 29.9,
+          "engagementRatePerViews": 8.662648076318272,
+          "spokenHook": "How poor versus rich people choose a business partner.",
+          "onScreenText": [
+            "r Vs Rich",
+            "How Poor",
+            "People Choose A",
+            "Business Partner",
+            "CHOOSE",
+            "POOR",
+            "RICH",
+            "TRUCK",
+            "$40,000°",
+            "$40,000",
+            "USED",
+            "$20,000 $20,00"
+          ],
+          "audioTitle": "original sound - braeden",
+          "durationSeconds": 133,
+          "topComments": [
+            "just do a business alone",
+            "This is why I'm doing business alone",
+            "js be the lawyer",
+            "resilient forgiving 😉",
+            "not a friend then"
+          ],
+          "publishedAt": "2026-10-13T01:29:18.000Z"
+        }
+      ],
+      "score": 0.53
     }
   ],
   "rejected": [
     {
       "url": "https://www.tiktok.com/@underrated.footba/video/7698292013187304726",
-      "reason": "Soccer highlights and commentary about Hatem Ben Arfa; false match for saving money."
+      "reason": "Football highlight reel about Hatem Ben Arfa; false keyword match completely unrelated to saving money."
     },
     {
       "url": "https://www.tiktok.com/@cindiezhu/video/7695162329909988609",
-      "reason": "ChatGPT prompt tutorial for summarizing books; not related to saving money."
-    },
-    {
-      "url": "https://www.tiktok.com/@basaraski/video/7699920412855029022",
-      "reason": "Paid affiliate pitch promoting the TickPick ticket marketplace app."
+      "reason": "Tech productivity tutorial showcasing ChatGPT book study prompts rather than saving money."
     },
     {
       "url": "https://www.tiktok.com/@aqayadubai/video/7698369347265236244",
-      "reason": "Brand account comedy sketch promoting an upscale Dubai cafe."
+      "reason": "Commercial comedy skit for Aqaya Dubai cafe brand account."
     },
     {
       "url": "https://www.instagram.com/reel/Dej-_ophDHd/",
-      "reason": "Documentary teaser about the 1990s Christian music industry; false match."
+      "reason": "Documentary promo regarding the Christian music industry and exploitation, not personal finance."
     },
     {
       "url": "https://www.tiktok.com/@bellabclark/video/7698025041333620001",
-      "reason": "Luxury handbag unboxing using breastfeeding savings as a satirical mom-math punchline."
+      "reason": "Luxury unboxing comedy/lifestyle vlog where breastfeeding is just a humorous justification for buying designer bags."
     },
     {
       "url": "https://www.tiktok.com/@littlepawjoy142/video/7695707782003084574",
-      "reason": "Re-uploaded clip of comedian John Mulaney on a late-night talk show; false match."
+      "reason": "Comedy clip compilation of John Mulaney; irrelevant search match."
     },
     {
       "url": "https://www.tiktok.com/@timmbrocks/video/7700568585990589728",
-      "reason": "Archival TV news broadcast (CBS Sunday Morning) discussing historical Vanderbilt family wealth."
+      "reason": "Historical archival documentary clip detailing the Vanderbilt family fortune."
     },
     {
       "url": "https://www.instagram.com/reel/DePSn8YhBzJ/",
-      "reason": "Creator monthly income transparency report focusing on gross earnings rather than saving money."
+      "reason": "Content creator monthly revenue earnings report focused on making money rather than saving it."
     },
     {
       "url": "https://www.instagram.com/reel/DfARX6JMv1E/",
-      "reason": "Corporate advertisement produced by HDFC Mutual Fund brand account."
-    },
-    {
-      "url": "https://www.tiktok.com/@virtuososnetwork/video/7698156365524520223",
-      "reason": "Whiteboard animation focused on relationship communication and hidden spending rather than actionable saving methods."
-    },
-    {
-      "url": "https://www.tiktok.com/@virtuososnetwork/video/7695958380896210206",
-      "reason": "Whiteboard animation about legal contracts when picking a business partner; false match."
+      "reason": "Corporate advertisement for HDFC Mutual Fund."
     },
     {
       "url": "https://www.tiktok.com/@ale441683/video/7700995369366244621",
-      "reason": "Slow-paced dealership inventory listicle with insufficient structural overlap to form a multi-video format."
+      "reason": "Long-form automotive inventory analysis focused on dealership inventory rather than a reproducible short-form saving format."
     },
     {
       "url": "https://www.instagram.com/reel/Dec7_MVvgFm/",
-      "reason": "Baywatch parody entertainment sketch; false match."
+      "reason": "Fictional parody/promo scene for Baywatch; completely unrelated to personal finance."
     }
   ],
-  "usedImages": true
+  "usedImages": false
 }

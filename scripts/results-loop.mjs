@@ -55,7 +55,7 @@ const briefs = formats
       evidence: rows.slice(0, 4).map((post) => ({
         url: post.link,
         platform: "instagram",
-        handle: account,
+        handle: "our-faceless-account",
         thumbnailUrl: null,
         frameUrls: [],
         views: post.views,
@@ -79,7 +79,7 @@ const best = briefs[0]?.score || 1;
 const medians = briefs.map((brief) => brief.score);
 for (const brief of briefs) brief.score = brief.score / best;
 
-const search = { query: `our account ${account}`, platforms: ["instagram"], minFollowers: 0, maxFollowers: 5000, days: 90, limit: posts.length };
+const search = { query: "our faceless account", platforms: ["instagram"], minFollowers: 0, maxFollowers: 5000, days: 90, limit: posts.length };
 const words = search.query.replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 const slug = `${words}_instagram_f0-5000_90d_n${posts.length}`;
 await writeFile(

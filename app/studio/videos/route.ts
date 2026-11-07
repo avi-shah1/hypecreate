@@ -16,7 +16,9 @@ export interface StudioVideo {
   beats?: Beat[];
 }
 
-const FOLDERS = ["renders", "renders/made-live", "out"];
+/** Folders of real-clip videos, one per account, plus what the Studio makes itself. */
+const REAL_CLIPS = ["renders/made-live", "renders/savewithcher", "renders/fintechben", "renders/notquiterichyet", "renders/investor.haven"];
+const FOLDERS = ["renders", ...REAL_CLIPS, "out"];
 
 const MODEL_NAMES: Record<string, string> = {
   "veo-3.1-fast-generate-001": "Veo 3.1 Fast",
@@ -39,10 +41,11 @@ export async function GET() {
 
       const base = file.replace(/(-raw)?\.mp4$/, "");
       const meta = JSON.parse(await readFile(path.join(dir, `${base}.json`), "utf8").catch(() => "{}"));
-      const model = typeof meta.model === "string" ? meta.model : null;
+      const real = REAL_CLIPS.includes(folder);
+      const model = typeof meta.model === "string" ? meta.model : real ? "Real clips" : null;
       videos.push({
         url: `/${folder}/${file}`,
-        name: meta.formatName ?? base.replace(/^test-[a-z0-9]+-/, "").replace(/-/g, " "),
+        name: meta.formatName ?? base.replace(/^test-[a-z0-9]+-/, "").replace(/^\d+-/, "").replace(/-/g, " "),
         model: model ? (MODEL_NAMES[model] ?? model) : null,
         formatId: meta.formatId ?? null,
         createdAt: info.mtime.toISOString(),
