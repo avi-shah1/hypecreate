@@ -94,7 +94,7 @@ export async function createVideo(body: CreateBody, onStage: (stage: string) => 
   }
 
   const words = script.scenes.map((scene) => scene.text ?? "").join(" ");
-  const needsLegal = showsPrizes || PRIZE_WORDS.test(words);
+  const needsLegal = showsPrizes || PRIZE_WORDS.test(words) || PRIZE_WORDS.test(script.caption);
 
   onStage("Cutting the clips and adding the text");
   const name = body.slug ?? `${body.brief?.id ?? "video"}-${style}-${shortHash(JSON.stringify(script))}`;
