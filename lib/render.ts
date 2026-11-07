@@ -86,7 +86,19 @@ function lookSteps(look: Look): string[] {
  * Text sits at the top of Reels' and TikTok's safe band: below the top 14% and
  * above the bottom 35%. The legal line alone goes below it, for the last 3 seconds.
  */
-export async function renderVideo(scenes: Scene[], outFile: string, legalLine?: string, music?: string): Promise<void> {
+export function renderVideo(scenes: Scene[], outFile: string, legalLine?: string, music?: string): Promise<void> {
+  const turn = (renders.queue ?? Promise.resolve())
+    .catch(() => {})
+    .then(() => renderNow(scenes, outFile, legalLine, music));
+  renders.queue = turn;
+  return turn;
+}
+
+// One render at a time for the whole server: three at once used 9.7 GB and crashed a 16 GB Mac.
+// On globalThis because Next can load this module more than once.
+const renders = globalThis as typeof globalThis & { queue?: Promise<void> };
+
+async function renderNow(scenes: Scene[], outFile: string, legalLine?: string, music?: string): Promise<void> {
   const temp = await mkdtemp(path.join(os.tmpdir(), "render-"));
   try {
     const inputs: string[] = [];
@@ -96,7 +108,8 @@ export async function renderVideo(scenes: Scene[], outFile: string, legalLine?: 
 
     for (const [index, scene] of scenes.entries()) {
       const speed = scene.speed ?? 1;
-      inputs.push("-ss", String(scene.start ?? 0), "-t", String(scene.seconds * speed), "-i", scene.file);
+      // Fewer decode threads cut a 5-clip 4K render from 2.6 GB to 1.1 GB, for about a third more time.
+      inputs.push("-threads", "2", "-ss", String(scene.start ?? 0), "-t", String(scene.seconds * speed), "-i", scene.file);
       const steps = [
         ...(speed === 1 ? [] : [`setpts=PTS/${speed}`]),
         "scale=1080:1920:force_original_aspect_ratio=increase",
@@ -136,8 +149,10 @@ export async function renderVideo(scenes: Scene[], outFile: string, legalLine?: 
         ...inputs,
         // Instagram's web uploader can't add a sound, so a video never goes out silent.
         ...(music ? ["-t", String(total), "-stream_loop", "-1", "-i", music] : ["-f", "lavfi", "-t", String(total), "-i", "anullsrc=r=44100:cl=stereo"]),
+        "-filter_complex_threads", "2",
         "-filter_complex", filters.join(";"),
         "-map", `[${last}]`, "-map", `${scenes.length}:a`,
+        "-threads", "4",
         "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p",
         "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709",
         ...(music ? ["-af", `afade=t=out:st=${Math.max(0, total - 0.6)}:d=0.6`] : []),

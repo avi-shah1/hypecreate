@@ -25,5 +25,5 @@ async function worker() {
   }
 }
 
-// Each render decodes 4K video, so keep it to a few at a time on a fanless laptop.
+// lib/render.ts runs the renders themselves one at a time. This only caps requests in flight.
 await Promise.all([worker(), worker(), worker()]);
