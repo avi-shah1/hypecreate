@@ -102,11 +102,11 @@ export default function Studio() {
       <main className="mx-auto w-full max-w-6xl px-4 py-12 md:px-8 md:py-16">
         <header className="flex flex-wrap items-end justify-between gap-6">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-400">Understudy Studio</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-400">Studio</p>
             <h1 className="mt-3 text-5xl font-semibold tracking-tight md:text-7xl">
               What&apos;s working now,
               <br />
-              <span className="text-zinc-500">remade as AI ads.</span>
+              <span className="text-zinc-500">remade from your own clips.</span>
             </h1>
           </div>
           {USE_MOCK_GENERATE && (

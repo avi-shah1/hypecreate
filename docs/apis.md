@@ -53,10 +53,16 @@ Docs: https://docs.gmicloud.ai, with every page listed at https://docs.gmicloud.
 
 | Job | Model | Payload | Price |
 |---|---|---|---|
-| Vertical clip | `veo-3.1-fast-generate-001` | `prompt`, `aspectRatio: "9:16"`, `durationSeconds` 4, 6 or 8, `generateAudio` | $0.15 a second |
+| Vertical clip, the default | `seedance-2-5-260628` | `prompt`, `ratio: "9:16"`, `duration` 4 to 15, `resolution` 720p, `generate_audio`, `first_frame` (public URL) | see pricing page |
+| Vertical clip, the fallback | `veo-3.1-fast-generate-001` | `prompt`, `negativePrompt`, `aspectRatio: "9:16"`, `durationSeconds` "4", "6" or "8", `generateAudio` | $0.15 a second |
+| Animate a real frame | `kling-v3-image-to-video` | `image` (URL or base64), `prompt`, `negative_prompt`, `duration` 3 to 15, `mode` | from $0.084 a second |
 | Vertical clip from references | `seedance-2-0-fast-260128` | `prompt`, `ratio: "9:16"`, `duration` 4 to 15, `reference_images`, `reference_videos` | not stated |
 | Clip, no ratio documented | `kling-v3-text-to-video` | `prompt`, `duration` 3 to 15, `mode` | from $0.084 a second |
 | Voiceover | `minimax-tts-speech-2.8-turbo` | `text`, `voice_id`, `speed`, `language_boost` | see pricing page |
+
+**Realism, tested.** Veo Fast with a plain scene description looked like stock video. `PHONE_LOOK` in `lib/gmi.ts` on Seedance 2.5, and Kling animating a real frame from our own footage, both looked filmed on a phone. Avoid close-up hands and readable screens.
+
+**Credits.** Expensive jobs fail first with 402 "Insufficient credits" while chat and speech keep working. Submits also answer 500 at random: retry the same request.
 
 Pricing: https://docs.gmicloud.ai/inference-engine/billing/price
 

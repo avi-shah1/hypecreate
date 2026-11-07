@@ -13,25 +13,39 @@ export const MODELS = {
   speech: "minimax-tts-speech-2.8-turbo",
 } as const;
 
+/**
+ * What makes generated b-roll pass as phone footage. Tested 2026-11-06: Veo Fast with a plain
+ * scene description looked like stock video. This wording on Seedance 2.5 looked filmed.
+ * Scenes with no close-up hands and no screens hold up best.
+ */
+export const PHONE_LOOK =
+  "Raw, unedited vertical video filmed on an iPhone by a regular person and posted straight to TikTok. It must look like real phone footage, not a film or an ad: phone auto-exposure, slightly blown-out windows, phone HDR look, a little digital noise and over-sharpening, natural handheld shake and small reframes, imperfect off-center framing, ordinary mixed indoor and daylight lighting, real everyday clutter. One continuous take. Nothing is styled or staged.";
+export const NOT_THIS =
+  "cinematic, film look, color grading, shallow depth of field, bokeh, dreamy soft light, golden glow, stock footage, commercial, studio lighting, gimbal, drone, dolly, slow motion, 3D render, CGI, perfect composition, captions, on-screen text, watermark, logos";
+
 /** Vertical video models, best first. Each entry builds that model's payload. */
 const VIDEO_MODELS: { model: string; costPerSecond: number; payload: (prompt: string, seconds: number) => object }[] = [
+  {
+    model: "seedance-2-5-260628",
+    costPerSecond: 0,
+    payload: (prompt, seconds) => ({
+      prompt: `${PHONE_LOOK} ${prompt} Avoid: ${NOT_THIS}.`,
+      ratio: "9:16",
+      duration: Math.max(4, Math.min(15, Math.round(seconds))),
+      resolution: "720p",
+      generate_audio: false,
+    }),
+  },
   {
     model: "veo-3.1-fast-generate-001",
     costPerSecond: 0.15,
     payload: (prompt, seconds) => ({
-      prompt,
+      prompt: `${PHONE_LOOK} ${prompt}`,
+      negativePrompt: NOT_THIS,
       aspectRatio: "9:16",
-      // A string: Veo answers 500 to a number here. Tested 2026-11-06, 53 s for 6 s of video.
-      durationSeconds: String(
-        [4, 6, 8].reduce((best, s) => (Math.abs(s - seconds) < Math.abs(best - seconds) ? s : best)),
-      ),
+      durationSeconds: String([4, 6, 8].reduce((best, s) => (Math.abs(s - seconds) < Math.abs(best - seconds) ? s : best))),
+      generateAudio: false,
     }),
-  },
-  {
-    // 186 s for 6 s of video in the same test, so it is the fallback.
-    model: "seedance-2-0-fast-260128",
-    costPerSecond: 0,
-    payload: (prompt, seconds) => ({ prompt, ratio: "9:16", duration: Math.max(4, Math.min(15, Math.round(seconds))) }),
   },
 ];
 
@@ -75,13 +89,14 @@ export async function generate(
   options: { timeoutMs?: number; pollMs?: number } = {},
 ): Promise<string[]> {
   const headers = { Authorization: `Bearer ${apiKey()}`, "Content-Type": "application/json" };
-  const submitted = await fetch(QUEUE_URL, {
-    method: "POST",
-    headers,
-    body: JSON.stringify({ model, payload }),
-  });
+  // GMI answers 500 at random, and the same request then goes through.
+  let submitted = await submit();
+  for (let attempt = 0; attempt < 3 && submitted.status >= 500; attempt++) submitted = await submit();
   const job = await submitted.json();
   if (!submitted.ok) throw new Error(`GMI submit ${submitted.status}: ${JSON.stringify(job)}`);
+  function submit() {
+    return fetch(QUEUE_URL, { method: "POST", headers, body: JSON.stringify({ model, payload }) });
+  }
 
   const deadline = Date.now() + (options.timeoutMs ?? 5 * 60_000);
   while (Date.now() < deadline) {
