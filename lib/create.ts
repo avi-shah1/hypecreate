@@ -1,7 +1,7 @@
 // One finished video from a format, or from a script written by hand. Shared by
 // /api/create (one request, waits for the video) and /api/generate (the Studio's job).
 import { createHash } from "node:crypto";
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import type { Beat, CreateRequest, CreateResult, VideoStyle } from "./contract";
 import { chat, generateClip, type GeneratedClip } from "./gmi";
@@ -21,8 +21,6 @@ interface ScriptScene {
 export interface Script {
   scenes: ScriptScene[];
   caption: string;
-  /** What kind of sound to add in the app when posting. */
-  sound?: string;
 }
 
 export type CreateBody = Partial<CreateRequest> & {
@@ -104,7 +102,7 @@ export async function createVideo(body: CreateBody, onStage: (stage: string) => 
   const name = body.slug ?? `${body.brief?.id ?? "video"}-${style}-${shortHash(JSON.stringify(script))}`;
   const relative = path.join(body.folder ?? "", `${name}.mp4`);
   const outFile = path.join(process.cwd(), "public", "renders", relative);
-  await renderVideo(scenes, outFile, needsLegal ? LEGAL[language] : undefined);
+  await renderVideo(scenes, outFile, needsLegal ? LEGAL[language] : undefined, await pickMusic(name));
   await writeFile(outFile.replace(/\.mp4$/, ".txt"), postingNotes(script, words));
 
   return {
@@ -140,7 +138,7 @@ Rules for this video:
 - Sell the fun. Never say how the bank connection works or where the savings stay.
 - Never put legal text on screen or in the caption: the renderer adds the legal line.
 - Claims about the product come only from the brand rules. General money tips are fine, with honest round numbers. Do not invent a personal story, an age or a number about the person on screen: use a general voice, or a hook they approved.
-- Reply with JSON only: {"scenes":[{"clip":"file from the list","start":0,"seconds":4,"text":"on-screen line"}],"caption":"post caption","sound":"the kind of sound to add when posting"}`,
+- Reply with JSON only: {"scenes":[{"clip":"file from the list","start":0,"seconds":4,"text":"on-screen line"}],"caption":"post caption"}`,
     },
     {
       role: "user",
@@ -176,8 +174,16 @@ async function saveGenerated(generated: GeneratedClip): Promise<string> {
   return file;
 }
 
+/** A licensed instrumental from clips/music, the same one for the same video. */
+async function pickMusic(name: string): Promise<string | undefined> {
+  const dir = path.join(CLIPS_DIR, "music");
+  const tracks = (await readdir(dir).catch(() => [] as string[])).filter((file) => file.endsWith(".mp3")).sort();
+  if (tracks.length === 0) return undefined;
+  return path.join(dir, tracks[parseInt(shortHash(name), 16) % tracks.length]);
+}
+
 function postingNotes(script: Script, words: string): string {
-  return `CAPTION\n${script.caption}\n\nON SCREEN\n${words}\n\nSOUND\n${script.sound ?? "Add a sound from the app's recommended list when posting."}\n`;
+  return `CAPTION\n${script.caption}\n\nON SCREEN\n${words}\n`;
 }
 
 function shortHash(text: string): string {

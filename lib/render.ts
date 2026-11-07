@@ -61,7 +61,7 @@ function drawText(textFile: string, options: { size: number; y: string; border: 
  * Text sits at the top of Reels' and TikTok's safe band: below the top 14% and
  * above the bottom 35%. The legal line alone goes below it, for the last 3 seconds.
  */
-export async function renderVideo(scenes: Scene[], outFile: string, legalLine?: string): Promise<void> {
+export async function renderVideo(scenes: Scene[], outFile: string, legalLine?: string, music?: string): Promise<void> {
   const temp = await mkdtemp(path.join(os.tmpdir(), "render-"));
   try {
     const inputs: string[] = [];
@@ -106,12 +106,13 @@ export async function renderVideo(scenes: Scene[], outFile: string, legalLine?: 
       [
         "-nostdin", "-hide_banner", "-loglevel", "error", "-y",
         ...inputs,
-        // Silent track: the poster adds a sound in the app, where it counts for reach.
-        "-f", "lavfi", "-t", String(total), "-i", "anullsrc=r=44100:cl=stereo",
+        // Instagram's web uploader can't add a sound, so a video never goes out silent.
+        ...(music ? ["-t", String(total), "-stream_loop", "-1", "-i", music] : ["-f", "lavfi", "-t", String(total), "-i", "anullsrc=r=44100:cl=stereo"]),
         "-filter_complex", filters.join(";"),
         "-map", `[${last}]`, "-map", `${scenes.length}:a`,
         "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p",
         "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709",
+        ...(music ? ["-af", `afade=t=out:st=${Math.max(0, total - 0.6)}:d=0.6`] : []),
         "-c:a", "aac", "-b:a", "128k", "-movflags", "+faststart",
         outFile,
       ],

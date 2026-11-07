@@ -14,9 +14,10 @@ export const MODELS = {
 } as const;
 
 /**
- * What makes generated b-roll pass as phone footage. Tested 2026-11-06: Veo Fast with a plain
- * scene description looked like stock video. This wording on Seedance 2.5 looked filmed.
- * Scenes with no close-up hands and no screens hold up best.
+ * What makes generated b-roll pass as phone footage. Tested 2026-11-06 on the same scene:
+ * MiniMax H3 looked filmed and is the cheapest of the good ones. Wan 3.0 came second and
+ * Seedance 2.5 third. Veo 3.1 and Luma Ray 3.2 looked artificial. Scenes with no close-up
+ * hands and no screens hold up best.
  */
 export const PHONE_LOOK =
   "Raw, unedited vertical video filmed on an iPhone by a regular person and posted straight to TikTok. It must look like real phone footage, not a film or an ad: phone auto-exposure, slightly blown-out windows, phone HDR look, a little digital noise and over-sharpening, natural handheld shake and small reframes, imperfect off-center framing, ordinary mixed indoor and daylight lighting, real everyday clutter. One continuous take. Nothing is styled or staged.";
@@ -26,25 +27,36 @@ export const NOT_THIS =
 /** Vertical video models, best first. Each entry builds that model's payload. */
 const VIDEO_MODELS: { model: string; costPerSecond: number; payload: (prompt: string, seconds: number) => object }[] = [
   {
+    model: "MiniMax-H3",
+    costPerSecond: 0.13,
+    payload: (prompt, seconds) => ({
+      prompt: `${PHONE_LOOK} ${prompt} Avoid: ${NOT_THIS}.`,
+      ratio: "9:16",
+      duration: Math.max(4, Math.min(10, Math.round(seconds))),
+      resolution: "2K",
+    }),
+  },
+  {
+    model: "wan3.0-video-prime",
+    costPerSecond: 0.2,
+    payload: (prompt, seconds) => ({
+      prompt: `${PHONE_LOOK} ${prompt}`,
+      negative_prompt: NOT_THIS,
+      ratio: "9:16",
+      duration: Math.max(2, Math.min(30, Math.round(seconds))),
+      resolution: "1080P",
+      prompt_extend: false,
+    }),
+  },
+  {
     model: "seedance-2-5-260628",
-    costPerSecond: 0,
+    costPerSecond: 0.231,
     payload: (prompt, seconds) => ({
       prompt: `${PHONE_LOOK} ${prompt} Avoid: ${NOT_THIS}.`,
       ratio: "9:16",
       duration: Math.max(4, Math.min(15, Math.round(seconds))),
       resolution: "720p",
       generate_audio: false,
-    }),
-  },
-  {
-    model: "veo-3.1-fast-generate-001",
-    costPerSecond: 0.15,
-    payload: (prompt, seconds) => ({
-      prompt: `${PHONE_LOOK} ${prompt}`,
-      negativePrompt: NOT_THIS,
-      aspectRatio: "9:16",
-      durationSeconds: String([4, 6, 8].reduce((best, s) => (Math.abs(s - seconds) < Math.abs(best - seconds) ? s : best))),
-      generateAudio: false,
     }),
   },
 ];
