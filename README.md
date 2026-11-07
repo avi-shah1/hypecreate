@@ -12,7 +12,7 @@ Built by Ben (create), Avi (Oriane signal) and Julius (brain view). This repo st
 |---|---|
 | `/studio` | Scan a niche on Oriane, see the winning formats with their evidence, make a video in three styles (real clips and app demo, 7-second b-roll, AI), look at it in the brain view, browse everything ready to post |
 | `/brain` | The brain view on its own. `/brain?video=/renders/x.mp4` opens with that video |
-| `/queue` | Review the posts planned for each account: video, caption, slot, approve or hold |
+| `/queue` | The posts planned for each account: video, caption, slot, and whether Ben has OK'd it. He reviews in chat, so the page is read-only |
 
 ## Run it
 

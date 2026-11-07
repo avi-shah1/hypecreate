@@ -23,7 +23,7 @@ The setup step is "connect your chequing or savings account" or, shorter, "conne
 ## Never say
 
 - "bank" or "savings account" to describe Lodavo itself: say "savings app"
-- "safe", "can't lose", "risk-free", "insured", "guaranteed"
+- "safe", "risk-free", "insured", "guaranteed". "You can't lose your money" is fine and literally true for Lodavo, which holds no money and charges nothing: use it against gambling or lotteries, and "your savings stay in your own bank account" elsewhere.
 - "18+": say "age of majority"
 - "gambling", "betting", "wager", and "lottery" unless comparing against one
 - "win prizes" without "can win" or "chance to win"
