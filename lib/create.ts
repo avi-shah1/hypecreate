@@ -6,7 +6,7 @@ import path from "node:path";
 import type { Beat, CreateRequest, CreateResult, VideoStyle } from "./contract";
 import { chat, generateClip, type GeneratedClip } from "./gmi";
 import { clipPath, CLIPS_DIR, loadLibrary, type LibraryClip } from "./library";
-import { renderVideo, type Scene } from "./render";
+import { renderVideo, type Look, type Scene } from "./render";
 
 interface ScriptScene {
   /** A file from the clip library. */
@@ -16,6 +16,8 @@ interface ScriptScene {
   start?: number;
   seconds: number;
   text?: string;
+  /** Playback speed; 0.9 slows the clip by a tenth. */
+  speed?: number;
 }
 
 export interface Script {
@@ -30,6 +32,8 @@ export type CreateBody = Partial<CreateRequest> & {
   folder?: string;
   /** False leaves the on-screen legal line off, whatever the video says. */
   legal?: boolean;
+  /** Gives app footage shared between videos its own zoom, pan and grade in this one. */
+  vary?: boolean;
 };
 
 export interface CreatedVideo extends CreateResult {
@@ -78,7 +82,9 @@ export async function createVideo(body: CreateBody, onStage: (stage: string) => 
     } else {
       const clip = pickClip(library, scene.clip, style, scenes.length === 0);
       const start = Math.max(0, Math.min(scene.start ?? 0, clip.seconds - 1));
-      const seconds = Math.min(scene.seconds, clip.seconds - start);
+      const speed = scene.speed ?? 1;
+      const seconds = Math.min(scene.seconds, (clip.seconds - start) / speed);
+      const look = body.vary && clip.tags.includes("app-demo") ? lookFor(`${body.slug}-${start}`) : undefined;
       // The brain view's hook check flagged no cut in the first second: open with a jump cut.
       const spare = clip.seconds - start - seconds;
       if (style === "hook-plus-demo" && scenes.length === 0 && seconds >= 3 && spare >= 0.4) {
@@ -86,7 +92,7 @@ export async function createVideo(body: CreateBody, onStage: (stage: string) => 
         scenes.push({ file: clipPath(clip), start, seconds: 1, text: scene.text });
         scenes.push({ file: clipPath(clip), start: start + 1 + skip, seconds: seconds - 1, text: scene.text });
       } else {
-        scenes.push({ file: clipPath(clip), start, seconds, text: scene.text });
+        scenes.push({ file: clipPath(clip), start, seconds, text: scene.text, speed, look });
       }
       clipsUsed.push(clip.file);
       showsPrizes ||= clip.tags.includes("prizes");
@@ -182,6 +188,20 @@ async function pickMusic(name: string): Promise<string | undefined> {
   const tracks = (await readdir(dir).catch(() => [] as string[])).filter((file) => file.endsWith(".mp3")).sort();
   if (tracks.length === 0) return undefined;
   return path.join(dir, tracks[parseInt(shortHash(name), 16) % tracks.length]);
+}
+
+/** The same video always gets the same look, so a re-render comes out the same. */
+function lookFor(key: string): Look {
+  const hash = createHash("sha1").update(key).digest();
+  const pick = (index: number, low: number, high: number) => Number((low + (hash[index] / 255) * (high - low)).toFixed(3));
+  return {
+    zoom: pick(0, 1.015, 1.04),
+    x: pick(1, 0, 1),
+    y: pick(2, 0, 1),
+    brightness: pick(3, -0.012, 0.012),
+    contrast: pick(4, 0.98, 1.03),
+    saturation: pick(5, 0.97, 1.05),
+  };
 }
 
 function postingNotes(script: Script, words: string): string {

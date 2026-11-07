@@ -1,6 +1,7 @@
 // Renders Notes-style list screens that build line by line, for the middle of a video.
 //   node scripts/list-screens.cjs clips/screens/notes.json clips/screens
-// notes.json: {"<name>": {"theme": "dark"|"light", "title": "...", "lines": ["..."]}}.
+// notes.json: {"<name>": {"theme": "dark"|"light", "title": "...", "lines": ["..."], "lead": 1.1}}.
+// lead (optional) holds an empty note first, so the hook's text can finish over it.
 // Writes <name>.mp4 at 1080x1920 and prints each one's length, to paste into the batch and library.json.
 const { execFileSync } = require("node:child_process");
 const { mkdtempSync, readFileSync, rmSync, writeFileSync } = require("node:fs");
@@ -25,7 +26,7 @@ const page = (note, shown, scale) => {
   p{font-size:${62 * scale}px;line-height:1.26;margin:0 0 ${24 * scale}px}
   .off{visibility:hidden}</style>
   <div class="bar"><span>&#8249; Notes</span><span>&#8943;</span></div>
-  <div class="note"><h1>${note.title}</h1>${note.lines.map((line, i) => `<p class="${i < shown ? "" : "off"}">${line}</p>`).join("")}</div>`;
+  <div class="note"><h1 class="${shown < 0 ? "off" : ""}">${note.title}</h1>${note.lines.map((line, i) => `<p class="${i < shown ? "" : "off"}">${line}</p>`).join("")}</div>`;
 };
 const words = (text) => text.split(/\s+/).length;
 
@@ -44,12 +45,12 @@ const words = (text) => text.split(/\s+/).length;
     }
     const list = [];
     let total = 0;
-    for (let shown = 0; shown <= note.lines.length; shown++) {
+    for (let shown = note.lead ? -1 : 0; shown <= note.lines.length; shown++) {
       await tab.setContent(page(note, shown, scale));
       const png = path.join(temp, `${name}-${shown}.png`);
       await tab.screenshot({ path: png });
-      let hold = shown === 0 ? Math.min(1.4, 0.7 + 0.2 * words(note.title)) : 0.45 + 0.2 * words(note.lines[shown - 1]);
-      if (shown === note.lines.length) hold += 1;
+      let hold = shown < 0 ? note.lead : shown === 0 ? Math.min(1.2, 0.6 + 0.15 * words(note.title)) : 0.4 + 0.17 * words(note.lines[shown - 1]);
+      if (shown === note.lines.length) hold += 0.8;
       list.push(`file '${png}'\nduration ${hold.toFixed(2)}`);
       total += hold;
     }

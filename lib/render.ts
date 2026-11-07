@@ -17,6 +17,21 @@ export interface Scene {
   seconds: number;
   /** On-screen text. Newlines are kept; long lines are wrapped. */
   text?: string;
+  /** Playback speed: 0.9 slows the clip by a tenth. seconds is the length on screen. */
+  speed?: number;
+  /** A slight zoom, pan and grade, so footage shared between videos isn't the same pixels. */
+  look?: Look;
+}
+
+export interface Look {
+  /** 1.015 to 1.04. */
+  zoom: number;
+  /** 0 to 1: where the crop sits inside the zoomed frame. */
+  x: number;
+  y: number;
+  brightness: number;
+  contrast: number;
+  saturation: number;
 }
 
 /** Keeps a line inside the 6% side margins at this font size. */
@@ -57,6 +72,16 @@ function drawText(textFile: string, options: { size: number; y: string; border: 
   return `drawtext=${parts.join(":")}`;
 }
 
+function lookSteps(look: Look): string[] {
+  const width = Math.round(540 * look.zoom) * 2;
+  const height = Math.round(960 * look.zoom) * 2;
+  return [
+    `scale=${width}:${height}`,
+    `crop=1080:1920:${Math.round((width - 1080) * look.x)}:${Math.round((height - 1920) * look.y)}`,
+    `eq=brightness=${look.brightness}:contrast=${look.contrast}:saturation=${look.saturation}`,
+  ];
+}
+
 /**
  * Text sits at the top of Reels' and TikTok's safe band: below the top 14% and
  * above the bottom 35%. The legal line alone goes below it, for the last 3 seconds.
@@ -70,10 +95,13 @@ export async function renderVideo(scenes: Scene[], outFile: string, legalLine?: 
     let total = 0;
 
     for (const [index, scene] of scenes.entries()) {
-      inputs.push("-ss", String(scene.start ?? 0), "-t", String(scene.seconds), "-i", scene.file);
+      const speed = scene.speed ?? 1;
+      inputs.push("-ss", String(scene.start ?? 0), "-t", String(scene.seconds * speed), "-i", scene.file);
       const steps = [
+        ...(speed === 1 ? [] : [`setpts=PTS/${speed}`]),
         "scale=1080:1920:force_original_aspect_ratio=increase",
         "crop=1080:1920",
+        ...(scene.look ? lookSteps(scene.look) : []),
         "setsar=1",
         "fps=30",
         "format=yuv420p",
