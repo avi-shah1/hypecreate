@@ -10,46 +10,158 @@
     "days": 30,
     "limit": 20
   },
-  "generatedAt": "2026-11-06T23:19:03.166Z",
+  "generatedAt": "2026-11-07T00:25:52.817Z",
   "model": "google/gemini-3.8-flash",
   "orianeFile": "data/oriane/budgeting-app_instagram+tiktok_f5000-200000_30d_n20.json",
+  "videosAnalysed": 20,
+  "totalMatches": 192,
   "briefs": [
     {
-      "id": "psychological-money-partitioning-rule",
-      "name": "Psychological Money Partitioning Rule",
-      "whyItWorks": "Uses a relatable counter-intuitive paradox about people who look well-off but claim they have no spending money to introduce a strict mental budgeting rule that separates cash into non-spendable digital buckets.",
-      "hookPattern": "There are some people that you ask for [money/help] and they tell you [common excuse], meanwhile they have [large sum] sitting in [account].",
+      "id": "personal-finance-reset-breakdown",
+      "name": "Personal Finance Reset Breakdown",
+      "whyItWorks": "Builds instant trust through vulnerable storytelling about a dramatic financial turnaround, then shows concrete tools and steps (budgeting setup, high-yield accounts) with visual receipts.",
+      "hookPattern": "These are [number] things I did to go from [negative financial situation] to [impressive financial milestone]",
+      "beats": [
+        {
+          "fromSeconds": 0,
+          "toSeconds": 4,
+          "shows": "Creator talking directly to camera, showing an overlay of past broke balance vs current high net worth balance chart",
+          "says": "These are 3 things I did to go from being completely broke to hitting a 250k net worth by 30.",
+          "onScreen": "3 THINGS I DID TO GO FROM BROKE TO $250K"
+        },
+        {
+          "fromSeconds": 4,
+          "toSeconds": 9,
+          "shows": "Close-up cut to screen recording or notebook showing incoming paycheck and expense breakdown",
+          "says": "First, I started tracking every dollar using a budgeting app. If you can't manage your money now, you won't later.",
+          "onScreen": "Step 1: Track Every Dollar"
+        },
+        {
+          "fromSeconds": 9,
+          "toSeconds": 15,
+          "shows": "Back to creator pointing up to savings interest rate graphic and phone app interface",
+          "says": "Second, move your emergency fund into a high-yield savings account so your cash actually grows.",
+          "onScreen": "Step 2: High Yield Savings"
+        }
+      ],
+      "durationSeconds": 15,
+      "recommendedStyle": "ai-generated",
+      "clipTag": null,
+      "evidence": [
+        {
+          "url": "https://www.tiktok.com/@overgenpoverty/video/7694796697033100557",
+          "platform": "tiktok",
+          "handle": "overgenpoverty",
+          "thumbnailUrl": "https://social-catalog-static.oriane.xyz/oriane-contents/tiktok/7694796697033100557/thumbnail.webp",
+          "frameUrls": [
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7694796697033100557/1_2.60.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7694796697033100557/4_10.83.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7694796697033100557/7_23.80.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7694796697033100557/10_42.23.webp"
+          ],
+          "views": 43800,
+          "followers": 20900,
+          "viewsPerFollower": 2.1,
+          "engagementRatePerViews": 11.691780821917808,
+          "spokenHook": "These are three things that I did to go from living in poverty to becoming",
+          "onScreenText": [
+            "3 things I did to escape poverty\n$252,071\n+$210,140.77 (80.17%)",
+            "becoming",
+            "MON",
+            "so",
+            "Paycheck : April 30, 2023\nsoFi: $2500\nchase: $365\nTotal: $2865",
+            "pue: Rent (5/1) $1225\nSoFi loan (5/11) $238\nNetflix (5/3) $20\nTotal: $1850",
+            "Netflix (5/3) $ 20\nCapital one (5/5) $ 5\nAmex (5/19) $ 367\nother : Miami? $1015 leftover for OTHER:",
+            "Miami?\nDermatologist, PCP - $30, $15 Groceries - $200\nJane's Bday - Starbucks $20? Meds - $10",
+            "Jane's Bday - Starbucks $20? Meds - $10\nDentrist - $860 wedding - $100\nMother's Day - $75\nupcoming /Next paycheck: Discover - 5/20 $338\nTally - 5/23 $200\nTamhile - 5/26 $170",
+            "4200",
+            "Tmobile-5/26 $170",
+            "Lemonade-5/25 $30"
+          ],
+          "audioTitle": "BAD BUNNY MONACO SLOWED",
+          "durationSeconds": 64,
+          "topComments": [
+            "My thing is budgeting!! I have not been able to find a system 😭😭😭",
+            "Commenting because I’ve been looking for a good high yield savings account and Roth IRA",
+            "Please forgive me , but you’re not rich. you’re smart and a good saver and you’re teaching our people basic budgeting, which is a good thing but true wealth is generation. I understand the struggle I went from.DACA 0-MM , our people are more than basic budgets,their entrepreneurs .All with love",
+            "so proud of you, 250K is incredible!!",
+            "👍"
+          ],
+          "publishedAt": "2026-10-09T22:21:34.000Z"
+        },
+        {
+          "url": "https://www.tiktok.com/@_nursebaemel/video/7698524185299127582",
+          "platform": "tiktok",
+          "handle": "_nursebaemel",
+          "thumbnailUrl": "https://social-catalog-static.oriane.xyz/oriane-contents/tiktok/7698524185299127582/thumbnail.webp",
+          "frameUrls": [
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7698524185299127582/1_2.00.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7698524185299127582/4_29.40.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7698524185299127582/7_46.80.webp",
+            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7698524185299127582/10_168.43.webp"
+          ],
+          "views": 72200,
+          "followers": 40400,
+          "viewsPerFollower": 1.79,
+          "engagementRatePerViews": 14.501385041551245,
+          "spokenHook": "I clearly had no business being that broke so shortly after I got terminated, which",
+          "onScreenText": [
+            "LET'S BUDGET MY TRAVEL NURSE CHECK",
+            "broke",
+            "BUDGET MY WAY BACK",
+            "back",
+            "increase",
+            "SoFi SoFi Financial company SoFi Technologies, Inc. is an American financial technology company. Founded in 2011 by Stanford University.",
+            "SoFi",
+            "University graduates as a student loan refinancier, it operates a direct bank serving retail customers and",
+            "businesses. SoFi is the largest U.S.-based online lender, and has nearly 16 million customers as of 2026.",
+            "Source: Wikipedia",
+            "checking",
+            "operates a direct bank serving retail customers and businesses. SoFi is the largest U.S.-based online lender, and has nearly 16 million customers as of 2026. Source: Wikipedia"
+          ],
+          "audioTitle": "The sound effect of the moment of Teleren hack",
+          "durationSeconds": 254,
+          "topComments": [
+            "The bill account and spending account is verrrryyy necessary !",
+            "As a financial advisor, I love this🤭! We love a 60/20/20 cash flow plan! Bills account, finance goals account, play money account 🔥🔥",
+            "Good stuff! And SoFi has a nice high yield savings account!",
+            "I’ve been using SoFi for a year and also kickoff because my credit needed a boost and it’s made such a difference financially it keeps me on track because I’m terrible without accountability 🤣",
+            "Do you get paid early with sofi direct deposit ?"
+          ],
+          "publishedAt": "2026-10-19T23:25:59.000Z"
+        }
+      ],
+      "score": 1
+    },
+    {
+      "id": "psychological-money-law",
+      "name": "Psychological Money Law",
+      "whyItWorks": "Hooks viewers with a counterintuitive psychological mystery about why certain people never go broke, then breaks down a memorable mental framework for managing income.",
+      "hookPattern": "There are some people that you ask for [thing] and they say they don't have it, but [secret reason]",
       "beats": [
         {
           "fromSeconds": 0,
           "toSeconds": 5,
-          "shows": "Direct-to-camera speaker talking in an ambiently lit room with neon background lights, gesturing with an earnest expression.",
-          "says": "There are people you ask for money and they say they have none, even with ten thousand sitting in an account. They aren't lying to you.",
+          "shows": "Talking head framed center camera with bold headline banner overhead and mood lighting",
+          "says": "There are some people you ask for money and they say they don't have it, even with 10k in their account. They aren't lying.",
           "onScreen": "HOW TO NEVER RUN OUT OF MONEY"
         },
         {
           "fromSeconds": 5,
           "toSeconds": 10,
-          "shows": "Speaker leans forward as floating graphical cards show separate bank buckets for bills, savings, and guilt-free spending.",
-          "says": "Psychologically, they don't see that money as spendable because they've trained their brain to lock it away.",
-          "onScreen": "Rule #1: Partition your spending"
+          "shows": "Graphic slides in showing split bank accounts and a strict rule diagram",
+          "says": "Psychologically, they treat saved money as money that literally does not exist to spend.",
+          "onScreen": "The 'Phantom Zero' Rule"
         },
         {
           "fromSeconds": 10,
           "toSeconds": 15,
-          "shows": "Screen recording of a budgeting app dashboard dividing incoming deposits into automated savings categories.",
-          "says": "Step one to never run out of money is creating digital sub-accounts in your app so you only spend what's allocated.",
-          "onScreen": "Automate your sub-accounts"
-        },
-        {
-          "fromSeconds": 15,
-          "toSeconds": 20,
-          "shows": "Speaker returns full screen, holding phone and nodding reassuringly.",
-          "says": "Once you build that wall between your cash and your bills, you'll never feel broke again.",
-          "onScreen": "Build your financial boundary"
+          "shows": "Creator gesturing directly into camera emphasizing practical habit change",
+          "says": "Here is the exact rule you need to automate into your budgeting app right now so you never run out.",
+          "onScreen": "Rule #1: Automate Before Spending"
         }
       ],
-      "durationSeconds": 20,
+      "durationSeconds": 15,
       "recommendedStyle": "ai-generated",
       "clipTag": null,
       "evidence": [
@@ -136,239 +248,73 @@
           "publishedAt": "2026-10-15T09:06:44.000Z"
         }
       ],
-      "score": 1
-    },
-    {
-      "id": "broke-to-milestone-wealth-roadmap",
-      "name": "Broke-to-Milestone Wealth Roadmap",
-      "whyItWorks": "Builds high trust by pairing personal vulnerability about humble beginnings with tangible proof of net worth, then breaks down the exact budgeting systems and tools that enabled the transformation.",
-      "hookPattern": "These are [number] things that I did to go from [difficult financial starting point] to [impressive financial milestone] by [age].",
-      "beats": [
-        {
-          "fromSeconds": 0,
-          "toSeconds": 4,
-          "shows": "Creator talking to camera outdoors with a verified green balance screenshot and an old childhood photo overlaid on screen.",
-          "says": "These are three things I did to go from living paycheck to paycheck to hitting a quarter million dollar net worth by thirty.",
-          "onScreen": "3 things I did to escape poverty | $250k Net Worth"
-        },
-        {
-          "fromSeconds": 4,
-          "toSeconds": 9,
-          "shows": "Cut to an organized mobile budgeting app interface showing income categorization and spending tracking.",
-          "says": "First, I started budgeting. I tested notebooks and apps until I found a daily system to know every dollar coming in and out.",
-          "onScreen": "1. Daily tracking in-app"
-        },
-        {
-          "fromSeconds": 9,
-          "toSeconds": 14,
-          "shows": "Over-the-shoulder view of setting up automated deposits into a high-yield savings account inside a digital banking app.",
-          "says": "Second, I moved my emergency fund out of traditional checking into high-yield savings so my money works for me.",
-          "onScreen": "2. High-Yield Savings Account"
-        },
-        {
-          "fromSeconds": 14,
-          "toSeconds": 18,
-          "shows": "Creator looks back into lens against city backdrop, offering a firm encouraging takeaway.",
-          "says": "If you cannot manage a hundred dollars today, you won't manage ten thousand tomorrow. Start tracking now.",
-          "onScreen": "Manage your money now"
-        }
-      ],
-      "durationSeconds": 18,
-      "recommendedStyle": "ai-generated",
-      "clipTag": null,
-      "evidence": [
-        {
-          "url": "https://www.tiktok.com/@overgenpoverty/video/7694796697033100557",
-          "platform": "tiktok",
-          "handle": "overgenpoverty",
-          "thumbnailUrl": "https://social-catalog-static.oriane.xyz/oriane-contents/tiktok/7694796697033100557/thumbnail.webp",
-          "frameUrls": [
-            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7694796697033100557/1_2.60.webp",
-            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7694796697033100557/4_10.83.webp",
-            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7694796697033100557/7_23.80.webp",
-            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7694796697033100557/10_42.23.webp"
-          ],
-          "views": 43800,
-          "followers": 20900,
-          "viewsPerFollower": 2.1,
-          "engagementRatePerViews": 11.691780821917808,
-          "spokenHook": "These are three things that I did to go from living in poverty to becoming",
-          "onScreenText": [
-            "3 things I did to escape poverty\n$252,071\n+$210,140.77 (80.17%)",
-            "becoming",
-            "MON",
-            "so",
-            "Paycheck : April 30, 2023\nsoFi: $2500\nchase: $365\nTotal: $2865",
-            "pue: Rent (5/1) $1225\nSoFi loan (5/11) $238\nNetflix (5/3) $20\nTotal: $1850",
-            "Netflix (5/3) $ 20\nCapital one (5/5) $ 5\nAmex (5/19) $ 367\nother : Miami? $1015 leftover for OTHER:",
-            "Miami?\nDermatologist, PCP - $30, $15 Groceries - $200\nJane's Bday - Starbucks $20? Meds - $10",
-            "Jane's Bday - Starbucks $20? Meds - $10\nDentrist - $860 wedding - $100\nMother's Day - $75\nupcoming /Next paycheck: Discover - 5/20 $338\nTally - 5/23 $200\nTamhile - 5/26 $170",
-            "4200",
-            "Tmobile-5/26 $170",
-            "Lemonade-5/25 $30"
-          ],
-          "audioTitle": "BAD BUNNY MONACO SLOWED",
-          "durationSeconds": 64,
-          "topComments": [
-            "My thing is budgeting!! I have not been able to find a system 😭😭😭",
-            "Commenting because I’ve been looking for a good high yield savings account and Roth IRA",
-            "Please forgive me , but you’re not rich. you’re smart and a good saver and you’re teaching our people basic budgeting, which is a good thing but true wealth is generation. I understand the struggle I went from.DACA 0-MM , our people are more than basic budgets,their entrepreneurs .All with love",
-            "so proud of you, 250K is incredible!!",
-            "👍"
-          ],
-          "publishedAt": "2026-10-09T22:21:34.000Z"
-        }
-      ],
-      "score": 0.55
-    },
-    {
-      "id": "paycheck-breakdown-routine",
-      "name": "Paycheck Breakdown Routine",
-      "whyItWorks": "De-stigmatizes financial recovery by walking viewers step-by-step through an honest, real-dollar paycheck distribution into targeted app accounts and debt repayment plans.",
-      "hookPattern": "I clearly had no business being that broke, so welcome to [series title] where I budget my [job/income source] check.",
-      "beats": [
-        {
-          "fromSeconds": 0,
-          "toSeconds": 4,
-          "shows": "Creator in casual lounge clothing speaking candidly to the camera with dynamic green captions.",
-          "says": "I had no business being that broke after losing my job, so welcome back to budgeting my nurse paycheck.",
-          "onScreen": "LET'S BUDGET MY PAYCHECK | Budget My Way Back"
-        },
-        {
-          "fromSeconds": 4,
-          "toSeconds": 9,
-          "shows": "Screen capture of a mobile banking and budgeting application showing recent direct deposits.",
-          "says": "Today we are giving every single dollar a job to pay off high-interest cards and stack my savings back up.",
-          "onScreen": "Give every dollar a job"
-        },
-        {
-          "fromSeconds": 9,
-          "toSeconds": 14,
-          "shows": "App animation showing funds transferring into dedicated bills, savings goals, and everyday spending pots.",
-          "says": "I immediately split my deposit: sixty percent to bills, twenty percent to savings, and twenty for weekly expenses.",
-          "onScreen": "60% Bills | 20% Goals | 20% Spending"
-        },
-        {
-          "fromSeconds": 14,
-          "toSeconds": 18,
-          "shows": "Creator smiles warmly at the camera while showing the completed zero-balance allocation screen.",
-          "says": "Using separate accounts for every category is the only way I keep myself from overspending.",
-          "onScreen": "Separate accounts = peace of mind"
-        }
-      ],
-      "durationSeconds": 18,
-      "recommendedStyle": "ai-generated",
-      "clipTag": null,
-      "evidence": [
-        {
-          "url": "https://www.tiktok.com/@_nursebaemel/video/7698524185299127582",
-          "platform": "tiktok",
-          "handle": "_nursebaemel",
-          "thumbnailUrl": "https://social-catalog-static.oriane.xyz/oriane-contents/tiktok/7698524185299127582/thumbnail.webp",
-          "frameUrls": [
-            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7698524185299127582/1_2.00.webp",
-            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7698524185299127582/4_29.40.webp",
-            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7698524185299127582/7_46.80.webp",
-            "https://social-catalog-static.oriane.xyz/oriane-frames/tiktok/7698524185299127582/10_168.43.webp"
-          ],
-          "views": 72200,
-          "followers": 40400,
-          "viewsPerFollower": 1.79,
-          "engagementRatePerViews": 14.501385041551245,
-          "spokenHook": "I clearly had no business being that broke so shortly after I got terminated, which",
-          "onScreenText": [
-            "LET'S BUDGET MY TRAVEL NURSE CHECK",
-            "broke",
-            "BUDGET MY WAY BACK",
-            "back",
-            "increase",
-            "SoFi SoFi Financial company SoFi Technologies, Inc. is an American financial technology company. Founded in 2011 by Stanford University.",
-            "SoFi",
-            "University graduates as a student loan refinancier, it operates a direct bank serving retail customers and",
-            "businesses. SoFi is the largest U.S.-based online lender, and has nearly 16 million customers as of 2026.",
-            "Source: Wikipedia",
-            "checking",
-            "operates a direct bank serving retail customers and businesses. SoFi is the largest U.S.-based online lender, and has nearly 16 million customers as of 2026. Source: Wikipedia"
-          ],
-          "audioTitle": "The sound effect of the moment of Teleren hack",
-          "durationSeconds": 254,
-          "topComments": [
-            "The bill account and spending account is verrrryyy necessary !",
-            "As a financial advisor, I love this🤭! We love a 60/20/20 cash flow plan! Bills account, finance goals account, play money account 🔥🔥",
-            "Good stuff! And SoFi has a nice high yield savings account!",
-            "I’ve been using SoFi for a year and also kickoff because my credit needed a boost and it’s made such a difference financially it keeps me on track because I’m terrible without accountability 🤣",
-            "Do you get paid early with sofi direct deposit ?"
-          ],
-          "publishedAt": "2026-10-19T23:25:59.000Z"
-        }
-      ],
-      "score": 0.5
+      "score": 0.95
     }
   ],
   "rejected": [
     {
       "url": "https://www.tiktok.com/@hotteanchitchat/video/7694585430825553174",
-      "reason": "Celebrity/influencer gossip commentary concerning personal hair appointments and gym controversies."
+      "reason": "Pop culture commentary and influencer drama gossip; not about budgeting apps."
     },
     {
       "url": "https://www.tiktok.com/@adopted_connor/video/7698110711318269214",
-      "reason": "Social issue explainer discussing crisis pregnancy centers versus reproductive health clinics."
+      "reason": "Social/political commentary on pregnancy clinics; false match."
     },
     {
       "url": "https://www.instagram.com/reel/DetlMZLo1F2/",
-      "reason": "Satirical gym comedy skit spoofing financial advice rules for weightlifting benchmarks."
+      "reason": "Satirical gym/fitness parody video; not about budgeting apps."
     },
     {
       "url": "https://www.instagram.com/reel/Dejq_mzMsOd/",
-      "reason": "Local city council meeting recording regarding automated license plate readers."
+      "reason": "Local city council meeting recording; political advocacy unrelated to budgeting apps."
     },
     {
       "url": "https://www.tiktok.com/@control_within4/video/7700586681761565974",
-      "reason": "Narrated Reddit relationship story reading about a couple fighting over a restaurant bill."
+      "reason": "Reddit relationship drama story animation; not about budgeting apps."
     },
     {
       "url": "https://www.instagram.com/reel/DeVQMJ9y00V/",
-      "reason": "Family grocery shopping vlog at Costco; focuses on toddler lifestyle rather than a budgeting app."
+      "reason": "Costco shopping grocery vlog with toddlers; casual weekly budget mention rather than budgeting app content."
     },
     {
       "url": "https://www.tiktok.com/@artofsmartedu/video/7697556011791568149",
-      "reason": "Educational exam preparation video giving predictions for a high school math test."
+      "reason": "High school math exam revision and exam score prediction video."
     },
     {
       "url": "https://www.tiktok.com/@kaytheg0d/video/7694144379354664206",
-      "reason": "Entertainment news breakdown analyzing upcoming DC Studios superhero film slates."
+      "reason": "Comic book movie production news; uses 'budgeting' in film studio context."
     },
     {
       "url": "https://www.instagram.com/reel/Def7uFmTQTb/",
-      "reason": "Brand promotional ad published by Westpac New Zealand marketing shared home ownership mortgages."
+      "reason": "Bank brand promo for social housing partnership program."
     },
     {
       "url": "https://www.instagram.com/reel/De0gSS3PZ6k/",
-      "reason": "Investing and compound interest calculator demonstration focused on early retirement, driven by automated lead-gen bot comments."
+      "reason": "Retirement compound interest flex/calculator video without a repeatable organic peer format for budgeting apps."
     },
     {
       "url": "https://www.instagram.com/reel/De2gnhlSf_A/",
-      "reason": "Job board recruitment clip outlining airline baggage handling and flight attendant positions."
+      "reason": "Airport hiring and job board listing promotion."
     },
     {
       "url": "https://www.tiktok.com/@jackrein316/video/7695522857413086495",
-      "reason": "Career advice video for educators explaining school tenure and union layoff contracts."
+      "reason": "Teacher career tenure advice discussing school district budget cuts."
     },
     {
       "url": "https://www.instagram.com/reel/DeYmB_FM_FG/",
-      "reason": "Art exhibition promotional clip showcasing a nocturnal light show at a church in Finland."
+      "reason": "Atmospheric light art festival video in Finnish; total false match."
     },
     {
       "url": "https://www.instagram.com/reel/Der-OHKIra7/",
-      "reason": "Beauty influencer career milestone vlog announcing a personal makeup artistry business."
+      "reason": "Beauty influencer personal life update announcement."
     },
     {
       "url": "https://www.tiktok.com/@burbnbougie2025/video/7695436441202986253",
-      "reason": "Reaction storytime reading a French user's relationship post from Reddit."
+      "reason": "Reading Reddit relationship forum stories; unrelated to budgeting apps."
     },
     {
       "url": "https://www.tiktok.com/@maddytheb/video/7695008789484866846",
-      "reason": "Travel and community event preview touring a book and art fair at the State Department."
+      "reason": "State department book fair tour and event preview."
     }
   ],
   "usedImages": true

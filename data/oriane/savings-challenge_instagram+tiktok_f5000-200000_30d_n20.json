@@ -10,7 +10,7 @@
     "days": 30,
     "limit": 20
   },
-  "fetchedAt": "2026-11-06T23:43:44.590Z",
+  "fetchedAt": "2026-11-07T00:17:02.645Z",
   "totalCount": 183,
   "oriane": {
     "operator": "and",
@@ -50,7 +50,7 @@
         "max": 200000
       },
       "publishedAt": {
-        "after": "2026-10-07T23:43:36.063Z"
+        "after": "2026-10-08T00:17:01.139Z"
       }
     },
     "queries": [

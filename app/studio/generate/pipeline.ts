@@ -74,15 +74,30 @@ async function run(job: GenerateJob, brief: FormatBrief, brand: string, rules: s
   const script = await writeScript(brief, brand, rules);
 
   job.stage = "Sending to Veo 3.1 Fast";
-  job.requestId = await submit({
+  const payload = {
     prompt: script.videoPrompt.slice(0, 2000),
-    negativePrompt: "on-screen text, captions, subtitles, logos, watermarks, distorted hands",
+    negativePrompt: "on-screen text, captions, subtitles, logos, watermarks, cash, banknotes, distorted hands",
     durationSeconds: String(SECONDS),
     aspectRatio: "9:16",
     generateAudio: true,
     resolution: "720p",
-  });
-  const remote = await waitForVideo(job);
+  };
+  let remote: string;
+  try {
+    job.requestId = await submit(payload);
+    remote = await waitForVideo(job);
+  } catch (error) {
+    // Veo fails with a bare "unknown reason" when its safety filter objects to the scene
+    // (a prompt with banknotes failed 3 times in a row). Retry once with the plainest scene.
+    console.error("studio generate: full prompt failed, trying the plain one:", error);
+    job.stage = "Retrying with a simpler scene";
+    const lines = script.beats.map((beat) => beat.says).filter(Boolean).join(" ");
+    job.requestId = await submit({
+      ...payload,
+      prompt: `Vertical 9:16 selfie video, handheld phone at arm's length, natural window light. A friendly adult in a casual sweater sits in a tidy, plain living room and talks straight to the camera like a friend. They say, clearly and warmly: "${lines}" Only their voice, no music.`,
+    });
+    remote = await waitForVideo(job);
+  }
 
   job.stage = "Adding the legal line";
   const videoUrl = await finish(remote, job.jobId, legalLine(rules));
@@ -127,6 +142,7 @@ The video is made by Veo, a text-to-video model with sound, in one continuous ${
 - Use only facts that appear in the brand rules.
 - Do not mention connecting a bank account anywhere, including the caption: it may never be a hook or a call to action.
 - No text on screen in the video. The legal line is added afterwards.
+- Nothing that trips the video model's safety filter: no cash, banknotes, coins, bank cards, cars, children or real brands and logos on screen. Keep it to a person talking in an ordinary room.
 
 Return JSON only, in exactly this shape:
 {"beats":[{"fromSeconds":0,"toSeconds":3,"shows":"what is on screen","says":"the words spoken","onScreen":"a short caption to show beside the video, optional"}],"caption":"the post caption, one or two short sentences that follow the brand rules","videoPrompt":"the full prompt for Veo: the person, setting, camera, lighting and mood, then the exact words they say, in quotes and in order. Under 1500 characters."}`;

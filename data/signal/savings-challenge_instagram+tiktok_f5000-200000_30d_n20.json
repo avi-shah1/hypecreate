@@ -10,38 +10,38 @@
     "days": 30,
     "limit": 20
   },
-  "generatedAt": "2026-11-06T23:48:30.970Z",
+  "generatedAt": "2026-11-07T00:17:20.893Z",
   "model": "google/gemini-3.8-flash",
   "orianeFile": "data/oriane/savings-challenge_instagram+tiktok_f5000-200000_30d_n20.json",
   "videosAnalysed": 20,
   "totalMatches": 183,
   "briefs": [
     {
-      "id": "interactive-savings-framework",
-      "name": "Interactive Savings Framework",
-      "whyItWorks": "They turn an intimidating abstract savings goal into a tangible, game-like visual chart or post-it board that viewers instantly want to screenshot and implement.",
-      "hookPattern": "Have you tried [gamifying/visualizing] your savings with this [dollar amount/timeframe] challenge?",
+      "id": "gamified-savings-system",
+      "name": "Gamified Savings System",
+      "whyItWorks": "Turning saving into a visual, step-by-step game with physical tracking elements (sticky notes, coloring trackers, or charts) makes abstract financial targets tactile, motivating, and easy to follow.",
+      "hookPattern": "Have you tried [action/method] to save [amount or goal]?",
       "beats": [
         {
           "fromSeconds": 0,
           "toSeconds": 4,
-          "shows": "Close-up of a visual tracker sheet or color-coded calendar on a wall showing incremental dollar targets.",
-          "says": "Have you tried gamifying your savings? Because watching numbers change makes it actually achievable.",
-          "onScreen": "SAVINGS CHALLENGE HACK"
+          "shows": "Creator standing in front of a visual tracker board filled with colored sticky notes or printable tracker charts, holding a microphone.",
+          "says": "Have you tried gamifying your savings? Because watching numbers in an app can feel sluggish and punishing.",
+          "onScreen": "HACK TO SAVE MONEY: GAMIFY IT"
         },
         {
           "fromSeconds": 4,
           "toSeconds": 9,
-          "shows": "Hand pointing down a tiered list matching target milestones and paycheck breakdown.",
-          "says": "Find your income tier and lock in your bi-weekly contribution target right here.",
-          "onScreen": "SCREENSHOT YOUR TARGET"
+          "shows": "Close-up hand view pulling off or filling in a daily savings target milestone.",
+          "says": "Set your monthly target and give yourself small daily challenges Monday through Friday.",
+          "onScreen": "STEP 1: DAILY CHALLENGES"
         },
         {
           "fromSeconds": 9,
           "toSeconds": 14,
-          "shows": "Hand checking off a completed milestone box or coloring in a tracker icon.",
-          "says": "Check your progress every week, reward yourself at every mini goal, and watch it stack.",
-          "onScreen": "HIT YOUR GOAL"
+          "shows": "Pointing to a weekly check-in note followed by a designated reward card.",
+          "says": "Check your progress every Saturday, and most importantly, reward yourself with guilt-free treats when you hit milestones.",
+          "onScreen": "TRACK & REWARD"
         }
       ],
       "durationSeconds": 14,
@@ -121,31 +121,31 @@
       "score": 1
     },
     {
-      "id": "fixed-cash-budget-run",
-      "name": "Fixed Cash Budget Run",
-      "whyItWorks": "Framing shopping as a strict cash-only cap creates natural tension, forcing creators to make tough in-store trade-offs that drive high engagement and opinionated comments.",
-      "hookPattern": "We are on a strict $[amount] cash budget to get [goal/event], let's see what happens.",
+      "id": "strict-budget-store-run",
+      "name": "Strict Budget Store Run",
+      "whyItWorks": "Framing routine shopping trips as high-stakes personal challenges with fixed cash caps creates suspense around whether the shopper can stick to the limit.",
+      "hookPattern": "We are on a strict [dollar amount] budget to [specific mission]!",
       "beats": [
         {
           "fromSeconds": 0,
           "toSeconds": 4,
-          "shows": "Creator holding physical cash bills inside their car or outside the store front.",
-          "says": "We are on a strict seventy-five dollar cash budget today to get everything on this list.",
-          "onScreen": "$75 CASH CHALLENGE"
+          "shows": "Creator in their car holding physical paper banknotes toward the camera.",
+          "says": "We are on a strict 100-dollar cash budget to see how much we can actually get today.",
+          "onScreen": "STRICT $100 CASH CHALLENGE"
         },
         {
           "fromSeconds": 4,
-          "toSeconds": 9,
-          "shows": "POV walking aisles, picking up items, checking price tags, and calculating subtotals.",
-          "says": "Everything is ridiculously expensive right now, so every single dollar has to count.",
-          "onScreen": "BUDGET SHOPPING"
+          "toSeconds": 10,
+          "shows": "POV walking rapidly down retail aisles, inspecting price tags and calculating costs.",
+          "says": "Prices are crazy right now, so we have to calculate every single item before putting it in the cart.",
+          "onScreen": "CAN WE STAY UNDER BUDGET?"
         },
         {
-          "fromSeconds": 9,
+          "fromSeconds": 10,
           "toSeconds": 14,
-          "shows": "Handing cash to the register and revealing the final haul spread.",
-          "says": "We checked out right under the limit. Look at everything we actually managed to score.",
-          "onScreen": "CHALLENGE COMPLETED"
+          "shows": "Checkout register total displayed on screen, paying with the cash.",
+          "says": "Let's see if we stayed under budget or if we blew right through it.",
+          "onScreen": "FINAL REGISTER TOTAL"
         }
       ],
       "durationSeconds": 14,
@@ -220,31 +220,31 @@
       "score": 0.9
     },
     {
-      "id": "coupon-stacking-challenge",
-      "name": "Coupon Stacking Challenge",
-      "whyItWorks": "Shows a crazy retail value drop down to pennies or free, giving step-by-step app coupon combinations that deliver instant dopamine.",
-      "hookPattern": "We are getting over $[high amount] worth of products down to [cheap amount/free] this week using this stack.",
+      "id": "coupon-stacking-breakdown",
+      "name": "Coupon Stacking Breakdown",
+      "whyItWorks": "Shows viewers exact step-by-step math to transform exorbitant retail shelf prices into negligible or profit-making totals using stacked promotions and rebates.",
+      "hookPattern": "Here is how to get [dollar amount] worth of products for [low amount or free]!",
       "beats": [
         {
           "fromSeconds": 0,
           "toSeconds": 3,
-          "shows": "Countertop display of brand-name products next to a printed receipt showing massive discounts.",
-          "says": "We are getting thirty-five dollars worth of household essentials down to completely free.",
-          "onScreen": "EXTREME SAVINGS CHALLENGE"
+          "shows": "Products arranged on a counter or in-store shelf next to a printed register reward slip.",
+          "says": "We are turning over thirty dollars worth of essentials into a five-dollar moneymaker.",
+          "onScreen": "$34 OF PRODUCTS FOR FREE"
         },
         {
           "fromSeconds": 3,
           "toSeconds": 8,
-          "shows": "Screen recording scrolling through store loyalty app clipping manufacturer digital coupons and rewards.",
-          "says": "First, open your app and clip these two digital coupons before you head into the store.",
-          "onScreen": "CLIP THESE COUPONS"
+          "shows": "Screen recording or cut to clipping in-app manufacturer coupons and promo offers.",
+          "says": "First clip this store coupon, then stack your manufacturer rewards.",
+          "onScreen": "CLIP DIGITAL COUPONS"
         },
         {
           "fromSeconds": 8,
           "toSeconds": 12,
-          "shows": "Register screen ringing up items with price dropping after applying rebate booster.",
-          "says": "Stack it with the spend booster at checkout and roll your points to pay next to nothing.",
-          "onScreen": "FINAL OUT OF POCKET: $0"
+          "shows": "Receipt showing cash-back rebate app scans and register rewards rolling over.",
+          "says": "Submit your receipt to fetch cash back and walk out with profit.",
+          "onScreen": "NET COST: FREE + CASH BACK"
         }
       ],
       "durationSeconds": 12,
@@ -340,59 +340,59 @@
   "rejected": [
     {
       "url": "https://www.instagram.com/reel/DePzzh4MXli/",
-      "reason": "Job recruitment notice for Chevron maintenance trainees, unrelated to savings challenges."
+      "reason": "Job recruitment advertisement for Chevron Maintenance Trainees; unrelated to savings challenges."
     },
     {
       "url": "https://www.tiktok.com/@avaonbrand/video/7700311871903075597",
-      "reason": "Sports warmup clip about Luka Doncic and music; keyword false match."
+      "reason": "NBA warmup sports clip of Luka Doncic; unrelated to savings challenges."
     },
     {
       "url": "https://www.instagram.com/reel/DehmZsMMdLw/",
-      "reason": "UK parliamentary debate speech regarding disability benefits policy."
+      "reason": "Political speech in Parliament regarding UK disability capital allowance limits."
     },
     {
       "url": "https://www.instagram.com/reel/De5rOAaRHGJ/",
-      "reason": "Supermarket store opening walkthrough and commercial tour."
+      "reason": "Store walkthrough / preview of a supermarket opening in New Jersey."
     },
     {
       "url": "https://www.tiktok.com/@tinayazdani/video/7698855534467747093",
-      "reason": "News report on healthcare litigation and cancer treatment funding."
+      "reason": "News report on Canadian healthcare court case and cancer treatment funding."
     },
     {
       "url": "https://www.instagram.com/reel/DeSXlfYkiSK/",
-      "reason": "Brand account dance challenge commercial promotion by HSBC HK."
+      "reason": "Brand dance challenge campaign advertisement by HSBC Hong Kong."
     },
     {
       "url": "https://www.tiktok.com/@cbctoronto/video/7699866904227384584",
-      "reason": "CBC news segment analyzing the single tax and cost of living."
+      "reason": "CBC news segment breaking down the single-person household living cost crisis."
     },
     {
       "url": "https://www.tiktok.com/@tryingmayabest/video/7698441897001372942",
-      "reason": "News commentary explaining political protests across Europe."
+      "reason": "Political and news commentary about protests across Europe."
     },
     {
       "url": "https://www.tiktok.com/@candyshowroom/video/7697329928479477014",
-      "reason": "Automotive review analyzing used BMW 330i models."
+      "reason": "Car review detailing the BMW E90 330i."
     },
     {
       "url": "https://www.tiktok.com/@theslickestsu/video/7698928625160097055",
-      "reason": "Buffet restaurant promotion and TikTok coupon ad."
+      "reason": "Local restaurant buffet promotion / food review in City of Industry, CA."
     },
     {
       "url": "https://www.instagram.com/reel/DekAebKx9_a/",
-      "reason": "House tour vlog detailing fitness mansion renovations."
+      "reason": "Mansion and fitness house tour vlog."
     },
     {
       "url": "https://www.tiktok.com/@leanne.bretanha/video/7700941048356293919",
-      "reason": "Sephora sale beauty haul wishlist recommendations, not a savings challenge."
+      "reason": "Sephora sale makeup recommendations haul and wishlist."
     },
     {
       "url": "https://www.tiktok.com/@briknmix/video/7701063843606187297",
-      "reason": "Mall vlog shopping for Lego and dinner."
+      "reason": "Shopping and dining lifestyle vlog at a mall."
     },
     {
       "url": "https://www.instagram.com/reel/De2wDijPW8P/",
-      "reason": "Real estate brokerage discussion analyzing presidential housing policy."
+      "reason": "Real estate market opinion video discussing housing executive orders."
     }
   ],
   "usedImages": true
