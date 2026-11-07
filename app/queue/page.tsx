@@ -8,6 +8,9 @@ export default function Queue() {
   const [account, setAccount] = useState("all");
 
   useEffect(() => {
+    // /queue?account=fintechben opens on one account's posts.
+    const wanted = new URLSearchParams(window.location.search).get("account");
+    if (wanted) setAccount(wanted);
     fetch("/api/queue")
       .then((res) => res.json())
       .then(setPosts);

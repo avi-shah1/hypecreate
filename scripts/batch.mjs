@@ -17,7 +17,8 @@ async function worker() {
     const res = await fetch("http://localhost:3000/api/create", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...item, person, brand: "lodavo", language: "en", folder: account, style: item.style ?? "broll-text" }),
+      // Ben's call: of our accounts, only @fintechben carries the on-screen legal line.
+      body: JSON.stringify({ ...item, person, brand: "lodavo", language: "en", folder: account, style: item.style ?? "broll-text", legal: account === "fintechben" }),
     });
     const json = await res.json();
     console.log(item.slug, res.status, `${Math.round((Date.now() - started) / 1000)}s`, res.ok ? json.videoUrl : json.error);

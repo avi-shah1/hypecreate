@@ -28,6 +28,8 @@ export type CreateBody = Partial<CreateRequest> & {
   /** Output name and subfolder under public/renders. */
   slug?: string;
   folder?: string;
+  /** False leaves the on-screen legal line off, whatever the video says. */
+  legal?: boolean;
 };
 
 export interface CreatedVideo extends CreateResult {
@@ -96,7 +98,7 @@ export async function createVideo(body: CreateBody, onStage: (stage: string) => 
   }
 
   const words = script.scenes.map((scene) => scene.text ?? "").join(" ");
-  const needsLegal = showsPrizes || PRIZE_WORDS.test(words) || PRIZE_WORDS.test(script.caption);
+  const needsLegal = body.legal !== false && (showsPrizes || PRIZE_WORDS.test(words) || PRIZE_WORDS.test(script.caption));
 
   onStage("Cutting the clips and adding the text");
   const name = body.slug ?? `${body.brief?.id ?? "video"}-${style}-${shortHash(JSON.stringify(script))}`;
