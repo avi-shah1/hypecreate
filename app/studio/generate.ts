@@ -18,6 +18,8 @@ export interface GenerateRequest {
   formatId: string;
   /** From the studio's Brand box, e.g. "Lodavo". The brand file is brand/<lowercase>.md. */
   brand: string;
+  /** Real clips unless this says otherwise. */
+  style?: "ai-generated";
 }
 
 export interface GenerateResult extends Partial<CreateResult> {

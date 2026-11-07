@@ -74,6 +74,10 @@ const briefs = formats
   })
   .filter((brief) => brief.evidence.length)
   .sort((a, b) => b.score - a.score);
+// The Studio shows score as 0 to 100: relative to this account's best format.
+const best = briefs[0]?.score || 1;
+const medians = briefs.map((brief) => brief.score);
+for (const brief of briefs) brief.score = brief.score / best;
 
 const search = { query: `our account ${account}`, platforms: ["instagram"], minFollowers: 0, maxFollowers: 5000, days: 90, limit: posts.length };
 const words = search.query.replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
@@ -83,6 +87,6 @@ await writeFile(
   JSON.stringify({ search, generatedAt: new Date().toISOString(), model: "results-loop", orianeFile: null, briefs, rejected: [], usedImages: false }, null, 2) + "\n",
 );
 console.log(slug);
-for (const brief of briefs) {
-  console.log(`${brief.score.toLocaleString()} median | ${brief.evidence.length} posts | ${brief.name} | ${brief.hookPattern}`);
+for (const [index, brief] of briefs.entries()) {
+  console.log(`${medians[index].toLocaleString()} median | ${brief.evidence.length} posts | ${brief.name} | ${brief.hookPattern}`);
 }

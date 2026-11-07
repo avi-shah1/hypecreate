@@ -21,7 +21,7 @@ export default function RecentAds({ videos }: { videos: StudioVideo[] }) {
                 preload="metadata"
               />
               <span className="pointer-events-none absolute left-2 top-2 rounded-full bg-violet-500/90 px-2 py-0.5 text-xs font-semibold">
-                AI-generated
+                {video.url.includes("/made-live/") ? "Real clips" : "AI-generated"}
               </span>
             </div>
             <figcaption className="mt-2">

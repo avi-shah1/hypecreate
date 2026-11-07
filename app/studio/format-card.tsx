@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { Beat, Evidence, FormatBrief } from "@/lib/contract";
+import BrainView from "@/app/brain/brain-view";
 import { GENERATE_POLL_MS, getGenerate, startGenerate, USE_MOCK_GENERATE, type GenerateStatus } from "./generate";
 import { compact, multiple, sleep, span } from "./utils";
 import type { StudioVideo } from "./videos/route";
@@ -20,6 +21,7 @@ export default function FormatCard({ rank, brief, brand, signalSlug, ready, onFi
   const [generation, setGeneration] = useState<GenerateStatus | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [startedAt, setStartedAt] = useState(0);
+  const [showBrain, setShowBrain] = useState(false);
   const mounted = useRef(true);
   useEffect(() => {
     mounted.current = true;
@@ -40,11 +42,12 @@ export default function FormatCard({ rank, brief, brand, signalSlug, ready, onFi
     });
   }
 
-  async function generate() {
+  async function generate(style?: "ai-generated") {
     setError(null);
+    setShowBrain(false);
     setStartedAt(Date.now());
     try {
-      const { jobId } = await startGenerate({ signalSlug, formatId: brief.id, brand }, brief);
+      const { jobId } = await startGenerate({ signalSlug, formatId: brief.id, brand, style }, brief);
       let status: GenerateStatus = { jobId, status: "queued", stage: "Queued" };
       while (mounted.current) {
         setGeneration(status);
@@ -98,15 +101,21 @@ export default function FormatCard({ rank, brief, brand, signalSlug, ready, onFi
         {!result && (
           <div className="flex flex-wrap items-center gap-5">
             <button
-              onClick={generate}
+              onClick={() => generate()}
               disabled={busy}
               className="rounded-full bg-white px-7 py-3.5 text-lg font-semibold text-black transition hover:bg-emerald-300 disabled:cursor-wait disabled:opacity-60"
             >
-              {busy ? "Generating…" : `Generate ${brand || "brand"} ad`}
+              {busy ? "Generating…" : `Make a ${brand || "brand"} video from real clips`}
             </button>
             {!busy && !USE_MOCK_GENERATE && (
-              <p className="text-zinc-500">Veo 3.1 Fast via GMI · 8 s with sound · about $1.20 · 1–3 min</p>
+              <button
+                onClick={() => generate("ai-generated")}
+                className="rounded-full border border-white/20 px-6 py-3 text-lg text-zinc-300 transition hover:border-white/50"
+              >
+                AI version
+              </button>
             )}
+            {!busy && !USE_MOCK_GENERATE && <p className="text-zinc-500">Your own footage, cut to this format. About a minute.</p>}
             {busy && generation && (
               <p className="flex items-center gap-3 text-lg text-zinc-300">
                 <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-violet-400 border-t-transparent" />
@@ -124,7 +133,7 @@ export default function FormatCard({ rank, brief, brand, signalSlug, ready, onFi
                     onClick={() => showReady(video)}
                     className="rounded-full border border-violet-400/50 bg-violet-400/10 px-5 py-2.5 text-lg font-medium text-violet-200 transition hover:border-violet-300"
                   >
-                    ▶ {video.model ?? "GMI"} ad
+                    ▶ {video.model ?? "GMI"}
                   </button>
                 ))}
               </div>
@@ -137,7 +146,7 @@ export default function FormatCard({ rank, brief, brand, signalSlug, ready, onFi
             <div className="relative mx-auto aspect-[9/16] w-full max-w-72 overflow-hidden rounded-2xl border border-white/10 bg-black">
               <video src={result.videoUrl} className="h-full w-full object-cover" controls autoPlay muted loop playsInline />
               <span className="absolute left-3 top-3 rounded-full bg-violet-500/90 px-3 py-1 text-sm font-semibold">
-                AI-generated
+                {result.videoUrl.includes("/made-live/") ? "Real clips" : "AI-generated"}
               </span>
               {USE_MOCK_GENERATE && (
                 <span className="absolute right-3 top-3 rounded-full bg-amber-400 px-3 py-1 text-sm font-semibold text-black">
@@ -173,7 +182,13 @@ export default function FormatCard({ rank, brief, brand, signalSlug, ready, onFi
               )}
               <div className="mt-6 flex flex-wrap gap-3">
                 <button
-                  onClick={generate}
+                  onClick={() => setShowBrain((shown) => !shown)}
+                  className="rounded-full bg-white px-5 py-2 font-semibold text-black transition hover:bg-emerald-300"
+                >
+                  {showBrain ? "Hide the brain view" : "See it in the brain"}
+                </button>
+                <button
+                  onClick={() => generate()}
                   className="rounded-full border border-white/20 px-5 py-2 text-zinc-300 transition hover:border-white/50"
                 >
                   Generate another
@@ -191,6 +206,12 @@ export default function FormatCard({ rank, brief, brand, signalSlug, ready, onFi
                   ))}
               </div>
             </div>
+          </div>
+        )}
+
+        {result && showBrain && (
+          <div className="mt-8 rounded-2xl border border-white/10 bg-black p-4">
+            <BrainView videoUrl={result.videoUrl} />
           </div>
         )}
       </div>

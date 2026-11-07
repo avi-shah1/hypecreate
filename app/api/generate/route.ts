@@ -30,7 +30,9 @@ export async function POST(request: Request) {
       (clips) => clips.length > 0,
       () => false,
     );
-    if (!hasFootage) return Response.json({ jobId: (await startGeneration(body)).jobId });
+    if (!hasFootage || body.style === "ai-generated") {
+      return Response.json({ jobId: (await startGeneration(body)).jobId });
+    }
 
     const brief = await findFormat(String(body.signalSlug ?? ""), String(body.formatId ?? ""));
     const job: Job = { jobId: crypto.randomUUID(), status: "running", stage: "Starting" };
@@ -58,7 +60,9 @@ async function run(
   brief: FormatBrief,
   body: { brand?: string; style?: VideoStyle; person?: string; fresh?: boolean },
 ) {
-  const style = body.style ?? "hook-plus-demo";
+  // A format from an account's own results is remade the way it won: b-roll with nobody on camera.
+  const own = brief.evidence.every((video) => video.frameUrls.length === 0);
+  const style = body.style ?? (own ? "broll-text" : "hook-plus-demo");
   const slug = `${brief.id}-${style}`;
   const saved = path.join(process.cwd(), "public", "renders", "made-live", `${slug}.json`);
   if (!body.fresh) {
@@ -71,10 +75,10 @@ async function run(
     }
   }
   job.result = await createVideo(
-    { brief, style, brand: body.brand ?? "Lodavo", language: "en", person: body.person ?? "chaerin", slug, folder: "made-live" },
+    { brief, style, brand: body.brand ?? "Lodavo", language: "en", person: body.person ?? (own ? "faceless" : "chaerin"), slug, folder: "made-live" },
     (stage) => (job.stage = stage),
   );
-  await writeFile(saved, JSON.stringify(job.result));
+  await writeFile(saved, JSON.stringify({ ...job.result, formatId: brief.id, formatName: brief.name, model: "Real clips" }));
   job.stage = "Done";
   job.status = "done";
 }

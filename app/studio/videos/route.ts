@@ -16,7 +16,7 @@ export interface StudioVideo {
   beats?: Beat[];
 }
 
-const FOLDERS = ["renders", "out"];
+const FOLDERS = ["renders", "renders/made-live", "out"];
 
 const MODEL_NAMES: Record<string, string> = {
   "veo-3.1-fast-generate-001": "Veo 3.1 Fast",
