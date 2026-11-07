@@ -1,6 +1,6 @@
 // GET /api/queue: the posts planned for each account, from clips/queue.json (local, never in git).
-// POST {id, decision, note}: saves a review decision to the same file.
-import { readFile, writeFile } from "node:fs/promises";
+// Ben reviews in chat; Claude records his calls in that file, and the posting session adds a note per post.
+import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { CLIPS_DIR } from "@/lib/library";
 
@@ -16,25 +16,11 @@ export interface QueuePost {
   caption: string;
   /** Why this post is in the plan. */
   why: string;
-  decision: "pending" | "approved" | "hold";
+  decision: "pending" | "approved";
+  /** Set when it goes out, e.g. "scheduled for Sat Nov 7, 12:00 PM ET from phone, sound: ...". */
   note?: string;
 }
 
-async function load(): Promise<QueuePost[]> {
-  return JSON.parse(await readFile(FILE, "utf8").catch(() => "[]"));
-}
-
 export async function GET() {
-  return Response.json(await load());
-}
-
-export async function POST(request: Request) {
-  const { id, decision, note } = await request.json();
-  const posts = await load();
-  const post = posts.find((item) => item.id === id);
-  if (!post) return Response.json({ error: "No such post" }, { status: 404 });
-  if (decision) post.decision = decision;
-  if (note !== undefined) post.note = note;
-  await writeFile(FILE, JSON.stringify(posts, null, 2));
-  return Response.json(post);
+  return Response.json(JSON.parse(await readFile(FILE, "utf8").catch(() => "[]")) as QueuePost[]);
 }
