@@ -94,7 +94,7 @@ export default function Home() {
       {gallery.map((group) => (
         <section key={group.account} className="mt-10">
           <h2 className="text-2xl font-semibold">
-            Ready to post: {group.account} ({group.videos.length})
+            {group.account === "made-live" ? "Made just now" : "Ready to post"} ({group.videos.length})
           </h2>
           <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
             {group.videos.map((video) => (

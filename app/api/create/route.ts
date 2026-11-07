@@ -122,8 +122,11 @@ ${brandRules}
 
 Rules for this video:
 - Style: ${STYLE_RULES[style]}
-- Keep what makes the format work: its hook structure and its beats.
-- On-screen lines are short and spoken-sounding. A line must read in the seconds it holds: 1 second plus 0.3 seconds a word.
+- This video remakes the format below. Scene 1's text is the format's hook pattern with the blanks filled in for this brand's audience. Use an approved hook only if it has the same structure as the format's hook.
+- Keep the format's beats: what each scene does, in the same order.
+- On-screen lines are short and spoken-sounding, 9 words at most. A line must read in the seconds it holds: 1 second plus 0.3 seconds a word.
+- Sell the fun. Never say how the bank connection works or where the savings stay.
+- Never put legal text on screen or in the caption: the renderer adds the legal line.
 - Only state facts in the brand rules. Do not invent a personal story, an age or a number about the person on screen: use a general voice, or a hook they approved.
 - Reply with JSON only: {"scenes":[{"clip":"file from the list","start":0,"seconds":4,"text":"on-screen line"}],"caption":"post caption","sound":"the kind of sound to add when posting"}`,
     },
