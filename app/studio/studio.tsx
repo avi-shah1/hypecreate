@@ -2,7 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { JobView, NicheSearch, SavedSearch, SignalSummary } from "@/app/api/signal/signal";
+import type { BrandProfile } from "./brand-profile";
 import FormatCard from "./format-card";
+import Research from "./research";
 import { USE_MOCK_GENERATE } from "./generate";
 import RecentAds from "./recent-ads";
 import type { StudioVideo } from "./videos/route";
@@ -28,6 +30,7 @@ export default function Studio() {
   const [error, setError] = useState<string | null>(null);
   const [live, setLive] = useState(false);
   const [videos, setVideos] = useState<StudioVideo[]>([]);
+  const [profile, setProfile] = useState<BrandProfile | null>(null);
   // Each scan gets a number, so a slow old scan can't overwrite a newer one.
   const scanNumber = useRef(0);
 
@@ -118,13 +121,22 @@ export default function Studio() {
           )}
         </header>
 
+        <Research
+          profile={profile}
+          onProfile={(found) => {
+            setProfile(found);
+            if (found) setBrand(found.company);
+          }}
+        />
+
         <form
           onSubmit={(event) => {
             event.preventDefault();
             scan();
           }}
-          className="mt-12 rounded-3xl border border-white/10 bg-zinc-900/60 p-6 md:p-8"
+          className="mt-8 rounded-3xl border border-white/10 bg-zinc-900/60 p-6 md:p-8"
         >
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-emerald-400">Step 2 · Scan trends</p>
           <div className="grid gap-5 md:grid-cols-[14rem_1fr_auto] md:items-end">
             <label className="block">
               <span className="text-sm font-medium text-zinc-400">Brand</span>
@@ -226,6 +238,7 @@ export default function Studio() {
                   brand={brand.trim() || "Lodavo"}
                   signalSlug={signal.slug}
                   ready={videos.filter((video) => video.formatId === brief.id)}
+                  profile={profile}
                   onFinished={loadVideos}
                 />
               ))}

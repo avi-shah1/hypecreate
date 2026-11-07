@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import type { Beat, Evidence, FormatBrief } from "@/lib/contract";
 import BrainView from "@/app/brain/brain-view";
 import { GENERATE_POLL_MS, getGenerate, startGenerate, USE_MOCK_GENERATE, type GenerateRequest, type GenerateStatus } from "./generate";
+import { guardrailsOf, type BrandProfile } from "./brand-profile";
 import { compact, multiple, sleep, span } from "./utils";
 import type { StudioVideo } from "./videos/route";
 
@@ -14,10 +15,12 @@ interface Props {
   signalSlug: string;
   /** Videos already made for this format: instant to show, and the fallback if GMI fails. */
   ready: StudioVideo[];
+  /** From the Research step. Sent with every generate request so the script obeys it. */
+  profile: BrandProfile | null;
   onFinished: () => void;
 }
 
-export default function FormatCard({ rank, brief, brand, signalSlug, ready, onFinished }: Props) {
+export default function FormatCard({ rank, brief, brand, signalSlug, ready, profile, onFinished }: Props) {
   const [generation, setGeneration] = useState<GenerateStatus | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [startedAt, setStartedAt] = useState(0);
@@ -47,7 +50,16 @@ export default function FormatCard({ rank, brief, brand, signalSlug, ready, onFi
     setShowBrain(false);
     setStartedAt(Date.now());
     try {
-      const { jobId } = await startGenerate({ signalSlug, formatId: brief.id, brand, style }, brief);
+      const { jobId } = await startGenerate(
+        {
+          signalSlug,
+          formatId: brief.id,
+          brand,
+          style,
+          ...(profile ? { brandProfile: profile, guardrails: guardrailsOf(profile) } : {}),
+        },
+        brief,
+      );
       let status: GenerateStatus = { jobId, status: "queued", stage: "Queued" };
       while (mounted.current) {
         setGeneration(status);

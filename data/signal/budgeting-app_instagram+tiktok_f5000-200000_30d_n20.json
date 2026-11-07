@@ -10,41 +10,41 @@
     "days": 30,
     "limit": 20
   },
-  "generatedAt": "2026-11-07T00:25:52.817Z",
+  "generatedAt": "2026-11-07T01:19:29.508Z",
   "model": "google/gemini-3.8-flash",
   "orianeFile": "data/oriane/budgeting-app_instagram+tiktok_f5000-200000_30d_n20.json",
   "videosAnalysed": 20,
-  "totalMatches": 192,
+  "totalMatches": 190,
   "briefs": [
     {
-      "id": "personal-finance-reset-breakdown",
-      "name": "Personal Finance Reset Breakdown",
-      "whyItWorks": "Builds instant trust through vulnerable storytelling about a dramatic financial turnaround, then shows concrete tools and steps (budgeting setup, high-yield accounts) with visual receipts.",
-      "hookPattern": "These are [number] things I did to go from [negative financial situation] to [impressive financial milestone]",
+      "id": "financial-turnaround-breakdown",
+      "name": "Financial Turnaround Breakdown",
+      "whyItWorks": "Builds instant trust by juxtaposing an aspirational wealth milestone or financial rock bottom against a realistic, actionable routine. Shows real numbers and tools on screen to demystify money management.",
+      "hookPattern": "These are [number] things I did to go from [undesirable financial state] to [impressive financial milestone]",
       "beats": [
         {
           "fromSeconds": 0,
           "toSeconds": 4,
-          "shows": "Creator talking directly to camera, showing an overlay of past broke balance vs current high net worth balance chart",
-          "says": "These are 3 things I did to go from being completely broke to hitting a 250k net worth by 30.",
-          "onScreen": "3 THINGS I DID TO GO FROM BROKE TO $250K"
+          "shows": "Creator speaking directly to camera with an inset photo or net worth graph overlay.",
+          "says": "These are 3 things I did to go from being completely broke to hitting a $100K net worth.",
+          "onScreen": "3 Things I Did To Reset My Finances"
         },
         {
           "fromSeconds": 4,
           "toSeconds": 9,
-          "shows": "Close-up cut to screen recording or notebook showing incoming paycheck and expense breakdown",
-          "says": "First, I started tracking every dollar using a budgeting app. If you can't manage your money now, you won't later.",
-          "onScreen": "Step 1: Track Every Dollar"
+          "shows": "Close-up cutaway of a mobile budgeting app dashboard showing categorized spending.",
+          "says": "First, every dollar gets a specific job. Track your real cash flow instead of guessing at the end of the month.",
+          "onScreen": "Rule 1: Zero-based budgeting"
         },
         {
           "fromSeconds": 9,
-          "toSeconds": 15,
-          "shows": "Back to creator pointing up to savings interest rate graphic and phone app interface",
-          "says": "Second, move your emergency fund into a high-yield savings account so your cash actually grows.",
-          "onScreen": "Step 2: High Yield Savings"
+          "toSeconds": 14,
+          "shows": "Creator holding their phone, scrolling through automated savings buckets.",
+          "says": "Second, automate transfers into dedicated accounts so you psychologically can't touch what you're saving.",
+          "onScreen": "Rule 2: Automated buckets"
         }
       ],
-      "durationSeconds": 15,
+      "durationSeconds": 14,
       "recommendedStyle": "ai-generated",
       "clipTag": null,
       "evidence": [
@@ -134,34 +134,34 @@
       "score": 1
     },
     {
-      "id": "psychological-money-law",
-      "name": "Psychological Money Law",
-      "whyItWorks": "Hooks viewers with a counterintuitive psychological mystery about why certain people never go broke, then breaks down a memorable mental framework for managing income.",
-      "hookPattern": "There are some people that you ask for [thing] and they say they don't have it, but [secret reason]",
+      "id": "psychological-wealth-shift",
+      "name": "Psychological Wealth Shift",
+      "whyItWorks": "Opens with a counterintuitive observation about money mindsets that subverts audience assumptions, followed by a numbered framework for keeping money saved.",
+      "hookPattern": "There are some people who [counterintuitive behavior], because psychologically [reason]",
       "beats": [
         {
           "fromSeconds": 0,
           "toSeconds": 5,
-          "shows": "Talking head framed center camera with bold headline banner overhead and mood lighting",
-          "says": "There are some people you ask for money and they say they don't have it, even with 10k in their account. They aren't lying.",
+          "shows": "Presenter speaking passionately straight to camera under studio lighting.",
+          "says": "There are people who say they don't have money even with 10k in their account, because psychologically they don't see it as spendable.",
           "onScreen": "HOW TO NEVER RUN OUT OF MONEY"
         },
         {
           "fromSeconds": 5,
-          "toSeconds": 10,
-          "shows": "Graphic slides in showing split bank accounts and a strict rule diagram",
-          "says": "Psychologically, they treat saved money as money that literally does not exist to spend.",
-          "onScreen": "The 'Phantom Zero' Rule"
+          "toSeconds": 11,
+          "shows": "Over-the-shoulder view showing phone screen with digital envelopes and locked budget rules.",
+          "says": "This rule trains your mind to treat baseline cash reserves as invisible so your bottom line keeps growing.",
+          "onScreen": "The Out-of-Sight Principle"
         },
         {
-          "fromSeconds": 10,
-          "toSeconds": 15,
-          "shows": "Creator gesturing directly into camera emphasizing practical habit change",
-          "says": "Here is the exact rule you need to automate into your budgeting app right now so you never run out.",
-          "onScreen": "Rule #1: Automate Before Spending"
+          "fromSeconds": 11,
+          "toSeconds": 16,
+          "shows": "Presenter gestures forward with clear call to action.",
+          "says": "Once you build this psychological wall with your budgeting setup, running out of money becomes impossible.",
+          "onScreen": "Budget your baseline first"
         }
       ],
-      "durationSeconds": 15,
+      "durationSeconds": 16,
       "recommendedStyle": "ai-generated",
       "clipTag": null,
       "evidence": [
@@ -254,67 +254,67 @@
   "rejected": [
     {
       "url": "https://www.tiktok.com/@hotteanchitchat/video/7694585430825553174",
-      "reason": "Pop culture commentary and influencer drama gossip; not about budgeting apps."
+      "reason": "Celebrity fitness influencer gossip, not about budgeting apps."
     },
     {
       "url": "https://www.tiktok.com/@adopted_connor/video/7698110711318269214",
-      "reason": "Social/political commentary on pregnancy clinics; false match."
+      "reason": "Political and social commentary regarding pregnancy centers; irrelevant to budgeting apps."
     },
     {
       "url": "https://www.instagram.com/reel/DetlMZLo1F2/",
-      "reason": "Satirical gym/fitness parody video; not about budgeting apps."
+      "reason": "Satirical fitness advice video parodying level-up lists, not a personal finance tool guide."
     },
     {
       "url": "https://www.instagram.com/reel/Dejq_mzMsOd/",
-      "reason": "Local city council meeting recording; political advocacy unrelated to budgeting apps."
+      "reason": "Local city council political activist speech; unrelated to budgeting."
     },
     {
       "url": "https://www.tiktok.com/@control_within4/video/7700586681761565974",
-      "reason": "Reddit relationship drama story animation; not about budgeting apps."
+      "reason": "Text-to-speech animated Reddit drama story, irrelevant to budgeting apps."
     },
     {
       "url": "https://www.instagram.com/reel/DeVQMJ9y00V/",
-      "reason": "Costco shopping grocery vlog with toddlers; casual weekly budget mention rather than budgeting app content."
+      "reason": "Costco grocery haul vlog with family entertainment focus, not about budgeting apps."
     },
     {
       "url": "https://www.tiktok.com/@artofsmartedu/video/7697556011791568149",
-      "reason": "High school math exam revision and exam score prediction video."
+      "reason": "High school math exam preparation advice; keyword false match."
     },
     {
       "url": "https://www.tiktok.com/@kaytheg0d/video/7694144379354664206",
-      "reason": "Comic book movie production news; uses 'budgeting' in film studio context."
+      "reason": "DC Studios and movie industry rumor breakdown, matched on film budgeting jargon."
     },
     {
       "url": "https://www.instagram.com/reel/Def7uFmTQTb/",
-      "reason": "Bank brand promo for social housing partnership program."
+      "reason": "Corporate bank PR feature for social housing community development."
     },
     {
       "url": "https://www.instagram.com/reel/De0gSS3PZ6k/",
-      "reason": "Retirement compound interest flex/calculator video without a repeatable organic peer format for budgeting apps."
+      "reason": "Compound interest retirement investment flex; not focused on budgeting apps."
     },
     {
       "url": "https://www.instagram.com/reel/De2gnhlSf_A/",
-      "reason": "Airport hiring and job board listing promotion."
+      "reason": "Job board promotional listing for LAX airport careers."
     },
     {
       "url": "https://www.tiktok.com/@jackrein316/video/7695522857413086495",
-      "reason": "Teacher career tenure advice discussing school district budget cuts."
+      "reason": "Career tenure discussion for teachers; matched on school budget cuts."
     },
     {
       "url": "https://www.instagram.com/reel/DeYmB_FM_FG/",
-      "reason": "Atmospheric light art festival video in Finnish; total false match."
+      "reason": "Finnish cultural light festival promotion in a church park; completely unrelated."
     },
     {
       "url": "https://www.instagram.com/reel/Der-OHKIra7/",
-      "reason": "Beauty influencer personal life update announcement."
+      "reason": "Beauty influencer career milestone announcement."
     },
     {
       "url": "https://www.tiktok.com/@burbnbougie2025/video/7695436441202986253",
-      "reason": "Reading Reddit relationship forum stories; unrelated to budgeting apps."
+      "reason": "Reaction to a relationship food forum post; unrelated to budgeting apps."
     },
     {
       "url": "https://www.tiktok.com/@maddytheb/video/7695008789484866846",
-      "reason": "State department book fair tour and event preview."
+      "reason": "Local event preview and walk-through of an art and book sale."
     }
   ],
   "usedImages": true

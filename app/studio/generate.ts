@@ -3,6 +3,7 @@
 //   "ben"     Ben's /api/generate, same shape, once it is live
 //   "mock"    ./mock-generate.ts: fake steps and a sample video, free
 import type { Beat, CreateResult, FormatBrief } from "@/lib/contract";
+import type { BrandProfile, Guardrails } from "./brand-profile";
 import { mockGet, mockStart } from "./mock-generate";
 
 export const GENERATE_WITH = "ben" as "studio" | "ben" | "mock";
@@ -20,6 +21,10 @@ export interface GenerateRequest {
   brand: string;
   /** Real clips unless this says otherwise. */
   style?: "hook-plus-demo" | "broll-text" | "ai-generated";
+  /** From the Research step: the facts the script may use. */
+  brandProfile?: BrandProfile;
+  /** From the Research step: what the script must never say, and what it must include. */
+  guardrails?: Guardrails;
 }
 
 export interface GenerateResult extends Partial<CreateResult> {

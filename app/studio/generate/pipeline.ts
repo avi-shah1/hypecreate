@@ -8,6 +8,7 @@ import path from "node:path";
 import { promisify } from "node:util";
 import { ask } from "@/app/api/signal/analyze";
 import type { Beat, FormatBrief } from "@/lib/contract";
+import type { BrandProfile, Guardrails } from "../brand-profile";
 
 const QUEUE_URL = "https://console.gmicloud.ai/api/v1/ie/requestqueue/apikey/requests";
 export const VIDEO_MODEL = "veo-3.1-fast-generate-001";
@@ -41,7 +42,14 @@ export function getGeneration(jobId: string): GenerateJob | null {
 }
 
 /** Checks the inputs, then runs the job in the background. Throws on bad input. */
-export async function startGeneration(input: { signalSlug?: string; formatId?: string; brand?: string }) {
+export async function startGeneration(input: {
+  signalSlug?: string;
+  formatId?: string;
+  brand?: string;
+  /** From the Studio's Research step; both optional. */
+  brandProfile?: BrandProfile;
+  guardrails?: Guardrails;
+}) {
   const slug = String(input.signalSlug ?? "");
   if (!/^[a-z0-9+_-]+$/.test(slug)) throw new Error("signalSlug is missing or malformed");
   const signal = JSON.parse(
@@ -58,9 +66,10 @@ export async function startGeneration(input: { signalSlug?: string; formatId?: s
     throw new Error(`No brand rules at brand/${brandFile}.md, so no copy can be checked against them`);
   });
 
+  const research = researchNotes(input.brandProfile, input.guardrails);
   const job: GenerateJob = { jobId: crypto.randomUUID(), status: "queued", stage: "Queued", startedAt: Date.now() };
   jobs.set(job.jobId, job);
-  run(job, brief, brand, rules).catch((error) => {
+  run(job, brief, brand, rules, research, input.guardrails?.requiredDisclaimers ?? []).catch((error) => {
     job.status = "error";
     job.error = error instanceof Error ? error.message : String(error);
     console.error(`studio generate ${job.jobId}:`, error);
@@ -68,10 +77,23 @@ export async function startGeneration(input: { signalSlug?: string; formatId?: s
   return job;
 }
 
-async function run(job: GenerateJob, brief: FormatBrief, brand: string, rules: string) {
+async function run(
+  job: GenerateJob,
+  brief: FormatBrief,
+  brand: string,
+  rules: string,
+  research: string,
+  disclaimers: string[],
+) {
   job.status = "running";
-  job.stage = `Writing the ${brand} script`;
-  const script = await writeScript(brief, brand, rules);
+  job.stage = research ? `Writing the ${brand} script within its guardrails` : `Writing the ${brand} script`;
+  const script = await writeScript(brief, brand, rules, research);
+  // Caption disclaimers are added in code so they can't be forgotten. "AI-generated" is the video's label, not caption text.
+  for (const line of disclaimers.filter((text) => !/ai-generated/i.test(text))) {
+    if (!script.caption.toLowerCase().includes(line.toLowerCase().replace(/\.$/, ""))) {
+      script.caption = `${script.caption.trim()} ${line}`.trim();
+    }
+  }
 
   job.stage = "Sending to Veo 3.1 Fast";
   const payload = {
@@ -121,7 +143,31 @@ async function run(job: GenerateJob, brief: FormatBrief, brand: string, rules: s
   job.status = "done";
 }
 
-async function writeScript(brief: FormatBrief, brand: string, rules: string) {
+/** The Research step's profile and guardrails, as a prompt section. Empty when the Studio sent none. */
+function researchNotes(profile?: BrandProfile, guardrails?: Guardrails): string {
+  if (!profile && !guardrails) return "";
+  const facts = profile
+    ? {
+        oneLiner: profile.oneLiner,
+        status: profile.status,
+        howItWorks: profile.howItWorks,
+        taglines: profile.taglines,
+        proofPointsCanada: profile.proofPointsCanada,
+        trust: profile.trust,
+        audience: profile.audience,
+        voice: profile.voice,
+        primaryCTA: profile.primaryCTA,
+      }
+    : null;
+  return `
+THE COMPANY RESEARCH. Facts you may use, and guardrails you must obey.
+${facts ? JSON.stringify(facts, null, 2) : ""}
+Never say, or imply: ${(guardrails?.doNotSay ?? profile?.doNotSay ?? []).join("; ")}.
+Proof points are Canadian: if you use one, say it is Canada. If this research and the brand rules disagree, follow whichever is stricter.
+`;
+}
+
+async function writeScript(brief: FormatBrief, brand: string, rules: string, research = "") {
   const format = {
     name: brief.name,
     whyItWorks: brief.whyItWorks,
@@ -135,7 +181,7 @@ ${JSON.stringify(format, null, 2)}
 
 THE BRAND RULES. Follow every one. They override the format.
 ${rules}
-
+${research}
 The video is made by Veo, a text-to-video model with sound, in one continuous ${SECONDS}-second shot:
 - One AI-generated creator talking to camera, selfie style, in one setting. They are a presenter, never a customer or a winner: no testimonials, no "I won", no claims about their own results.
 - At most 22 spoken words in total, natural and conversational. Open with the format's hook pattern, its blanks filled for ${brand}.
