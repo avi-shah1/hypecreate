@@ -34,6 +34,8 @@ First customer: Lodavo, a Canadian savings app, with its next batch of posts due
 | Code | `lib/oriane.ts`, `app/api/signal/` | `lib/gmi.ts`, `app/api/create/`, `brand/`, `clips/` |
 | Output | `FormatBrief[]` | `CreateResult`: an MP4 and a caption |
 
+**Julius: brain view.** Code that shows which brain regions a video is predicted to activate. Put it in its own `brain/` folder so it can't collide with the other two halves. The idea: compare a new video against the breakout it remakes. Oriane gives frames and a timed transcript for that breakout, not the video file, so it needs to work from those or we need another source for the original.
+
 `lib/contract.ts` is the only thing connecting the two. `fixtures/format-brief.example.json` is a real example, so Ben can build before Avi's search is ready, and `/api/signal` serves it until then. `app/page.tsx` is shared: keep edits small.
 
 ### Avi's half

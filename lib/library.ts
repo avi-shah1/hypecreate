@@ -16,7 +16,12 @@ export async function loadLibrary(person?: string): Promise<LibraryClip[]> {
   } catch {
     throw new Error("No clips/library.json on this machine: the footage is only on Ben's laptop.");
   }
-  return clips.filter((clip) => clip.cleared && (!person || clip.person === person || clip.person === null));
+  return clips.filter((clip) => {
+    if (!clip.cleared) return false;
+    // A faceless account uses whatever has nobody on camera: scenery, screens, hands.
+    if (person === "faceless") return !clip.tags.includes("person");
+    return !person || clip.person === person || clip.person === null;
+  });
 }
 
 export function clipPath(clip: Pick<Clip, "file">): string {

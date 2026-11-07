@@ -5,7 +5,7 @@
 import type { Beat, CreateResult, FormatBrief } from "@/lib/contract";
 import { mockGet, mockStart } from "./mock-generate";
 
-export const GENERATE_WITH = "studio" as "studio" | "ben" | "mock";
+export const GENERATE_WITH = "ben" as "studio" | "ben" | "mock";
 
 export const USE_MOCK_GENERATE = GENERATE_WITH === "mock";
 const ENDPOINT = GENERATE_WITH === "ben" ? "/api/generate" : "/studio/generate";
