@@ -179,7 +179,8 @@ async function closestSaved(search: NicheSearch, slug: string): Promise<{ signal
   const candidates = (await listSaved()).filter((saved) => !saved.search.query.startsWith("our "));
   const best =
     [...candidates].sort((a, b) => shared(b.search.query) - shared(a.search.query))[0] ?? null;
-  const fallback = slugOf(DEFAULTS);
+  // readSearch sorts the platforms, so the saved file names have them sorted too.
+  const fallback = slugOf({ ...DEFAULTS, platforms: [...DEFAULTS.platforms].sort() });
   const chosen = best && shared(best.search.query) > 0 ? best.slug : fallback;
   const signal = await load<SavedSignal>(SIGNAL_DIR, chosen);
   if (!signal) throw new NotSaved(`No saved search "${chosen}" for the demo`);

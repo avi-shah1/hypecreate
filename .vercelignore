@@ -1,0 +1,9 @@
+# Never upload these to Vercel: keys, local footage and local renders, build output.
+.env*
+!.env.example
+clips
+public/renders
+public/out
+node_modules
+.next
+CLAUDE.avi.md
