@@ -13,7 +13,8 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 Read `README.md`, then `docs/apis.md`.
 
 - `lib/contract.ts` is the interface between signal, create and brain. Change it deliberately.
-- Never commit a key, footage or a render. Keys live in `.env.local`, footage in `clips/`, renders in `public/renders/`. All of them are ignored.
+- Never commit a key, footage or a render. Keys live in `.env.local`, footage in `clips/`, renders in `public/renders/`. All of them are ignored. The one exception is `public/demo/`: the finished AI videos the public demo shows, listed in `data/demo-videos.json`.
+- Demo mode (`lib/demo.ts`) is on unless `HYPECREATE_LIVE=1`. Every route that calls Oriane or GMI must check `DEMO_MODE` on the server first.
 - Oriane and GMI cost real credits. Cache responses, keep `limit` small while exploring, and never run a generation job in an uncapped loop.
 - Copy for Lodavo follows `brand/lodavo.md`. Check copy against it, not from memory.
 - Clips with `cleared: false` are never used. An AI-generated person never plays a real user, and nobody's face or voice is made to say words they did not say.

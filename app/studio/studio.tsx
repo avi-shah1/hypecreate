@@ -21,7 +21,8 @@ const DEFAULT_SEARCH: NicheSearch = {
   limit: 20,
 };
 
-export default function Studio() {
+/** `demo` comes from lib/demo.ts on the server: the public demo is Lodavo only. */
+export default function Studio({ demo = false }: { demo?: boolean }) {
   const [brand, setBrand] = useState("Lodavo");
   const [niche, setNiche] = useState("");
   const [saved, setSaved] = useState<SavedSearch[]>([]);
@@ -121,6 +122,14 @@ export default function Studio() {
           )}
         </header>
 
+        {demo && (
+          <p className="mt-8 rounded-2xl border border-sky-400/30 bg-sky-400/10 p-5 text-lg leading-relaxed text-sky-100">
+            <span className="font-semibold">This demo is built for one company: Lodavo</span>, a savings app that gives
+            you free tickets to a weekly cash draw for the money you save. The research, the brand rules and every video
+            are Lodavo&apos;s. Other companies aren&apos;t supported yet.
+          </p>
+        )}
+
         <Research
           profile={profile}
           onProfile={(found) => {
@@ -143,7 +152,9 @@ export default function Studio() {
               <input
                 value={brand}
                 onChange={(event) => setBrand(event.target.value)}
-                className="mt-2 w-full rounded-2xl border border-white/10 bg-zinc-950 px-4 py-3.5 text-xl outline-none focus:border-emerald-400"
+                readOnly={demo}
+                title={demo ? "The demo is for Lodavo only" : undefined}
+                className="mt-2 w-full rounded-2xl border border-white/10 bg-zinc-950 px-4 py-3.5 text-xl outline-none focus:border-emerald-400 read-only:cursor-not-allowed read-only:text-zinc-400"
               />
             </label>
             <label className="block">

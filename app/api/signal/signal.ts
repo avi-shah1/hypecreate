@@ -7,6 +7,7 @@
 import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import type { FormatBrief, Platform } from "@/lib/contract";
+import { DEMO_MODE } from "@/lib/demo";
 import { nicheQuery, searchContents, type NicheSearch, type OrianeContent } from "@/lib/oriane";
 import { analyze, MAX_VIDEOS, SIGNAL_MODEL, type Analysis, type Progress } from "./analyze";
 
@@ -121,7 +122,8 @@ async function run(
   slug: string,
   mode: Mode,
   onProgress: (progress: Progress) => void,
-): Promise<{ signal: SavedSignal; source: Source }> {
+): Promise<{ signal: SavedSignal; source: Source; slug?: string }> {
+  if (DEMO_MODE) return closestSaved(search, slug);
   if (mode === "default") {
     const saved = await load<SavedSignal>(SIGNAL_DIR, slug);
     if (saved) return { signal: saved, source: "saved" };
@@ -164,6 +166,24 @@ async function run(
   };
   await save(SIGNAL_DIR, slug, signal);
   return { signal, source };
+}
+
+/** Demo mode never searches Oriane: a niche nobody saved gets the saved search sharing the most words with it. */
+async function closestSaved(search: NicheSearch, slug: string): Promise<{ signal: SavedSignal; source: Source; slug: string }> {
+  const exact = await load<SavedSignal>(SIGNAL_DIR, slug);
+  if (exact) return { signal: exact, source: "saved", slug };
+
+  const words = new Set(search.query.split(/[^a-z0-9]+/).filter((word) => word.length > 2));
+  const shared = (query: string) => query.split(/[^a-z0-9]+/).filter((word) => words.has(word)).length;
+  // Our own account's results are not a niche search, so a typed niche never lands on them.
+  const candidates = (await listSaved()).filter((saved) => !saved.search.query.startsWith("our "));
+  const best =
+    [...candidates].sort((a, b) => shared(b.search.query) - shared(a.search.query))[0] ?? null;
+  const fallback = slugOf(DEFAULTS);
+  const chosen = best && shared(best.search.query) > 0 ? best.slug : fallback;
+  const signal = await load<SavedSignal>(SIGNAL_DIR, chosen);
+  if (!signal) throw new NotSaved(`No saved search "${chosen}" for the demo`);
+  return { signal, source: "saved", slug: chosen };
 }
 
 async function summarize(slug: string, signal: SavedSignal): Promise<SignalSummary> {
@@ -265,8 +285,9 @@ export function startJob(search: NicheSearch, mode: Mode): Job {
     job.notes[progress.stage] =
       progress.stage === "frames" ? `${progress.framesDone}/${progress.framesTotal} opening frames read` : progress.detail;
   })
-    .then(async ({ signal, source }) => {
-      job.summary = await summarize(slug, signal);
+    .then(async ({ signal, source, slug: used }) => {
+      if (used) job.slug = used;
+      job.summary = await summarize(job.slug, signal);
       job.source = source;
       job.status = "done";
       job.progress = { stage: "done", detail: source === "saved" ? "Loaded saved formats" : "Saved for next time" };

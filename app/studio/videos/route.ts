@@ -5,6 +5,7 @@
 import { readdir, readFile, stat } from "node:fs/promises";
 import path from "node:path";
 import type { Beat } from "@/lib/contract";
+import { DEMO_MODE, DEMO_VIDEOS } from "@/lib/demo";
 
 export interface StudioVideo {
   url: string;
@@ -28,6 +29,8 @@ const MODEL_NAMES: Record<string, string> = {
 };
 
 export async function GET() {
+  // The demo's videos are listed in data/demo-videos.json: a host can't read public/ at run time.
+  if (DEMO_MODE) return Response.json([...DEMO_VIDEOS].sort((a, b) => b.createdAt.localeCompare(a.createdAt)));
   const videos: StudioVideo[] = [];
   for (const folder of FOLDERS) {
     const dir = path.join(process.cwd(), "public", folder);

@@ -1,0 +1,152 @@
+[
+  {
+    "url": "/demo/broke-to-milestone-wealth-roadmap-veo.mp4",
+    "name": "Broke-to-Milestone Wealth Roadmap",
+    "model": "Veo 3.1 Fast",
+    "formatId": "broke-to-milestone-wealth-roadmap",
+    "createdAt": "2026-11-07T00:25:01.187Z",
+    "caption": "Every $25 you have saved earns a free ticket for the weekly draw. Download the savings app to start.",
+    "beats": [
+      {
+        "fromSeconds": 0,
+        "toSeconds": 4,
+        "shows": "A friendly presenter talking directly to camera in a bright, modern living room, holding phone naturally at selfie angle.",
+        "says": "These are two things you can do to go from zero saved to weekly cash prizes.",
+        "onScreen": "Start saving and get tickets"
+      },
+      {
+        "fromSeconds": 4,
+        "toSeconds": 8,
+        "shows": "Presenter smiles warmly, speaking enthusiastically to the viewer.",
+        "says": "Save twenty-five dollars, get a free ticket every week, and get a chance to win ten thousand dollars.",
+        "onScreen": "Chance to win $10,000"
+      }
+    ]
+  },
+  {
+    "url": "/demo/personal-finance-reset-breakdown-veo.mp4",
+    "name": "Personal Finance Reset Breakdown",
+    "model": "Veo 3.1 Fast",
+    "formatId": "personal-finance-reset-breakdown",
+    "createdAt": "2026-11-07T00:44:40.847Z",
+    "caption": "Every 25 dollars you have saved earns a free ticket every week. Download Lodavo and get your tickets.",
+    "beats": [
+      {
+        "fromSeconds": 0,
+        "toSeconds": 4,
+        "shows": "A friendly presenter talking directly to camera in a bright living room, holding phone naturally at chest level.",
+        "says": "These are two things to go from zero savings to having a chance to win cash every week.",
+        "onScreen": "2 STEPS TO CASH PRIZES"
+      },
+      {
+        "fromSeconds": 4,
+        "toSeconds": 8,
+        "shows": "Presenter gestures encouragingly, continuing to speak warmly to camera.",
+        "says": "Save twenty-five dollars. Lodavo gives you a free ticket for the weekly draw.",
+        "onScreen": "SAVE $25 = FREE WEEKLY TICKET"
+      }
+    ]
+  },
+  {
+    "url": "/demo/strict-budget-store-run-veo.mp4",
+    "name": "Strict Budget Store Run",
+    "model": "Veo 3.1 Fast",
+    "formatId": "strict-budget-store-run",
+    "createdAt": "2026-11-07T00:23:01.653Z",
+    "caption": "Every $25 you have saved earns a free ticket for the weekly cash draw. Start saving today!",
+    "beats": [
+      {
+        "fromSeconds": 0,
+        "toSeconds": 4,
+        "shows": "A friendly presenter talking directly to camera in a bright kitchen, smiling and gesturing.",
+        "says": "We are on a strict twenty-five dollar budget to earn free tickets!",
+        "onScreen": "STRICT $25 BUDGET"
+      },
+      {
+        "fromSeconds": 4,
+        "toSeconds": 8,
+        "shows": "The presenter continues speaking naturally to camera, enthusiastically explaining the weekly cash chance.",
+        "says": "Every twenty-five dollars you save with Lodavo gives you a chance to win cash weekly.",
+        "onScreen": "CHANCE TO WIN CASH WEEKLY"
+      }
+    ]
+  },
+  {
+    "url": "/demo/frugal-childhood-confession-veo.mp4",
+    "name": "The Frugal Childhood Confession",
+    "model": "Veo 3.1 Fast",
+    "formatId": "the-frugal-childhood-confession",
+    "createdAt": "2026-11-07T00:03:54.846Z",
+    "caption": "Saving money just got way more fun. Earn free tickets every week.",
+    "beats": [
+      {
+        "fromSeconds": 0,
+        "toSeconds": 4,
+        "says": "I used to think my family was broke growing up because saving money was treated like a sport.",
+        "shows": ""
+      },
+      {
+        "fromSeconds": 4,
+        "toSeconds": 8,
+        "says": "With Lodavo, every twenty-five dollars you save gives you a chance to win cash weekly.",
+        "shows": ""
+      }
+    ]
+  },
+  {
+    "url": "/demo/frugal-childhood-confession-veo-test.mp4",
+    "name": "The Frugal Childhood Confession",
+    "model": "Veo 3.1 Fast",
+    "formatId": "the-frugal-childhood-confession",
+    "createdAt": "2026-11-06T23:50:35.931Z",
+    "beats": [
+      {
+        "fromSeconds": 0,
+        "toSeconds": 4,
+        "shows": "",
+        "says": "I thought we were broke growing up because Mom clipped coupons."
+      },
+      {
+        "fromSeconds": 4,
+        "toSeconds": 8,
+        "shows": "",
+        "says": "Now Lodavo gives you free tickets for saving."
+      }
+    ]
+  },
+  {
+    "url": "/demo/frugal-childhood-confession-seedance.mp4",
+    "name": "The Frugal Childhood Confession",
+    "model": "Seedance 2.0 Fast",
+    "formatId": "the-frugal-childhood-confession",
+    "createdAt": "2026-11-06T23:51:15.257Z",
+    "beats": [
+      {
+        "fromSeconds": 0,
+        "toSeconds": 4,
+        "shows": "",
+        "says": "I thought we were broke growing up because Mom clipped coupons."
+      },
+      {
+        "fromSeconds": 4,
+        "toSeconds": 8,
+        "shows": "",
+        "says": "Now Lodavo gives you free tickets for saving."
+      }
+    ]
+  },
+  {
+    "url": "/demo/frugal-childhood-confession-kling.mp4",
+    "name": "The Frugal Childhood Confession",
+    "model": "Kling 3",
+    "formatId": "the-frugal-childhood-confession",
+    "createdAt": "2026-11-07T00:14:45.897Z"
+  },
+  {
+    "url": "/demo/frugal-childhood-confession-kling-edited.mp4",
+    "name": "The Frugal Childhood Confession",
+    "model": "Kling 3, edited",
+    "formatId": "the-frugal-childhood-confession",
+    "createdAt": "2026-11-07T00:15:17.901Z"
+  }
+]

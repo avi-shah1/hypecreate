@@ -70,7 +70,7 @@ export default function Research({ profile, onProfile }: Props) {
 
         {unsupported && (
           <p className="mt-6 rounded-2xl border border-amber-400/30 bg-amber-400/10 p-4 text-lg text-amber-200">
-            Demo supports Lodavo only.
+            This demo only works for Lodavo. Try https://www.lodavo.com: other companies aren&apos;t supported yet.
           </p>
         )}
 

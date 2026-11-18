@@ -11,10 +11,12 @@ export default function Queue() {
   useEffect(() => {
     // /queue?account=fintechben opens on one account's posts.
     const wanted = new URLSearchParams(window.location.search).get("account");
-    if (wanted) setAccount(wanted);
     fetch("/api/queue")
       .then((res) => res.json())
-      .then(setPosts);
+      .then((list: QueuePost[]) => {
+        setPosts(list);
+        if (wanted) setAccount(wanted);
+      });
   }, []);
 
   const accounts = [...new Set(posts.map((post) => post.account))];

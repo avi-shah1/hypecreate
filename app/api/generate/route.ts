@@ -10,6 +10,7 @@ import path from "node:path";
 import { getGeneration, startGeneration } from "@/app/studio/generate/pipeline";
 import type { FormatBrief, VideoStyle } from "@/lib/contract";
 import { createVideo, type CreatedVideo } from "@/lib/create";
+import { DEMO_MODE, getDemoGeneration, startDemoGeneration } from "@/lib/demo";
 import { loadLibrary } from "@/lib/library";
 
 interface Job {
@@ -25,6 +26,7 @@ const jobs = (registry.__createJobs ??= new Map<string, Job>());
 
 export async function POST(request: Request) {
   const body = await request.json().catch(() => ({}));
+  if (DEMO_MODE) return Response.json(startDemoGeneration(body));
   try {
     const hasFootage = await loadLibrary(body.person ?? "chaerin").then(
       (clips) => clips.length > 0,
@@ -48,7 +50,7 @@ export async function POST(request: Request) {
 
 export async function GET(request: Request) {
   const jobId = new URL(request.url).searchParams.get("jobId") ?? "";
-  const job = jobs.get(jobId) ?? getGeneration(jobId);
+  const job = DEMO_MODE ? getDemoGeneration(jobId) : (jobs.get(jobId) ?? getGeneration(jobId));
   if (!job) return Response.json({ error: "No such job. The server may have restarted." }, { status: 404 });
   return Response.json(job);
 }
