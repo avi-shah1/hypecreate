@@ -1,0 +1,49 @@
+{
+  "creatorFrom": "veo",
+  "creatorName": "Coupon Kid",
+  "creatorDescription": "Woman in her mid-20s, dark curly hair in a claw clip, sage-green sweatshirt",
+  "shots": [
+    {
+      "seconds": 4,
+      "kind": "aroll",
+      "prompt": "Raw iPhone front-camera selfie video, vertical, constant handheld shake, arm visible at the frame edge, natural late-afternoon window light, not cinematic. <<<element_1>>> sits cross-legged on an unmade bed in her small apartment bedroom wearing an oversized sage-green sweatshirt. She leans toward the lens with a half-laugh, like confessing something embarrassing, and says {says}",
+      "says": "I thought we were broke growing up because Mom clipped coupons.",
+      "caption": "I thought we were broke...",
+      "captionAt": "top",
+      "zoom": "push"
+    },
+    {
+      "seconds": 3,
+      "kind": "broll",
+      "prompt": "1998 home video shot on a VHS camcorder: washed-out colors, soft focus, slight tape wobble. Close-up of a mother's hands at a cluttered kitchen table cutting coupons out of a newspaper insert with orange-handled scissors, a small pile of clipped coupons growing, warm tungsten kitchen light. No faces, no dialogue. Sound: scissors snipping, an old fridge humming.",
+      "caption": "No brand names. Clearance only.",
+      "look": "vhs"
+    },
+    {
+      "seconds": 3,
+      "kind": "aroll",
+      "prompt": "Raw iPhone front-camera selfie, same bedroom and same window light, handheld shake. <<<element_1>>> pulls the phone closer for a tight close-up, raises her eyebrows with a knowing smile, and says {says}",
+      "says": "Turns out we weren't broke. We were saving.",
+      "caption": "Not broke. Saving.",
+      "zoom": "punch"
+    },
+    {
+      "seconds": 2,
+      "kind": "broll",
+      "prompt": "Magical slow-motion shot in a warm sunbeam: dozens of paper coupons swirl upward and transform mid-air into glowing golden tickets, sparkling light trails, dreamy and surreal. No people, no dialogue, no readable text. Sound: a soft shimmering whoosh.",
+      "look": "glow"
+    },
+    {
+      "seconds": 3,
+      "kind": "aroll",
+      "prompt": "Raw iPhone front-camera selfie in the same bedroom, handheld shake. Small glowing golden tickets now float in the air around <<<element_1>>>, catching the window light. She grins at the lens and says {says}",
+      "says": "Now Lodavo gives you free tickets for saving.",
+      "caption": "Free tickets. Just for saving.",
+      "zoom": "push"
+    }
+  ],
+  "endCard": {
+    "seconds": 3,
+    "lines": ["Lodavo", "Free tickets for saving.", "A chance to win cash every week."]
+  }
+}
