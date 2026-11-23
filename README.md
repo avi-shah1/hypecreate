@@ -8,8 +8,6 @@
 
 Consumer apps grow on TikTok and Instagram through small UGC accounts: someone films themselves, posts every day, and the account warms up. When that person leaves, the account goes quiet. HypeCreate keeps it posting. It reads what is working for other creators this month, explains *why* each video works, and remakes that format as a new video for your brand, checked against your brand's rules.
 
-> **This demo only works for Lodavo**, a savings app that gives you free tickets to a weekly cash draw for the money you save. The company research, brand rules and videos are all Lodavo's. Other companies aren't supported yet: adding one means a brand file in `brand/`, a profile in `app/studio/brand-profile.ts`, and live mode to make its videos.
-
 ## How it works
 
 1. **Research the company.** Paste the company's website and the Studio shows a brand profile: what the product does, who it's for, and the guardrails every script must follow (what it may never claim, which legal line has to appear). For now the profile is pre-built for Lodavo (`app/studio/brand-profile.ts`, from `lodavo-brand-brief.md`), so any lodavo.com address works and other sites don't yet.
@@ -25,38 +23,6 @@ Consumer apps grow on TikTok and Instagram through small UGC accounts: someone f
 | `/studio` | The whole flow above: research, scan, formats with evidence, make a video, and every video made so far |
 | `/brain` | The brain view on its own. `/brain?video=/demo/strict-budget-store-run-veo.mp4` opens with that video |
 | `/queue` | The planned posts for each account, with captions and time slots (read-only) |
-
-## Demo mode
-
-The public demo can't spend money. **Demo mode is on unless `HYPECREATE_LIVE=1` is set**, and the server enforces it (`lib/demo.ts`), not just the buttons:
-
-- **Scans** answer from the saved searches in `data/signal/`, which are real results saved from earlier scans. A niche nobody saved gets the saved search closest to it.
-- **Make a video** runs through its steps in a second or two, then shows one of the videos already made, in `public/demo/`. It prefers a video made for that same format.
-- **Paid routes** (`/api/create`) refuse.
-
-Nothing calls Oriane or GMI, so the demo needs no API keys.
-
-## Run it on your computer
-
-```powershell
-npm install
-npm run dev
-```
-
-Then open http://localhost:3000. That runs the demo.
-
-To run it for real (live scans, real videos, using your credits):
-
-```powershell
-Copy-Item .env.example .env.local
-# In .env.local, set HYPECREATE_LIVE=1 and add your keys:
-#   ORIANE_API_KEY  from https://app.oriane.xyz/billing/subscription?tab=api
-#   GMI_API_KEY     from https://console.gmicloud.ai > Settings > API Keys
-npm run smoke   # checks both keys with one cheap call each
-npm run dev
-```
-
-A live video costs about $1–2 of GMI credit and takes a few minutes. `docs/apis.md` has the tested API notes and prices.
 
 ## Deploying
 
@@ -82,4 +48,4 @@ It's a standard Next.js app, so it deploys to Vercel as-is. Leave `HYPECREATE_LI
 
 ## Credits
 
-Built at the Hack the Feed hackathon by Ben Thomas (video creation), Avi Shah (Oriane signal) and Julius (brain view). Forked from [benthomasmtl/hack-the-feed](https://github.com/benthomasmtl/hack-the-feed).
+Built at the Hack the Feed hackathon by Avi Shah & Ben Thomas   
