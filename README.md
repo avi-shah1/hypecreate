@@ -4,6 +4,8 @@
 
 **[Try the live demo → hypecreate.vercel.app](https://hypecreate.vercel.app)**
 
+🥇 Our team won **1st place in the Compound Viral Award** at the [Hack the Feed hackathon](https://luma.com/92iq2a12)
+
 ![The HypeCreate Studio](docs/studio.png)
 
 Consumer apps grow on TikTok and Instagram through small UGC accounts: someone films themselves, posts every day, and the account warms up. When that person leaves, the account goes quiet. HypeCreate keeps it posting. It reads what is working for other creators this month, explains *why* each video works, and remakes that format as a new video for your brand, checked against your brand's rules.
@@ -52,4 +54,4 @@ Built at the Hack the Feed hackathon by Avi Shah & Ben Thomas
 
 ## 🥇 Award
 
-Our team won **1st place in the Compound Viral Award** at the [Hack the Feed hackathon](https://luma.com/92iq2a12). [See the Instagram reel](https://www.instagram.com/reel/DfbFjiCmXjP/).
+Our team won **1st place in the Compound Viral Award** at the [Hack the Feed hackathon](https://luma.com/92iq2a12)
