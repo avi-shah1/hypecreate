@@ -15,6 +15,8 @@ export interface DemoVideo {
   createdAt: string;
   caption?: string;
   beats?: Beat[];
+  /** The one video the "Ready to post" grid shows in the demo (the rest are only used by "Make a video"). */
+  featured?: boolean;
 }
 
 export const DEMO_VIDEOS = demoVideos as DemoVideo[];

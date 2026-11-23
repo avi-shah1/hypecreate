@@ -116,6 +116,7 @@
   },
   {
     "url": "/demo/frugal-childhood-confession-seedance.mp4",
+    "featured": true,
     "name": "The Frugal Childhood Confession",
     "model": "Seedance 2.0 Fast",
     "formatId": "the-frugal-childhood-confession",

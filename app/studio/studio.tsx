@@ -263,7 +263,7 @@ export default function Studio({ demo = false }: { demo?: boolean }) {
           </p>
         )}
 
-        <RecentAds videos={videos} />
+        <RecentAds allVideos={videos} />
       </main>
     </div>
   );

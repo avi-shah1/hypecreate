@@ -3,7 +3,9 @@
 import type { StudioVideo } from "./videos/route";
 
 /** Every finished video on this laptop, from GET /studio/videos. */
-export default function RecentAds({ videos }: { videos: StudioVideo[] }) {
+export default function RecentAds({ allVideos }: { allVideos: StudioVideo[] }) {
+  // In the demo one video is marked featured: show only that one here.
+  const videos = allVideos.some((video) => video.featured) ? allVideos.filter((video) => video.featured) : allVideos;
   if (videos.length === 0) return null;
   return (
     <section className="mt-16">

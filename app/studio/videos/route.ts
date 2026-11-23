@@ -15,6 +15,7 @@ export interface StudioVideo {
   createdAt: string;
   caption?: string;
   beats?: Beat[];
+  featured?: boolean;
 }
 
 /** Folders of real-clip videos, one per account, plus what the Studio makes itself. */
