@@ -2,6 +2,10 @@
 
 **Find the short videos working in your niche right now, then turn them into ready-to-post ads for your brand.**
 
+**[Try the live demo → hypecreate.vercel.app](https://hypecreate.vercel.app)**
+
+![The HypeCreate Studio](docs/studio.png)
+
 Consumer apps grow on TikTok and Instagram through small UGC accounts: someone films themselves, posts every day, and the account warms up. When that person leaves, the account goes quiet. HypeCreate keeps it posting. It reads what is working for other creators this month, explains *why* each video works, and remakes that format as a new video for your brand, checked against your brand's rules.
 
 > **This demo only works for Lodavo**, a savings app that gives you free tickets to a weekly cash draw for the money you save. The company research, brand rules and videos are all Lodavo's. Other companies aren't supported yet: adding one means a brand file in `brand/`, a profile in `app/studio/brand-profile.ts`, and live mode to make its videos.

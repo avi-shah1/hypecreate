@@ -1,5 +1,5 @@
 // The Studio's "Research company" result, hardcoded for the demo from
-// lodavo-brand-brief.md: section 14 is the profile, section 15 the agent steps.
+// lodavo-brand-brief.md (section 14 is the profile).
 // The brief was sourced from lodavo.com/en-us and press coverage; nothing here is invented.
 
 export interface BrandProfile {
