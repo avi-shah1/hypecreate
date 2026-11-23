@@ -48,4 +48,12 @@ It's a standard Next.js app, so it deploys to Vercel as-is. Leave `HYPECREATE_LI
 
 ## Credits
 
+<<<<<<< HEAD
 Built at the Hack the Feed hackathon by Avi Shah & Ben Thomas   
+=======
+Built at the Hack the Feed hackathon by Ben Thomas (video creation), Avi Shah (Oriane signal) and Julius (brain view). Forked from [benthomasmtl/hack-the-feed](https://github.com/benthomasmtl/hack-the-feed).
+
+## 🥇 Award
+
+Our team won **1st place in the Compound Viral Award** at the [Hack the Feed hackathon](https://luma.com/92iq2a12). [See the Instagram reel](https://www.instagram.com/reel/DfbFjiCmXjP/).
+>>>>>>> ac0b07b (README: add the Compound Viral Award (1st place))
